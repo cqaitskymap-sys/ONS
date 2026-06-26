@@ -3,7 +3,18 @@ import { COMPANY } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://lomarspharma.com";
-  const routes = ["", "/about", "/services", "/sourcing", "/contact"];
+  const routes = [
+    "",
+    "/about",
+    "/services",
+    "/industries",
+    "/sourcing",
+    "/careers",
+    "/contact",
+    "/faq",
+    "/privacy",
+    "/terms",
+  ];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

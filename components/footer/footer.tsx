@@ -140,8 +140,9 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link>
           </div>
         </div>
       </div>

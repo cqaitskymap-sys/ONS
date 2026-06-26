@@ -23,7 +23,9 @@ export const NAV_LINKS = [
     label: "Services",
     mega: true,
   },
+  { href: "/industries", label: "Industries" },
   { href: "/sourcing", label: "Sourcing" },
+  { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -79,6 +81,85 @@ export const INDUSTRIES = [
   { title: "Cosmeceuticals", icon: "Sparkles" },
   { title: "Medical Devices", icon: "Stethoscope" },
   { title: "Veterinary", icon: "Heart" },
+] as const;
+
+export const INDUSTRY_DETAILS = [
+  {
+    title: "Pharmaceuticals",
+    icon: "Pill",
+    description:
+      "Full-spectrum support for small molecules, generics, and innovative drug development — from dossier preparation to post-approval compliance.",
+    capabilities: ["Regulatory submissions", "GMP audits", "Tech transfer", "ANDA/NDA support"],
+  },
+  {
+    title: "Biotechnology",
+    icon: "Dna",
+    description:
+      "Specialized consultancy for biologics, biosimilars, and cell-based therapies with complex regulatory pathways.",
+    capabilities: ["Biosimilar strategy", "Cold chain compliance", "BLA submissions", "Process validation"],
+  },
+  {
+    title: "Nutraceuticals",
+    icon: "Leaf",
+    description:
+      "Navigate dietary supplement regulations across FSSAI, FDA, and EU frameworks while ensuring quality and label compliance.",
+    capabilities: ["Label compliance", "Ingredient sourcing", "FSSAI registration", "Health claims review"],
+  },
+  {
+    title: "Cosmeceuticals",
+    icon: "Sparkles",
+    description:
+      "Bridge cosmetic and pharmaceutical standards with expertise in product classification, safety assessments, and market entry.",
+    capabilities: ["Product classification", "Safety assessments", "CDSCO registration", "GMP for cosmetics"],
+  },
+  {
+    title: "Medical Devices",
+    icon: "Stethoscope",
+    description:
+      "ISO 13485 implementation, CE marking, and FDA 510(k) guidance for Class I–III medical devices.",
+    capabilities: ["ISO 13485 QMS", "CE marking", "510(k) submissions", "Risk management (ISO 14971)"],
+  },
+  {
+    title: "Veterinary",
+    icon: "Heart",
+    description:
+      "Regulatory and quality support for veterinary pharmaceuticals, feed additives, and animal health products.",
+    capabilities: ["VICH compliance", "API sourcing", "GMP for vet products", "Export documentation"],
+  },
+] as const;
+
+export const CAREER_BENEFITS = [
+  { title: "Global Exposure", description: "Work with clients and suppliers across 30+ countries.", icon: "Globe" },
+  { title: "Continuous Learning", description: "Stay at the forefront of regulatory and industry developments.", icon: "GraduationCap" },
+  { title: "Impactful Work", description: "Help bring safe, effective medicines to patients worldwide.", icon: "Heart" },
+  { title: "Collaborative Culture", description: "Join a team of seasoned pharma professionals who mentor and support.", icon: "Users" },
+] as const;
+
+export const CAREER_OPENINGS = [
+  {
+    title: "Senior Regulatory Affairs Consultant",
+    department: "Regulatory Affairs",
+    location: "Silvassa, India (Hybrid)",
+    type: "Full-time",
+  },
+  {
+    title: "Quality Assurance Specialist",
+    department: "Quality Assurance",
+    location: "Silvassa, India",
+    type: "Full-time",
+  },
+  {
+    title: "Sourcing & Procurement Analyst",
+    department: "Sourcing",
+    location: "Remote",
+    type: "Full-time",
+  },
+  {
+    title: "Business Development Executive",
+    department: "Sales",
+    location: "Mumbai / Delhi",
+    type: "Full-time",
+  },
 ] as const;
 
 export const STATS = [
