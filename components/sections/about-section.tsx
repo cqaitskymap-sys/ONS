@@ -35,6 +35,7 @@ export function AboutSection() {
                 alt="Pharmaceutical research"
                 fill
                 className="object-cover"
+                sizes="192px"
               />
             </div>
           </motion.div>

@@ -135,7 +135,13 @@ export default function AboutPage() {
             {LEADERSHIP.map((leader, i) => (
               <GlowCard key={leader.name} delay={i * 0.15} glowColor={i === 0 ? "green" : i === 1 ? "blue" : "purple"}>
                 <div className="relative w-24 h-24 rounded-2xl overflow-hidden mb-4">
-                  <Image src={leader.image} alt={leader.name} fill className="object-cover" />
+                  <Image
+                    src={leader.image}
+                    alt={leader.name}
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
                 </div>
                 <h3 className="text-lg font-bold">{leader.name}</h3>
                 <p className="text-primary text-sm mb-3">{leader.role}</p>

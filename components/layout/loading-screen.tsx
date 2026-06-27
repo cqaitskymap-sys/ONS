@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY } from "@/lib/constants";
+import { Logo } from "@/components/brand/logo";
 
 export function LoadingScreen() {
   const [loading, setLoading] = useState(true);
@@ -27,10 +28,7 @@ export function LoadingScreen() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 mx-auto glow-green">
-              <span className="text-2xl font-bold text-primary">L</span>
-            </div>
-            <h1 className="text-2xl font-bold gradient-text mb-2">{COMPANY.name}</h1>
+            <Logo size="xl" link={false} className="mx-auto mb-4" priority />
             <p className="text-muted-foreground text-sm">{COMPANY.tagline}</p>
           </motion.div>
           <motion.div

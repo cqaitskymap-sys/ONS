@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Pill, Mail, Phone, MapPin, Clock, Share2, Globe, MessageSquare, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Share2, Globe, MessageSquare, ArrowRight } from "lucide-react";
 import { COMPANY, NAV_LINKS, SERVICES } from "@/lib/constants";
+import { Logo } from "@/components/brand/logo";
 import { toast } from "sonner";
 
 export function Footer() {
@@ -24,12 +25,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-                <Pill className="w-5 h-5 text-primary" />
-              </div>
-              <span className="font-bold text-lg">{COMPANY.name}</span>
-            </Link>
+            <Logo size="xl" className="mb-6" />
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               {COMPANY.tagline}. Delivering excellence in pharmaceutical consultancy across India.
             </p>

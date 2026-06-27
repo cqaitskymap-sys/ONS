@@ -4,8 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, ChevronDown, Pill } from "lucide-react";
-import { COMPANY, NAV_LINKS, SERVICES } from "@/lib/constants";
+import { Menu, ChevronDown } from "lucide-react";
+import { NAV_LINKS, SERVICES } from "@/lib/constants";
+import { Logo } from "@/components/brand/logo";
 import { cn } from "@/lib/utils";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import {
@@ -30,18 +31,11 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled ? "glass-strong py-3 shadow-lg shadow-black/20" : "py-5 bg-transparent"
+        scrolled ? "glass-strong py-3 shadow-lg shadow-black/20" : "py-4 bg-transparent"
       )}
     >
       <nav className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center group-hover:glow-green transition-shadow">
-            <Pill className="w-5 h-5 text-primary" />
-          </div>
-          <div>
-            <span className="font-bold text-lg tracking-tight">{COMPANY.name}</span>
-          </div>
-        </Link>
+        <Logo size="nav" priority />
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-1">
@@ -131,7 +125,8 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="glass-strong border-white/10 w-80">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-            <div className="flex flex-col gap-2 mt-8">
+            <div className="flex flex-col gap-2 mt-4">
+              <Logo size="nav" className="mb-4 mx-auto" />
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}

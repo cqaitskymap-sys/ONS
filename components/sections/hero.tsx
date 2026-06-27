@@ -49,7 +49,7 @@ function AuroraBackground() {
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-32">
       <AuroraBackground />
       <Hero3D />
 

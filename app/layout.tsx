@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer/footer";
 import { Providers } from "@/components/layout/providers";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY, LOGO } from "@/lib/constants";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,6 +28,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: COMPANY.name,
+    images: [
+      {
+        url: LOGO.src,
+        width: LOGO.width,
+        height: LOGO.height,
+        alt: LOGO.alt,
+      },
+    ],
+  },
+  icons: {
+    icon: [
+      { url: "/logo.png", type: "image/png", sizes: "512x512" },
+      { url: "/icon", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
+    shortcut: "/logo.png",
   },
   twitter: {
     card: "summary_large_image",
@@ -46,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -55,7 +71,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen antialiased">
+      <body className="min-h-screen antialiased" suppressHydrationWarning>
         <Providers>
           <Navbar />
           <main>{children}</main>

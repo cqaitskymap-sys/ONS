@@ -25,7 +25,13 @@ export function TestimonialsSection() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                  <Image src={t.avatar} alt={t.author} fill className="object-cover" />
+                  <Image
+                    src={t.avatar}
+                    alt={t.author}
+                    fill
+                    className="object-cover"
+                    sizes="40px"
+                  />
                 </div>
                 <div>
                   <div className="text-sm font-semibold">{t.author}</div>

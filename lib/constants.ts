@@ -1,3 +1,10 @@
+export const LOGO = {
+  src: "/logo.png",
+  alt: "LoMars Pharma logo featuring a 3D blue planet with a glowing medical cross and a silver ring, above the text LoMars Pharma - Care Made Convenient.",
+  width: 400,
+  height: 500,
+} as const;
+
 export const COMPANY = {
   name: "LoMars Pharma",
   tagline: "Your Complete Partner in Pharma Excellence",
@@ -212,7 +219,7 @@ export const TESTIMONIALS = [
       "Their GMP consultancy was instrumental in our WHO prequalification. Professional, thorough, and results-driven.",
     author: "Ahmed Hassan",
     role: "Quality Head, PharmaCore Ltd.",
-    avatar: "https://images.unsplash.com/photo-1537368910025-700350f70c0e?w=100&h=100&fit=crop&crop=face",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
   },
 ] as const;
 

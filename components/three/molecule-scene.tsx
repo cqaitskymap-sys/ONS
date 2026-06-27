@@ -7,6 +7,7 @@ import * as THREE from "three";
 
 function Molecule() {
   const groupRef = useRef<THREE.Group>(null);
+  const elapsed = useRef(0);
   const atoms = useMemo(() => {
     const positions: [number, number, number][] = [
       [0, 0, 0], [1.2, 0.5, 0.3], [-1, 0.8, -0.2], [0.5, -1, 0.5],
@@ -15,10 +16,11 @@ function Molecule() {
     return positions;
   }, []);
 
-  useFrame((state) => {
+  useFrame((_, delta) => {
+    elapsed.current += delta;
     if (groupRef.current) {
-      groupRef.current.rotation.y = state.clock.elapsedTime * 0.15;
-      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.1;
+      groupRef.current.rotation.y = elapsed.current * 0.15;
+      groupRef.current.rotation.x = Math.sin(elapsed.current * 0.1) * 0.1;
     }
   });
 
@@ -51,9 +53,11 @@ function Molecule() {
 
 function Capsule({ position }: { position: [number, number, number] }) {
   const ref = useRef<THREE.Mesh>(null);
-  useFrame((state) => {
+  const elapsed = useRef(0);
+  useFrame((_, delta) => {
+    elapsed.current += delta;
     if (ref.current) {
-      ref.current.rotation.z = state.clock.elapsedTime * 0.5;
+      ref.current.rotation.z = elapsed.current * 0.5;
     }
   });
   return (
@@ -79,9 +83,11 @@ function ParticleCloud() {
   }, []);
 
   const ref = useRef<THREE.Points>(null);
-  useFrame((state) => {
+  const elapsed = useRef(0);
+  useFrame((_, delta) => {
+    elapsed.current += delta;
     if (ref.current) {
-      ref.current.rotation.y = state.clock.elapsedTime * 0.02;
+      ref.current.rotation.y = elapsed.current * 0.02;
     }
   });
 
