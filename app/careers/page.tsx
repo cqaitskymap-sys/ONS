@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Globe, GraduationCap, Heart, Users, MapPin, Briefcase, Clock, ArrowRight,
+  Building2, GraduationCap, Heart, Users, MapPin, Briefcase, Clock, ArrowRight,
 } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlowCard } from "@/components/cards/glow-card";
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const benefitIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Globe, GraduationCap, Heart, Users,
+  Building2, GraduationCap, Heart, Users,
 };
 
 export default function CareersPage() {
@@ -27,7 +27,7 @@ export default function CareersPage() {
           <SectionTitle
             badge="Careers"
             title="Build Your Future With Us"
-            subtitle="Join a team of passionate pharmaceutical professionals making a global impact on healthcare accessibility and quality."
+            subtitle="Join a team of passionate pharmaceutical professionals making an impact on healthcare accessibility and quality across India."
           />
         </div>
       </section>

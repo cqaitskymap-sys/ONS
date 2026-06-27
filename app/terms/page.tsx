@@ -16,7 +16,7 @@ const sections = [
   {
     title: "Services",
     content:
-      "LoMars Pharma provides pharmaceutical consultancy services including regulatory affairs, quality assurance, manufacturing consultancy, validation, sourcing, and market entry strategy. Specific scope, deliverables, and fees are defined in individual service agreements or statements of work.",
+      "LoMars Pharma provides pharmaceutical consultancy services including plant design, commissioning and validation, third-party GMP audits, pre-inspection audits, QMS implementation, pharmaceutical training, and domestic sourcing. Specific scope, deliverables, and fees are defined in individual service agreements or statements of work.",
   },
   {
     title: "Website Use",

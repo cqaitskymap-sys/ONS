@@ -43,7 +43,7 @@ export function AboutSection() {
             <SectionTitle
               badge="About Us"
               title="Pioneering Pharma Excellence"
-              subtitle="For over 15 years, LoMars Pharma has been the trusted partner for pharmaceutical companies seeking regulatory compliance, quality assurance, and global market access."
+              subtitle="For over 15 years, LoMars Pharma has been the trusted partner for pharmaceutical companies seeking GMP compliance, facility validation, and quality excellence."
               align="left"
               className="mb-8"
             />
@@ -53,8 +53,8 @@ export function AboutSection() {
               viewport={{ once: true }}
               className="text-muted-foreground leading-relaxed mb-6"
             >
-              Based in Silvassa, India, we combine deep local expertise with a global network
-              of regulatory specialists, quality auditors, and sourcing partners to deliver
+              Based in Silvassa, India, we combine deep local expertise with a domestic network
+              of quality auditors, validation specialists, and sourcing partners to deliver
               comprehensive pharmaceutical consultancy services.
             </motion.p>
             <Link href="/about">

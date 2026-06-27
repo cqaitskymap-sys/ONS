@@ -31,7 +31,7 @@ export function Footer() {
               <span className="font-bold text-lg">{COMPANY.name}</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              {COMPANY.tagline}. Delivering excellence in pharmaceutical consultancy worldwide.
+              {COMPANY.tagline}. Delivering excellence in pharmaceutical consultancy across India.
             </p>
             <div className="flex gap-3">
               {[
@@ -74,7 +74,7 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-6">Services</h4>
             <ul className="space-y-3">
-              {SERVICES.slice(0, 5).map((service) => (
+              {SERVICES.map((service) => (
                 <li key={service.title}>
                   <Link
                     href={service.href}

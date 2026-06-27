@@ -51,9 +51,9 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold">Our Mission</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                To empower pharmaceutical companies worldwide with expert consultancy,
+                To empower pharmaceutical companies across India with expert consultancy,
                 enabling them to achieve regulatory compliance, operational excellence,
-                and sustainable growth in global markets.
+                and sustainable growth in domestic markets.
               </p>
             </GlowCard>
             <GlowCard glowColor="blue">
@@ -64,7 +64,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold">Our Vision</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                To be the most trusted pharmaceutical consultancy partner globally,
+                To be the most trusted pharmaceutical consultancy partner in India,
                 recognized for innovation, integrity, and transformative impact on
                 healthcare accessibility.
               </p>

@@ -25,8 +25,8 @@ export function CTASection() {
               Your Pharma Operations?
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-              Partner with LoMars Pharma for regulatory excellence, quality assurance,
-              and global market access. Let&apos;s build your success story together.
+              Partner with LoMars Pharma for GMP compliance, facility validation,
+              and quality excellence. Let&apos;s build your success story together.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/contact">

@@ -14,7 +14,7 @@ export function TestimonialsSection() {
         <SectionTitle
           badge="Testimonials"
           title="What Our Clients Say"
-          subtitle="Trusted by pharmaceutical leaders across the globe."
+          subtitle="Trusted by pharmaceutical leaders across India."
         />
         <div className="grid md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t, i) => (

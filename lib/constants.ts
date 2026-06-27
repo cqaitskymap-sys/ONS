@@ -2,7 +2,7 @@ export const COMPANY = {
   name: "LoMars Pharma",
   tagline: "Your Complete Partner in Pharma Excellence",
   description:
-    "LoMars Pharma is a premier pharmaceutical consultancy delivering end-to-end solutions — from regulatory compliance and quality assurance to global sourcing and manufacturing excellence.",
+    "LoMars Pharma is a premier pharmaceutical consultancy delivering end-to-end solutions — from plant design and validation to GMP audits, QMS implementation, training, and domestic sourcing.",
   address: "Office No.16 Platinum Square, Near St. Xavier School, Silvassa 396230",
   phone: "+91 9714912040",
   email: "info@lomarspharma.com",
@@ -31,46 +31,46 @@ export const NAV_LINKS = [
 
 export const SERVICES = [
   {
-    title: "Regulatory Affairs",
+    title: "Plant Design, Commissioning & Validation",
     description:
-      "Navigate complex global regulations with expert guidance on dossier preparation, submissions, and compliance.",
-    icon: "Shield",
-    href: "/services#regulatory",
+      "Facility planning, commissioning, and DQ/IQ/OQ/PQ validation for HVAC, utilities, and cleanroom systems.",
+    icon: "Building2",
+    href: "/services#plant-design",
   },
   {
-    title: "Quality Assurance",
+    title: "Third-Party GMP Audits",
     description:
-      "Implement robust QA systems aligned with GMP, WHO, and international pharmacopoeia standards.",
+      "Independent GMP compliance audits for pharmaceutical plants, API facilities, CMOs, and suppliers.",
+    icon: "ClipboardCheck",
+    href: "/services#gmp-audits",
+  },
+  {
+    title: "Pre-Inspection Audits",
+    description:
+      "Pre-regulatory inspection assessments to identify gaps and strengthen inspection readiness.",
+    icon: "SearchCheck",
+    href: "/services#pre-inspection",
+  },
+  {
+    title: "Quality Management System (QMS)",
+    description:
+      "Design, implementation, and upgradation of QMS per EU GMP, PIC/S, WHO, and ISO guidelines.",
     icon: "Award",
-    href: "/services#quality",
+    href: "/services#qms",
   },
   {
-    title: "Manufacturing Consultancy",
+    title: "Pharmaceutical Training",
     description:
-      "Optimize production processes, scale operations, and achieve manufacturing excellence.",
-    icon: "Factory",
-    href: "/services#manufacturing",
+      "GMP, validation, QA/QC, OSD and sterile manufacturing training with placement support.",
+    icon: "GraduationCap",
+    href: "/services#training",
   },
   {
-    title: "Pharma Sourcing",
+    title: "Pharma Sourcing & Packaging",
     description:
-      "Connect with verified global suppliers for APIs, excipients, and packaging materials.",
-    icon: "Globe",
+      "Domestic sourcing of APIs, excipients, and pharmaceutical glass packaging with full QA support.",
+    icon: "Package",
     href: "/sourcing",
-  },
-  {
-    title: "Validation Services",
-    description:
-      "Comprehensive validation protocols for equipment, processes, cleaning, and computer systems.",
-    icon: "CheckCircle",
-    href: "/services#validation",
-  },
-  {
-    title: "Market Entry Strategy",
-    description:
-      "Strategic planning for entering new markets with regulatory and commercial insights.",
-    icon: "TrendingUp",
-    href: "/services#market",
   },
 ] as const;
 
@@ -89,7 +89,7 @@ export const INDUSTRY_DETAILS = [
     icon: "Pill",
     description:
       "Full-spectrum support for small molecules, generics, and innovative drug development — from dossier preparation to post-approval compliance.",
-    capabilities: ["Regulatory submissions", "GMP audits", "Tech transfer", "ANDA/NDA support"],
+    capabilities: ["Plant design & validation", "GMP audits", "QMS implementation", "Pre-inspection audits"],
   },
   {
     title: "Biotechnology",
@@ -129,9 +129,9 @@ export const INDUSTRY_DETAILS = [
 ] as const;
 
 export const CAREER_BENEFITS = [
-  { title: "Global Exposure", description: "Work with clients and suppliers across 30+ countries.", icon: "Globe" },
+  { title: "Industry Exposure", description: "Work with leading pharmaceutical manufacturers across India.", icon: "Building2" },
   { title: "Continuous Learning", description: "Stay at the forefront of regulatory and industry developments.", icon: "GraduationCap" },
-  { title: "Impactful Work", description: "Help bring safe, effective medicines to patients worldwide.", icon: "Heart" },
+  { title: "Impactful Work", description: "Help bring safe, effective medicines to patients across India.", icon: "Heart" },
   { title: "Collaborative Culture", description: "Join a team of seasoned pharma professionals who mentor and support.", icon: "Users" },
 ] as const;
 
@@ -165,7 +165,7 @@ export const CAREER_OPENINGS = [
 export const STATS = [
   { value: 15, suffix: "+", label: "Years Experience" },
   { value: 200, suffix: "+", label: "Projects Delivered" },
-  { value: 50, suffix: "+", label: "Global Partners" },
+  { value: 50, suffix: "+", label: "Domestic Partners" },
   { value: 98, suffix: "%", label: "Client Satisfaction" },
 ] as const;
 
@@ -202,9 +202,9 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "Outstanding sourcing capabilities. They connected us with premium API suppliers and ensured full quality compliance.",
-    author: "Sarah Mitchell",
-    role: "Procurement Director, GlobalPharm Inc.",
+      "Outstanding sourcing capabilities. They connected us with qualified domestic API suppliers and ensured full quality compliance.",
+    author: "Priya Desai",
+    role: "Procurement Director, Bharat Pharma Ltd.",
     avatar: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=100&h=100&fit=crop&crop=face",
   },
   {
@@ -220,7 +220,7 @@ export const FAQ_ITEMS = [
   {
     question: "What services does LoMars Pharma offer?",
     answer:
-      "We offer comprehensive pharmaceutical consultancy including regulatory affairs, quality assurance, manufacturing consultancy, validation services, global sourcing, and market entry strategy.",
+      "We offer plant design, commissioning and validation, third-party GMP audits, pre-inspection audits, QMS implementation, pharmaceutical training, and domestic sourcing of APIs, excipients, and packaging materials.",
   },
   {
     question: "Which regulatory markets do you support?",
@@ -251,21 +251,21 @@ export const TRUSTED_LOGOS = [
 
 export const TIMELINE = [
   { year: "2010", title: "Founded", description: "LoMars Pharma established in Silvassa, India." },
-  { year: "2014", title: "Global Expansion", description: "Extended services to Middle East and Southeast Asia." },
+  { year: "2014", title: "Service Expansion", description: "Extended services across Gujarat, Maharashtra, and key pharma hubs in India." },
   { year: "2018", title: "WHO Partnership", description: "Became WHO-prequalified consultancy partner." },
   { year: "2022", title: "Digital Transformation", description: "Launched digital sourcing and compliance platform." },
-  { year: "2026", title: "Industry Leader", description: "200+ projects delivered across 30+ countries." },
+  { year: "2026", title: "Industry Leader", description: "200+ projects delivered across pharmaceutical facilities in India." },
 ] as const;
 
 export const WHY_CHOOSE_US = [
   {
     title: "Deep Expertise",
-    description: "15+ years of pharmaceutical industry experience across all major markets.",
+    description: "15+ years of pharmaceutical industry experience across India's regulatory landscape.",
     icon: "Brain",
   },
   {
-    title: "Global Network",
-    description: "Verified supplier and regulatory networks spanning 30+ countries.",
+    title: "Domestic Network",
+    description: "Verified supplier and regulatory networks across India's pharmaceutical hubs.",
     icon: "Network",
   },
   {
@@ -282,23 +282,23 @@ export const WHY_CHOOSE_US = [
 
 export const SOURCING_MATERIALS = [
   {
-    title: "API Materials",
-    description: "Active Pharmaceutical Ingredients from WHO-GMP certified manufacturers worldwide.",
+    title: "API Sourcing",
+    description: "Regulated and non-regulated APIs from qualified domestic manufacturers with DMF and regulatory documentation support.",
     icon: "FlaskConical",
   },
   {
-    title: "Excipients",
-    description: "High-purity excipients meeting pharmacopoeial standards for all dosage forms.",
+    title: "Excipient Sourcing",
+    description: "Pharmaceutical excipients meeting USP, EP, BP, and pharmacopeial standards for all dosage forms.",
     icon: "Beaker",
   },
   {
-    title: "Packaging Materials",
-    description: "Primary and secondary packaging compliant with international standards.",
+    title: "Glass Container Solutions",
+    description: "Type I, II, and III glass vials, ampoules, bottles, cartridges, and syringe components.",
     icon: "Package",
   },
   {
-    title: "Quality Assurance",
-    description: "Full traceability, COA verification, and batch-to-batch consistency checks.",
+    title: "Quality & Compliance",
+    description: "Vendor qualification, GMP audits, COA verification, and full supply-chain traceability.",
     icon: "ShieldCheck",
   },
 ] as const;
@@ -307,7 +307,7 @@ export const LEADERSHIP = [
   {
     name: "Dr. Vikram Mehta",
     role: "Founder & CEO",
-    bio: "25+ years in pharmaceutical regulatory affairs and global market access.",
+    bio: "25+ years in pharmaceutical regulatory affairs and domestic market compliance.",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
   },
   {
@@ -319,7 +319,7 @@ export const LEADERSHIP = [
   {
     name: "James O'Brien",
     role: "Director of Sourcing",
-    bio: "Global supply chain expert with networks across Asia, Europe, and Americas.",
+    bio: "Domestic supply chain expert with networks across India's pharmaceutical manufacturing hubs.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
   },
 ] as const;

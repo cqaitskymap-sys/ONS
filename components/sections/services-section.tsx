@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Shield, Award, Factory, Globe, CheckCircle, TrendingUp, ArrowRight,
+  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, ArrowRight,
 } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlowCard } from "@/components/cards/glow-card";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Shield, Award, Factory, Globe, CheckCircle, TrendingUp,
+  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package,
 };
 
 export function ServicesSection() {
@@ -21,12 +21,12 @@ export function ServicesSection() {
         <SectionTitle
           badge="Our Services"
           title="Comprehensive Pharma Solutions"
-          subtitle="From regulatory strategy to global sourcing — we deliver end-to-end pharmaceutical consultancy tailored to your needs."
+          subtitle="From plant design and validation to GMP audits, QMS, training, and domestic sourcing — tailored to your pharmaceutical operations."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((service, i) => {
-            const Icon = iconMap[service.icon] || Shield;
+            const Icon = iconMap[service.icon] || Building2;
             return (
               <GlowCard key={service.title} delay={i * 0.1} glowColor={i % 3 === 0 ? "green" : i % 3 === 1 ? "blue" : "purple"}>
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">

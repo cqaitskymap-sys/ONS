@@ -79,8 +79,8 @@ export function Hero() {
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
-              End-to-end pharmaceutical consultancy — regulatory affairs, quality assurance,
-              global sourcing, and manufacturing excellence for companies worldwide.
+              End-to-end pharmaceutical consultancy — plant design, GMP audits, QMS implementation,
+              training, and domestic sourcing for pharmaceutical manufacturers across India.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
@@ -121,8 +121,8 @@ export function Hero() {
               <div className="text-sm text-muted-foreground">Certified Consultancy</div>
             </GlassCard>
             <GlassCard className="absolute bottom-20 left-0 w-56" delay={1}>
-              <div className="text-secondary text-2xl font-bold mb-1">30+</div>
-              <div className="text-sm text-muted-foreground">Countries Served</div>
+              <div className="text-secondary text-2xl font-bold mb-1">50+</div>
+              <div className="text-sm text-muted-foreground">Domestic Partners</div>
             </GlassCard>
             <GlassCard className="absolute top-1/2 right-10 w-52" delay={1.2}>
               <div className="text-accent text-2xl font-bold mb-1">FDA</div>
