@@ -95,9 +95,9 @@ const whyChooseUs = [
 export default function SourcingPage() {
   return (
     <>
-      <section className="pt-32 pb-16 relative">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/5 to-transparent" />
-        <div className="container mx-auto px-4 lg:px-8 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
           <SectionTitle
             badge="Sourcing"
             title="Pharmaceutical Sourcing"
@@ -106,9 +106,9 @@ export default function SourcingPage() {
         </div>
       </section>
 
-      <section className="pb-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="pb-12 sm:pb-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {SOURCING_MATERIALS.map((material, i) => {
               const Icon = iconMap[material.icon] || FlaskConical;
               return (
@@ -123,10 +123,10 @@ export default function SourcingPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Services" title="Our Sourcing Services" />
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {sourcingServices.map((service, i) => (
               <GlassCard key={service.title} delay={i * 0.08} hover={false}>
                 <h3 className="text-lg font-bold mb-4">{service.title}</h3>
@@ -144,17 +144,17 @@ export default function SourcingPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Process" title="Supply Chain Workflow" subtitle="A rigorous five-step process ensuring quality at every stage." />
           <Timeline items={supplyChainSteps} />
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Network" title="Domestic Supplier Network" subtitle="Qualified manufacturers across India's key pharmaceutical manufacturing hubs." />
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
             {supplierRegions.map((region, i) => (
               <GlassCard key={region.region} delay={i * 0.08} className="text-center">
                 <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
@@ -167,12 +167,12 @@ export default function SourcingPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Coverage" title="Pan-India Reach" subtitle="Serving pharmaceutical manufacturers across India with reliable domestic sourcing." />
-          <div className="glass-strong rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          <div className="glass-strong rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-hidden">
             <div className="absolute inset-0 grid-bg opacity-30" />
-            <div className="relative grid md:grid-cols-3 gap-8 text-center">
+            <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
               {[
                 { icon: Search, label: "Qualified Suppliers", value: "100+" },
                 { icon: Truck, label: "Active Shipments", value: "50+" },
@@ -189,10 +189,10 @@ export default function SourcingPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Quality" title="Quality & Compliance" subtitle="Quality is central to our operations. We work with qualified manufacturers adhering to GMP and international quality standards." />
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {[
               { title: "GMP Audits", desc: "On-site audits of manufacturing facilities against GMP and CDSCO standards." },
               { title: "Documentation Review", desc: "Complete DMF, COA, and regulatory documentation verification." },
@@ -208,8 +208,8 @@ export default function SourcingPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <div className="grid md:grid-cols-2 gap-8">
             <GlassCard hover={false}>
               <h3 className="text-xl font-bold mb-4">Value Proposition</h3>

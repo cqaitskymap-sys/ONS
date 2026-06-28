@@ -38,8 +38,8 @@ export function ContactForm() {
   ];
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      <div className="grid md:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 min-w-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {fields.map((field) => (
           <div key={field.name} className="relative">
             <input
@@ -48,7 +48,7 @@ export function ContactForm() {
               id={field.name}
               placeholder=" "
               className={cn(
-                "peer w-full px-4 pt-6 pb-2 rounded-xl glass text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all",
+                "peer w-full min-w-0 px-4 pt-6 pb-2 rounded-xl glass text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all",
                 errors[field.name] && "ring-1 ring-destructive"
               )}
             />
@@ -71,7 +71,7 @@ export function ContactForm() {
           id="service"
           defaultValue=""
           className={cn(
-            "w-full px-4 py-4 rounded-xl glass text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 appearance-none",
+            "w-full min-w-0 px-4 py-4 min-h-11 rounded-xl glass text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 appearance-none",
             errors.service && "ring-1 ring-destructive"
           )}
         >
@@ -94,7 +94,7 @@ export function ContactForm() {
           rows={5}
           placeholder=" "
           className={cn(
-            "peer w-full px-4 pt-6 pb-2 rounded-xl glass text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 resize-none transition-all",
+            "peer w-full min-w-0 px-4 pt-6 pb-2 rounded-xl glass text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 resize-none transition-all",
             errors.message && "ring-1 ring-destructive"
           )}
         />

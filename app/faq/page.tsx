@@ -35,8 +35,8 @@ export default function FAQPage() {
 
   return (
     <>
-      <section className="pt-32 pb-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle
             badge="FAQ"
             title="Frequently Asked Questions"
@@ -45,14 +45,14 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <section className="pb-16">
-        <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
+      <section className="pb-12 sm:pb-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl min-w-0">
           <FAQ items={allFaqs} />
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl min-w-0">
           <GlassCard hover={false} className="text-center">
             <MessageCircle className="w-10 h-10 text-primary mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-2">Still have questions?</h3>

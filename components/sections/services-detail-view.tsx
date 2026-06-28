@@ -32,26 +32,26 @@ function ServiceDetailBlock({ service }: { service: (typeof SERVICE_DETAILS)[num
   const Icon = iconMap[service.icon] || Building2;
 
   return (
-    <section id={service.id} className="py-8 scroll-mt-28">
-      <div className="flex items-start gap-4 mb-8">
-        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-          <Icon className="w-7 h-7 text-primary" />
+    <section id={service.id} className="py-6 sm:py-8 scroll-mt-24 sm:scroll-mt-28">
+      <div className="flex flex-col sm:flex-row items-start gap-4 mb-6 sm:mb-8">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+          <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
         </div>
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">{service.title}</h2>
-          <p className="text-muted-foreground leading-relaxed max-w-4xl">{service.introduction}</p>
+        <div className="min-w-0">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">{service.title}</h2>
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-4xl">{service.introduction}</p>
         </div>
       </div>
 
-      <div className="space-y-8">
+      <div className="space-y-4 sm:space-y-6 md:space-y-8">
         {service.sections.map((section, si) => (
           <GlassCard key={section.title} delay={si * 0.05} hover={false}>
-            <h3 className="text-lg font-bold mb-3">{section.title}</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3">{section.title}</h3>
             {section.content && (
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{section.content}</p>
             )}
             {section.items && (
-              <ul className="grid md:grid-cols-2 gap-2">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                 {section.items.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
@@ -61,11 +61,11 @@ function ServiceDetailBlock({ service }: { service: (typeof SERVICE_DETAILS)[num
               </ul>
             )}
             {section.subsections && (
-              <div className="space-y-6 mt-4">
+              <div className="space-y-4 sm:space-y-6 mt-4">
                 {section.subsections.map((sub) => (
                   <div key={sub.title}>
                     <h4 className="text-sm font-semibold mb-2">{sub.title}</h4>
-                    <ul className="grid md:grid-cols-2 gap-2">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                       {sub.items.map((item) => (
                         <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
@@ -121,9 +121,9 @@ export function ServicesDetailView({ initialServiceId }: { initialServiceId: str
   const selectedService = SERVICE_DETAILS.find((s) => s.id === selectedId);
 
   return (
-    <section className="pb-16" id="service-detail">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-2xl mx-auto mb-10">
+    <section className="pb-10 sm:pb-12 md:pb-16 overflow-hidden" id="service-detail">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
+        <div className="max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-10">
           <label htmlFor="service-select" className="block text-sm font-medium mb-2">
             Select a Service
           </label>
@@ -133,7 +133,7 @@ export function ServicesDetailView({ initialServiceId }: { initialServiceId: str
               value={selectedId}
               onChange={(e) => selectService(e.target.value)}
               className={cn(
-                "w-full px-4 py-4 pr-10 rounded-xl glass text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 appearance-none cursor-pointer"
+                "w-full min-w-0 px-4 py-3 sm:py-4 pr-10 rounded-xl glass text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 appearance-none cursor-pointer min-h-11"
               )}
             >
               <option value="" className="bg-surface">
@@ -152,8 +152,8 @@ export function ServicesDetailView({ initialServiceId }: { initialServiceId: str
         {selectedService ? (
           <ServiceDetailBlock service={selectedService} />
         ) : (
-          <div className="text-center py-12 glass rounded-2xl">
-            <p className="text-muted-foreground">
+          <div className="text-center py-8 sm:py-12 px-4 glass rounded-2xl">
+            <p className="text-sm sm:text-base text-muted-foreground">
               Please select a service from the dropdown above to view its details.
             </p>
           </div>

@@ -50,12 +50,12 @@ function AuroraBackground() {
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-32">
+    <section className="relative min-h-[100dvh] flex items-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
       <AuroraBackground />
       <Hero3D />
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-w-0">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-medium text-primary mb-6"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full glass text-xs font-medium text-primary mb-4 sm:mb-6 max-w-full"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               Pharmaceutical Excellence Since 2023
@@ -80,34 +80,34 @@ export function Hero() {
               <Logo size="xl" link={false} priority />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-4 sm:mb-6 break-words">
               <span className="sr-only">{COMPANY.name} — </span>
               <span className="gradient-text">
                 <TypingText text={COMPANY.tagline} />
               </span>
             </h1>
 
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-8 max-w-xl break-words">
               End-to-end pharmaceutical consultancy — plant design, GMP audits, QMS implementation,
               training, and sourcing Of API, Excipients,Packaging Materials and finished products(SVP,LVP,Tablets,sachets,capsules,syrups etc.) across India.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-12">
-              <Link href="/contact">
-                <MagneticButton className="bg-primary text-primary-foreground glow-green text-base px-8 py-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <MagneticButton className="w-full sm:w-auto bg-primary text-primary-foreground glow-green text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 min-h-11">
                   Start Your Journey
                   <ArrowRight className="w-4 h-4" />
                 </MagneticButton>
               </Link>
-              <Link href="/services">
-                <MagneticButton className="glass hover:bg-white/10 text-base px-8 py-4">
+              <Link href="/services" className="w-full sm:w-auto">
+                <MagneticButton className="w-full sm:w-auto glass hover:bg-white/10 text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 min-h-11">
                   <Play className="w-4 h-4" />
                   Our Services
                 </MagneticButton>
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
               {STATS.map((stat) => (
                 <AnimatedCounter
                   key={stat.label}

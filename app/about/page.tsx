@@ -28,9 +28,9 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-32 pb-16 relative">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-        <div className="container mx-auto px-4 lg:px-8 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
           <SectionTitle
             badge="About Us"
             title="Our Story"
@@ -40,15 +40,15 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             <GlowCard glowColor="green">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Target className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Target className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold">Our Mission</h3>
+                <h3 className="text-xl sm:text-2xl font-bold">Our Mission</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
                 To empower pharmaceutical companies across India with expert consultancy,
@@ -58,10 +58,10 @@ export default function AboutPage() {
             </GlowCard>
             <GlowCard glowColor="blue">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
-                  <Eye className="w-6 h-6 text-secondary" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                  <Eye className="w-5 h-5 sm:w-6 sm:h-6 text-secondary" />
                 </div>
-                <h3 className="text-2xl font-bold">Our Vision</h3>
+                <h3 className="text-xl sm:text-2xl font-bold">Our Vision</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
                 To be the most trusted pharmaceutical consultancy partner in India,
@@ -74,10 +74,10 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Values" title="What Drives Us" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {values.map((v, i) => (
               <GlassCard key={v.title} delay={i * 0.1}>
                 <v.icon className="w-8 h-8 text-primary mb-4" />
@@ -90,9 +90,9 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="glass-strong rounded-3xl p-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
+          <div className="glass-strong rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {STATS.map((stat) => (
               <AnimatedCounter
                 key={stat.label}
@@ -106,20 +106,20 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Journey" title="Our Milestones" />
           <Timeline items={TIMELINE} />
         </div>
       </section>
 
       {/* Certifications */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Certifications" title="Accreditations & Standards" />
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             {CERTIFICATIONS.map((cert, i) => (
-              <GlassCard key={cert} delay={i * 0.08} className="px-8 py-4" hover={false}>
+              <GlassCard key={cert} delay={i * 0.08} className="px-4 sm:px-8 py-3 sm:py-4" hover={false}>
                 <span className="font-semibold text-sm">{cert}</span>
               </GlassCard>
             ))}
@@ -128,10 +128,10 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Leadership" title="Meet Our Team" subtitle="Experienced professionals driving pharmaceutical excellence." />
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {LEADERSHIP.map((leader, i) => (
               <GlowCard key={leader.name} delay={i * 0.15} glowColor={i === 0 ? "green" : i === 1 ? "blue" : "purple"}>
                 <div className="relative w-24 h-24 rounded-2xl overflow-hidden mb-4">

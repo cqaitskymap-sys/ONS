@@ -23,12 +23,12 @@ export function FAQ({ items }: FAQProps) {
         <AccordionItem
           key={i}
           value={`item-${i}`}
-          className="rounded-2xl glass px-6 border-none data-[state=open]:border-primary/20"
+          className="rounded-2xl glass px-4 sm:px-6 border-none data-[state=open]:border-primary/20"
         >
-          <AccordionTrigger className="text-left font-medium hover:text-primary transition-colors py-5 hover:no-underline">
+          <AccordionTrigger className="text-left text-sm sm:text-base font-medium hover:text-primary transition-colors py-4 sm:py-5 min-h-11 hover:no-underline">
             {item.question}
           </AccordionTrigger>
-          <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+          <AccordionContent className="text-sm sm:text-base text-muted-foreground pb-4 sm:pb-5 leading-relaxed">
             {item.answer}
           </AccordionContent>
         </AccordionItem>

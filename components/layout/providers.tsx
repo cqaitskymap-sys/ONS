@@ -16,7 +16,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <LoadingScreen />
       <ScrollProgress />
       <Spotlight />
-      <div className="noise relative z-10">{children}</div>
+      <div className="noise relative z-10 overflow-x-clip">{children}</div>
       <ScrollToTop />
       <FloatingContact />
       <Toaster position="top-right" theme="dark" richColors />

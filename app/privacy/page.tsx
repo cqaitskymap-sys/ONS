@@ -48,8 +48,8 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <section className="pt-32 pb-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle
             badge="Legal"
             title="Privacy Policy"
@@ -58,8 +58,8 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      <section className="pb-24">
-        <div className="container mx-auto px-4 lg:px-8 max-w-3xl space-y-6">
+      <section className="pb-16 sm:pb-24 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl min-w-0 space-y-4 sm:space-y-6">
           {sections.map((section) => (
             <GlassCard key={section.title} hover={false}>
               <h2 className="text-lg font-bold mb-3">{section.title}</h2>

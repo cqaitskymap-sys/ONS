@@ -118,7 +118,7 @@ function Scene() {
 
 export function MoleculeScene() {
   return (
-    <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 45 }}
         dpr={[1, 1.5]}

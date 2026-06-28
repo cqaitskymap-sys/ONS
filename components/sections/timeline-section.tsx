@@ -6,8 +6,8 @@ import { Timeline } from "@/components/ui/timeline";
 
 export function TimelineSection() {
   return (
-    <section className="py-24 relative">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
         <SectionTitle
           badge="Our Journey"
           title="Milestones of Excellence"

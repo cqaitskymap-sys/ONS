@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils";
 const sizeClasses = {
   sm: "h-8",
   md: "h-10",
-  nav: "h-12",
-  lg: "h-20",
-  xl: "h-28",
-  hero: "h-32 md:h-40",
+  nav: "h-10 sm:h-12",
+  lg: "h-16 sm:h-20",
+  xl: "h-20 sm:h-28",
+  hero: "h-24 sm:h-32 md:h-40",
 } as const;
 
 const framePadding = {

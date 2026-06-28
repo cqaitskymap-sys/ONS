@@ -9,14 +9,14 @@ import { GlassCard } from "@/components/cards/glass-card";
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
         <SectionTitle
           badge="Testimonials"
           title="What Our Clients Say"
           subtitle="Trusted by pharmaceutical leaders across India."
         />
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {TESTIMONIALS.map((t, i) => (
             <GlassCard key={t.author} delay={i * 0.15}>
               <Quote className="w-8 h-8 text-primary/30 mb-4" />

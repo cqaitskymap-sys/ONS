@@ -15,8 +15,8 @@ export function AnimatedCounter({ value, suffix = "", label, className }: Animat
 
   return (
     <div ref={ref} className={cn("text-center", className)}>
-      <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">{count}</div>
-      <div className="text-sm text-muted-foreground uppercase tracking-wider">{label}</div>
+      <div className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-1 sm:mb-2">{count}</div>
+      <div className="text-[0.65rem] sm:text-xs md:text-sm text-muted-foreground uppercase tracking-wide sm:tracking-wider leading-tight">{label}</div>
     </div>
   );
 }

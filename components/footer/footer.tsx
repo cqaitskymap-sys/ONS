@@ -19,10 +19,10 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-white/5 mt-20">
+    <footer className="relative border-t border-white/5 mt-12 sm:mt-16 lg:mt-20 overflow-x-clip">
       <div className="absolute inset-0 grid-bg opacity-30" />
-      <div className="container mx-auto px-4 lg:px-8 py-16 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           {/* Brand */}
           <div>
             <Logo size="xl" className="mb-6" />
@@ -87,19 +87,19 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-6">Contact</h4>
             <ul className="space-y-4 mb-8">
-              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+              <li className="flex items-start gap-3 text-sm text-muted-foreground break-words">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                {COMPANY.address}
+                <span>{COMPANY.address}</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+              <li className="flex items-center gap-3 text-sm text-muted-foreground min-w-0">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <a href={`tel:${COMPANY.phone}`} className="hover:text-primary transition-colors">
+                <a href={`tel:${COMPANY.phone}`} className="hover:text-primary transition-colors break-all">
                   {COMPANY.phone}
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+              <li className="flex items-center gap-3 text-sm text-muted-foreground min-w-0">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <a href={`mailto:${COMPANY.email}`} className="hover:text-primary transition-colors">
+                <a href={`mailto:${COMPANY.email}`} className="hover:text-primary transition-colors break-all">
                   {COMPANY.email}
                 </a>
               </li>
@@ -110,20 +110,21 @@ export function Footer() {
             </ul>
 
             <h4 className="font-bold mb-4 text-sm">Newsletter</h4>
-            <form onSubmit={handleNewsletter} className="flex gap-2">
+            <form onSubmit={handleNewsletter} className="flex flex-col sm:flex-row gap-2 min-w-0">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email"
-                className="flex-1 px-4 py-2.5 rounded-xl glass text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
+                className="flex-1 min-w-0 px-4 py-2.5 min-h-11 rounded-xl glass text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
                 required
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="px-4 py-2.5 rounded-xl bg-primary text-primary-foreground"
+                className="px-4 py-2.5 min-h-11 min-w-11 rounded-xl bg-primary text-primary-foreground shrink-0 self-end sm:self-auto"
+                aria-label="Subscribe to newsletter"
               >
                 <ArrowRight className="w-4 h-4" />
               </motion.button>
@@ -131,11 +132,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <p className="text-sm text-muted-foreground break-words">
             &copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-muted-foreground">
             <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
             <Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link>

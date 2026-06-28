@@ -26,9 +26,9 @@ const whyIconMap: Record<string, React.ComponentType<{ className?: string }>> = 
 export default function IndustriesPage() {
   return (
     <>
-      <section className="pt-32 pb-16 relative">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-        <div className="container mx-auto px-4 lg:px-8 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
           <SectionTitle
             badge="Industries"
             title="Sectors We Serve"
@@ -37,9 +37,9 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <section className="pb-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
+      <section className="pb-12 sm:pb-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {INDUSTRY_DETAILS.map((industry, i) => {
               const Icon = iconMap[industry.icon] || Pill;
               return (
@@ -80,10 +80,10 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Why Us" title="Industry-Specific Expertise" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {WHY_CHOOSE_US.map((item, i) => {
               const Icon = whyIconMap[item.icon] || Pill;
               return (

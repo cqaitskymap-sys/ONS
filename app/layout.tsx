@@ -76,7 +76,7 @@ export default function RootLayout({
       <body className="min-h-screen antialiased" suppressHydrationWarning>
         <Providers>
           <Navbar />
-          <main>{children}</main>
+          <main className="min-w-0 overflow-x-clip">{children}</main>
           <Footer />
         </Providers>
       </body>

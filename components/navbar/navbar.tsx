@@ -32,10 +32,10 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled ? "glass-strong py-3 shadow-lg shadow-black/20" : "py-4 bg-transparent"
+        scrolled ? "glass-strong py-2 sm:py-3 shadow-lg shadow-black/20" : "py-3 sm:py-4 bg-transparent"
       )}
     >
-      <nav className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 min-w-0">
         <Logo size="nav" priority />
 
         {/* Desktop Nav */}
@@ -121,10 +121,10 @@ export function Navbar() {
 
         {/* Mobile Nav */}
         <Sheet>
-          <SheetTrigger className="lg:hidden p-2 rounded-xl glass">
+          <SheetTrigger className="lg:hidden min-h-11 min-w-11 flex items-center justify-center rounded-xl glass" aria-label="Open menu">
             <Menu className="w-5 h-5" />
           </SheetTrigger>
-          <SheetContent side="right" className="glass-strong border-white/10 w-80">
+          <SheetContent side="right" className="glass-strong border-white/10 w-[min(20rem,100vw)] overflow-y-auto">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="flex flex-col gap-2 mt-4">
               <Logo size="nav" className="mb-4 mx-auto" />
@@ -135,7 +135,7 @@ export function Navbar() {
                       <Link
                         href={link.href}
                         className={cn(
-                          "px-4 py-3 rounded-xl text-base font-medium transition-colors block",
+                          "px-4 py-3 min-h-11 rounded-xl text-base font-medium transition-colors block",
                           pathname === link.href
                             ? "text-primary bg-primary/10"
                             : "text-muted-foreground hover:text-foreground hover:bg-white/5"
@@ -149,7 +149,7 @@ export function Navbar() {
                         <SheetClose key={service.title} asChild>
                           <Link
                             href={service.href}
-                            className="px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-primary hover:bg-white/5 transition-colors"
+                            className="px-4 py-2.5 min-h-10 rounded-lg text-sm text-muted-foreground hover:text-primary hover:bg-white/5 transition-colors block"
                           >
                             {service.title}
                           </Link>
@@ -162,7 +162,7 @@ export function Navbar() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "px-4 py-3 rounded-xl text-base font-medium transition-colors",
+                        "px-4 py-3 min-h-11 rounded-xl text-base font-medium transition-colors block",
                         pathname === link.href
                           ? "text-primary bg-primary/10"
                           : "text-muted-foreground hover:text-foreground hover:bg-white/5"

@@ -21,8 +21,8 @@ const contactCards = [
 export default function ContactPage() {
   return (
     <>
-      <section className="pt-32 pb-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle
             badge="Contact"
             title="Let's Connect"
@@ -32,30 +32,30 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Cards */}
-      <section className="pb-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+      <section className="pb-12 sm:pb-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 sm:mb-16">
             {contactCards.map((card, i) => (
               <a key={card.title} href={card.href} target={card.title === "Visit Us" ? "_blank" : undefined} rel="noopener noreferrer">
                 <GlassCard delay={i * 0.1} className="h-full hover:border-primary/30">
                   <card.icon className="w-8 h-8 text-primary mb-4" />
                   <h3 className="font-bold mb-2">{card.title}</h3>
-                  <p className="text-sm text-muted-foreground">{card.content}</p>
+                  <p className="text-sm text-muted-foreground break-words">{card.content}</p>
                 </GlassCard>
               </a>
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 min-w-0">
             {/* Form */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3>
+            <div className="min-w-0">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send Us a Message</h3>
               <ContactForm />
             </div>
 
             {/* Map & Hours */}
-            <div className="space-y-8">
-              <div className="rounded-2xl overflow-hidden glass aspect-video">
+            <div className="space-y-6 sm:space-y-8 min-w-0">
+              <div className="rounded-2xl overflow-hidden glass aspect-video min-h-[200px] sm:min-h-[280px]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.5!2d73.01!3d20.27!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDE2JzEyLjAiTiA3M8KwMDAnMzYuMCJF!5e0!3m2!1sen!2sin!4v1"
                   width="100%"
@@ -85,8 +85,8 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl min-w-0">
           <SectionTitle badge="FAQ" title="Common Questions" />
           <FAQ items={FAQ_ITEMS} />
         </div>

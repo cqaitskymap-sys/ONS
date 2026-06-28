@@ -35,7 +35,7 @@ export function TiltCard({ children, className }: TiltCardProps) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className={cn("rounded-2xl glass p-6 perspective-1000", className)}
+      className={cn("rounded-2xl glass p-5 sm:p-6 perspective-1000 min-w-0", className)}
     >
       {children}
     </motion.div>

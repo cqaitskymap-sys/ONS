@@ -15,16 +15,16 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function ServicesSection() {
   return (
-    <section className="py-24 relative">
+    <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
-      <div className="container mx-auto px-4 lg:px-8 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
         <SectionTitle
           badge="Our Services"
           title="Comprehensive Pharma Solutions"
           subtitle="From plant design and validation to GMP audits, QMS, training, and domestic sourcing — tailored to your pharmaceutical operations."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {SERVICES.map((service, i) => {
             const Icon = iconMap[service.icon] || Building2;
             return (

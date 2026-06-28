@@ -31,7 +31,7 @@ export function GlowCard({
       transition={{ duration: 0.5, delay }}
       whileHover={{ y: -6 }}
       className={cn(
-        "rounded-2xl glass-strong p-6 transition-all duration-500",
+        "rounded-2xl glass-strong p-5 sm:p-6 transition-all duration-500",
         glowColors[glowColor],
         className
       )}

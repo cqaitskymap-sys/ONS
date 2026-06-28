@@ -11,15 +11,15 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function WhyChooseUs() {
   return (
-    <section className="py-24 relative">
+    <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.03] via-transparent to-secondary/[0.03]" />
-      <div className="container mx-auto px-4 lg:px-8 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
         <SectionTitle
           badge="Why LoMars"
           title="Why Choose Us"
           subtitle="What sets us apart in the pharmaceutical consultancy landscape."
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {WHY_CHOOSE_US.map((item) => {
             const Icon = iconMap[item.icon] || Brain;
             return (

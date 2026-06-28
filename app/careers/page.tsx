@@ -21,9 +21,9 @@ const benefitIconMap: Record<string, React.ComponentType<{ className?: string }>
 export default function CareersPage() {
   return (
     <>
-      <section className="pt-32 pb-16 relative">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent" />
-        <div className="container mx-auto px-4 lg:px-8 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
           <SectionTitle
             badge="Careers"
             title="Build Your Future With Us"
@@ -32,10 +32,10 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="pb-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="pb-12 sm:pb-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Culture" title="Why Work at LoMars" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {CAREER_BENEFITS.map((benefit, i) => {
               const Icon = benefitIconMap[benefit.icon] || Heart;
               return (
@@ -50,8 +50,8 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle
             badge="Open Positions"
             title="Current Openings"
@@ -80,7 +80,7 @@ export default function CareersPage() {
                   </div>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-11 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors shrink-0 w-full md:w-auto"
                   >
                     Apply Now <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -91,10 +91,10 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="glass-strong rounded-3xl p-8 md:p-12 text-center max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">General Applications</h3>
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
+          <div className="glass-strong rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-center max-w-3xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4">General Applications</h3>
             <p className="text-muted-foreground mb-6">
               We're growing fast and welcome applications from regulatory specialists,
               QA professionals, sourcing experts, and business development talent.
