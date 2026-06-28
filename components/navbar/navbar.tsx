@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetTrigger,
   SheetTitle,
@@ -127,25 +128,58 @@ export function Navbar() {
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="flex flex-col gap-2 mt-4">
               <Logo size="nav" className="mb-4 mx-auto" />
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "px-4 py-3 rounded-xl text-base font-medium transition-colors",
-                    pathname === link.href
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
-                  )}
-                >
-                  {link.label}
+              {NAV_LINKS.map((link) =>
+                "mega" in link && link.mega ? (
+                  <div key={link.href}>
+                    <SheetClose asChild>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          "px-4 py-3 rounded-xl text-base font-medium transition-colors block",
+                          pathname === link.href
+                            ? "text-primary bg-primary/10"
+                            : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    </SheetClose>
+                    <div className="ml-4 mt-1 mb-2 flex flex-col gap-1">
+                      {SERVICES.filter((s) => s.href.startsWith("/services?service=")).map((service) => (
+                        <SheetClose key={service.title} asChild>
+                          <Link
+                            href={service.href}
+                            className="px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-primary hover:bg-white/5 transition-colors"
+                          >
+                            {service.title}
+                          </Link>
+                        </SheetClose>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <SheetClose key={link.href} asChild>
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "px-4 py-3 rounded-xl text-base font-medium transition-colors",
+                        pathname === link.href
+                          ? "text-primary bg-primary/10"
+                          : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </SheetClose>
+                )
+              )}
+              <SheetClose asChild>
+                <Link href="/contact" className="mt-4 block">
+                  <MagneticButton className="w-full bg-primary text-primary-foreground">
+                    Get Started
+                  </MagneticButton>
                 </Link>
-              ))}
-              <Link href="/contact" className="mt-4">
-                <MagneticButton className="w-full bg-primary text-primary-foreground">
-                  Get Started
-                </MagneticButton>
-              </Link>
+              </SheetClose>
             </div>
           </SheetContent>
         </Sheet>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { COMPANY, STATS } from "@/lib/constants";
+import { Logo } from "@/components/brand/logo";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { GlassCard } from "@/components/cards/glass-card";
@@ -70,10 +71,18 @@ export function Hero() {
               Pharmaceutical Excellence Since 2023
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-              <span className="gradient-text">{COMPANY.name}</span>
-              <br />
-              <span className="text-foreground/90 text-3xl md:text-4xl lg:text-5xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
+              className="mb-8 lg:hidden"
+            >
+              <Logo size="xl" link={false} priority />
+            </motion.div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
+              <span className="sr-only">{COMPANY.name} — </span>
+              <span className="gradient-text">
                 <TypingText text={COMPANY.tagline} />
               </span>
             </h1>
@@ -114,17 +123,30 @@ export function Hero() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="hidden lg:block relative h-[500px]"
+            className="hidden lg:block relative h-[520px]"
           >
-            <GlassCard className="absolute top-10 right-0 w-64" delay={0.8}>
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-80 h-80 rounded-full bg-primary/12 blur-[100px]" />
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, delay: 0.7 }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+            >
+              <Logo size="hero" link={false} priority />
+            </motion.div>
+
+            <GlassCard className="absolute top-6 right-0 w-56" delay={0.8}>
               <div className="text-primary text-2xl font-bold mb-1">15+</div>
               <div className="text-sm text-muted-foreground">Years Experience</div>
             </GlassCard>
-            <GlassCard className="absolute bottom-20 left-0 w-56" delay={1}>
+            <GlassCard className="absolute bottom-16 left-0 w-52" delay={1}>
               <div className="text-secondary text-2xl font-bold mb-1">50+</div>
               <div className="text-sm text-muted-foreground">Domestic Partners</div>
             </GlassCard>
-            <GlassCard className="absolute top-1/2 right-10 w-52" delay={1.2}>
+            <GlassCard className="absolute bottom-8 right-4 w-48" delay={1.2}>
               <div className="text-accent text-2xl font-bold mb-1">200+</div>
               <div className="text-sm text-muted-foreground">Projects Delivered</div>
             </GlassCard>

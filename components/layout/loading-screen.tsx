@@ -6,13 +6,16 @@ import { COMPANY } from "@/lib/constants";
 import { Logo } from "@/components/brand/logo";
 
 export function LoadingScreen() {
+  const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setShow(true);
     const timer = setTimeout(() => setLoading(false), 2200);
     return () => clearTimeout(timer);
   }, []);
 
+  if (!show) return null;
   return (
     <AnimatePresence>
       {loading && (

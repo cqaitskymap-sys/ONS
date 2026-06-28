@@ -8,9 +8,10 @@ import { GlowCard } from "@/components/cards/glow-card";
 import { GlassCard } from "@/components/cards/glass-card";
 import { FAQ } from "@/components/ui/faq";
 import { CTASection } from "@/components/sections/cta-section";
+import { ServicesDetailView } from "@/components/sections/services-detail-view";
+import { getServiceIdFromSearchParam } from "@/lib/service-details";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { SERVICES, PROCESS_STEPS, STATS, FAQ_ITEMS } from "@/lib/constants";
-import { SERVICE_DETAILS } from "@/lib/service-details";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -43,80 +44,12 @@ const caseStudies = [
   },
 ];
 
-function ServiceDetailBlock({
-  service,
-  index,
-}: {
-  service: (typeof SERVICE_DETAILS)[number];
-  index: number;
-}) {
-  const Icon = iconMap[service.icon] || Building2;
+export default async function ServicesPage({
+  searchParams,
+}: PageProps<"/services">) {
+  const params = await searchParams;
+  const initialServiceId = getServiceIdFromSearchParam(params.service);
 
-  return (
-    <section id={service.id} className="py-16 scroll-mt-28">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-start gap-4 mb-8">
-          <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-            <Icon className="w-7 h-7 text-primary" />
-          </div>
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">{service.title}</h2>
-            <p className="text-muted-foreground leading-relaxed max-w-4xl">{service.introduction}</p>
-          </div>
-        </div>
-
-        <div className="space-y-8">
-          {service.sections.map((section, si) => (
-            <GlassCard key={section.title} delay={si * 0.05} hover={false}>
-              <h3 className="text-lg font-bold mb-3">{section.title}</h3>
-              {section.content && (
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{section.content}</p>
-              )}
-              {section.items && (
-                <ul className="grid md:grid-cols-2 gap-2">
-                  {section.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {section.subsections && (
-                <div className="space-y-6 mt-4">
-                  {section.subsections.map((sub) => (
-                    <div key={sub.title}>
-                      <h4 className="text-sm font-semibold mb-2">{sub.title}</h4>
-                      <ul className="grid md:grid-cols-2 gap-2">
-                        {sub.items.map((item) => (
-                          <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </GlassCard>
-          ))}
-        </div>
-
-        <div className="mt-8">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-1 text-sm text-primary hover:gap-2 transition-all"
-          >
-            Enquire about {service.title} <ArrowRight className="w-3 h-3" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export default function ServicesPage() {
   return (
     <>
       <section className="pt-32 pb-16">
@@ -161,9 +94,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {SERVICE_DETAILS.map((service, i) => (
-        <ServiceDetailBlock key={service.id} service={service} index={i} />
-      ))}
+      <ServicesDetailView
+        key={initialServiceId || "none"}
+        initialServiceId={initialServiceId}
+      />
 
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">

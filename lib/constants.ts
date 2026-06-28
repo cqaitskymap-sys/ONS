@@ -42,35 +42,35 @@ export const SERVICES = [
     description:
       "Facility planning, commissioning, and DQ/IQ/OQ/PQ validation for HVAC, utilities, and cleanroom systems.",
     icon: "Building2",
-    href: "/services#plant-design",
+    href: "/services?service=plant-design",
   },
   {
     title: "Third-Party GMP Audits",
     description:
       "Independent GMP compliance audits for pharmaceutical plants, API facilities, CMOs, and suppliers.",
     icon: "ClipboardCheck",
-    href: "/services#gmp-audits",
+    href: "/services?service=gmp-audits",
   },
   {
     title: "Pre-Inspection Audits",
     description:
       "Pre-regulatory inspection assessments to identify gaps and strengthen inspection readiness.",
     icon: "SearchCheck",
-    href: "/services#pre-inspection",
+    href: "/services?service=pre-inspection",
   },
   {
     title: "Quality Management System (QMS)",
     description:
       "Design, implementation, and upgradation of QMS per EU GMP, PIC/S, and ISO guidelines.",
     icon: "Award",
-    href: "/services#qms",
+    href: "/services?service=qms",
   },
   {
     title: "Pharmaceutical Training",
     description:
       "GMP, validation, QA/QC, OSD and sterile manufacturing training with placement support.",
     icon: "GraduationCap",
-    href: "/services#training",
+    href: "/services?service=training",
   },
   {
     title: "Pharmaceutical Sourcing",
@@ -84,7 +84,7 @@ export const SERVICES = [
     description:
       "Recruitment and placement of qualified pharmaceutical professionals across QA, QC, manufacturing, and regulatory affairs.",
     icon: "UserPlus",
-    href: "/services#talent-acquisition",
+    href: "/services?service=talent-acquisition",
   },
 ] as const;
 
