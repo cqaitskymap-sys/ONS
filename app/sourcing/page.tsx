@@ -21,7 +21,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 const supplyChainSteps = [
   { year: "Step 1", title: "Requirement Analysis", description: "Understanding your material specifications, volumes, and quality requirements." },
-  { year: "Step 2", title: "Supplier Identification", description: "Screening qualified domestic manufacturers with WHO-GMP and CDSCO compliance." },
+  { year: "Step 2", title: "Supplier Identification", description: "Screening qualified domestic manufacturers with GMP and CDSCO compliance." },
   { year: "Step 3", title: "Qualification & Audit", description: "On-site audits, documentation review, and sample testing." },
   { year: "Step 4", title: "Negotiation & Contracting", description: "Competitive pricing, supply agreements, and quality contracts." },
   { year: "Step 5", title: "Delivery & QA Release", description: "Logistics coordination, COA verification, and batch release." },
@@ -100,7 +100,7 @@ export default function SourcingPage() {
         <div className="container mx-auto px-4 lg:px-8 relative">
           <SectionTitle
             badge="Sourcing"
-            title="Pharmaceutical Sourcing & Packaging Solutions"
+            title="Pharmaceutical Sourcing"
             subtitle="We are a specialized pharmaceutical sourcing and supply-chain partner providing comprehensive solutions for APIs, excipients, and pharmaceutical packaging components across India — with full quality assurance at every step."
           />
         </div>
@@ -194,7 +194,7 @@ export default function SourcingPage() {
           <SectionTitle badge="Quality" title="Quality & Compliance" subtitle="Quality is central to our operations. We work with qualified manufacturers adhering to GMP and international quality standards." />
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "GMP Audits", desc: "On-site audits of manufacturing facilities against WHO-GMP and CDSCO standards." },
+              { title: "GMP Audits", desc: "On-site audits of manufacturing facilities against GMP and CDSCO standards." },
               { title: "Documentation Review", desc: "Complete DMF, COA, and regulatory documentation verification." },
               { title: "Batch Testing", desc: "Independent laboratory testing for identity, purity, and potency." },
             ].map((item, i) => (

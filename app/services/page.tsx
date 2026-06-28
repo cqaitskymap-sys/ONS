@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import {
-  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, ArrowRight,
+  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, UserPlus, ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package,
+  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, UserPlus,
 };
 
 const caseStudies = [
@@ -30,10 +30,10 @@ const caseStudies = [
     metric: "Full PQ achieved",
   },
   {
-    title: "WHO Prequalification",
+    title: "QMS Implementation",
     client: "PharmaCore Ltd.",
-    result: "Successfully obtained WHO prequalification for 3 products",
-    metric: "3 products qualified",
+    result: "Successfully implemented QMS across 3 manufacturing facilities",
+    metric: "3 facilities certified",
   },
   {
     title: "Pre-Inspection Readiness",
@@ -124,7 +124,7 @@ export default function ServicesPage() {
           <SectionTitle
             badge="Services"
             title="Pharmaceutical Excellence"
-            subtitle="End-to-end consultancy for plant design, GMP audits, QMS, training, and domestic sourcing — aligned with WHO, EU GMP, PIC/S, and CDSCO requirements."
+            subtitle="End-to-end consultancy for Plant Design, GMP Audits, QMS, Training, Sourcing, and Talent Acquisition — aligned with CDSCO, WHO, EU GMP, and PIC/S requirements."
           />
         </div>
       </section>

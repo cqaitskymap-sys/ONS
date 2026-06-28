@@ -67,7 +67,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-medium text-primary mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Pharmaceutical Excellence Since 2010
+              Pharmaceutical Excellence Since 2023
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
@@ -80,7 +80,7 @@ export function Hero() {
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
               End-to-end pharmaceutical consultancy — plant design, GMP audits, QMS implementation,
-              training, and domestic sourcing for pharmaceutical manufacturers across India.
+              training, and sourcing Of API, Excipients,Packaging Materials and finished products(SVP,LVP,Tablets,sachets,capsules,syrups etc.) across India.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
@@ -117,16 +117,16 @@ export function Hero() {
             className="hidden lg:block relative h-[500px]"
           >
             <GlassCard className="absolute top-10 right-0 w-64" delay={0.8}>
-              <div className="text-primary text-2xl font-bold mb-1">WHO-GMP</div>
-              <div className="text-sm text-muted-foreground">Certified Consultancy</div>
+              <div className="text-primary text-2xl font-bold mb-1">15+</div>
+              <div className="text-sm text-muted-foreground">Years Experience</div>
             </GlassCard>
             <GlassCard className="absolute bottom-20 left-0 w-56" delay={1}>
               <div className="text-secondary text-2xl font-bold mb-1">50+</div>
               <div className="text-sm text-muted-foreground">Domestic Partners</div>
             </GlassCard>
             <GlassCard className="absolute top-1/2 right-10 w-52" delay={1.2}>
-              <div className="text-accent text-2xl font-bold mb-1">FDA</div>
-              <div className="text-sm text-muted-foreground">Regulatory Expertise</div>
+              <div className="text-accent text-2xl font-bold mb-1">200+</div>
+              <div className="text-sm text-muted-foreground">Projects Delivered</div>
             </GlassCard>
           </motion.div>
         </div>

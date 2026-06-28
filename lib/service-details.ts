@@ -36,7 +36,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
           "HVAC system design for temperature, humidity, and pressure control",
           "Utility system design (water, steam, compressed air, gases)",
           "Material and personnel flow management",
-          "Compliance with GMP, WHO, EU GMP and other regulatory guidelines",
+          "Compliance with GMP, EU GMP, PIC/S and other regulatory guidelines",
         ],
       },
       {
@@ -116,7 +116,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
               "ICH Q7 compliance for APIs",
               "EU GMP requirements",
               "PIC/S GMP standards",
-              "WHO GMP standards",
+              "National GMP standards",
               "Data Integrity assessments",
               "Quality Management System (QMS) reviews",
               "CAPA, Change Control, and Risk Management evaluations",
@@ -170,7 +170,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
           "Periodic supplier requalification",
           "CMO site inspection",
           "Due diligence for acquisitions or technology transfers",
-          "FDA, EMA, MHRA, WHO-GMP inspection readiness",
+          "EMA, MHRA, and PIC/S inspection readiness",
           "Quality agreement compliance verification",
         ],
       },
@@ -277,9 +277,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
         title: "Regulatory Coverage",
         content: "Audits may be conducted against requirements from:",
         items: [
-          "U.S. Food and Drug Administration (FDA)",
           "European Medicines Agency (EMA)",
-          "World Health Organization (WHO) GMP Guidelines",
           "Pharmaceutical Inspection Co-operation Scheme (PIC/S)",
           "National regulatory authority requirements (CDSCO)",
         ],
@@ -318,7 +316,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
     id: "qms",
     title: "Quality Management System (QMS)",
     description:
-      "Design, implementation, and upgradation of QMS aligned with EU GMP, PIC/S, WHO, and ISO guidelines for pharmaceutical operations.",
+      "Design, implementation, and upgradation of QMS aligned with EU GMP, PIC/S, and ISO guidelines for pharmaceutical operations.",
     icon: "Award",
     href: "/services#qms",
     introduction:
@@ -343,7 +341,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
       {
         title: "System Synopsis",
         content:
-          "The QMS is based on principles outlined in WHO GMP, ICH Q8/Q9/Q10/Q12 guidelines, FDA regulations, EMA requirements, and applicable national regulatory requirements.",
+          "The QMS is based on principles outlined in ICH Q8/Q9/Q10/Q12 guidelines, EMA requirements, PIC/S standards, and applicable national regulatory requirements.",
         items: [
           "SOPs, protocol, report and document evaluation and upgradation to current GMP requirements",
         ],
@@ -576,7 +574,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
         title: "Specialized Workshops",
         items: [
           "EU GMP Regulations",
-          "WHO GMP Standards",
+          "PIC/S GMP Standards",
           "Risk Management and CAPA",
           "Root Cause Analysis",
           "Quality Risk Management (QRM)",
@@ -618,7 +616,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
           "Quality Management Systems (QMS)",
           "Deviation, CAPA, and Change Control management",
           "Audit preparation and compliance",
-          "Regulatory requirements of EMA, WHO, PIC/S, and CDSCO",
+          "Regulatory requirements of EMA, PIC/S, and CDSCO",
         ],
       },
       {
@@ -669,6 +667,124 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
           "Skilled workforce development",
           "Industry-focused placement support",
         ],
+      },
+    ],
+  },
+  {
+    id: "talent-acquisition",
+    title: "Talent Acquisition",
+    description:
+      "Specialized recruitment and placement of qualified pharmaceutical professionals across QA, QC, manufacturing, regulatory affairs, and R&D.",
+    icon: "UserPlus",
+    href: "/services#talent-acquisition",
+    introduction:
+      "LoMars Pharma provides dedicated talent acquisition services for pharmaceutical and life sciences organizations. We leverage our deep industry network, domain expertise, and understanding of pharma-specific skill requirements to source, screen, and place professionals across all critical functions — from manufacturing and quality control to regulatory affairs, R&D, and commercial operations.",
+    sections: [
+      {
+        title: "Who We Source",
+        subsections: [
+          {
+            title: "Quality & Compliance",
+            items: [
+              "QA professionals (Quality Assurance Managers, Officers)",
+              "QC analysts and laboratory scientists",
+              "Microbiologists",
+              "Validation engineers",
+              "Regulatory Affairs specialists",
+              "GMP and compliance professionals",
+            ],
+          },
+          {
+            title: "Manufacturing & Operations",
+            items: [
+              "Production managers and shift in-charge",
+              "Manufacturing operators and executives",
+              "Maintenance and engineering professionals",
+              "Fill-finish and sterile manufacturing specialists",
+              "Packaging and warehouse staff",
+            ],
+          },
+          {
+            title: "R&D and Analytical",
+            items: [
+              "Formulation scientists (OSD, Liquid, Sterile)",
+              "Analytical R&D chemists",
+              "Process development scientists",
+              "Regulatory documentation specialists (Drug Information, Regulatory Information Management)",
+            ],
+          },
+          {
+            title: "Supply Chain & Commercial",
+            items: [
+              "Procurement and sourcing specialists",
+              "Supply chain managers",
+              "Pharmacovigilance professionals",
+              "Medical representatives and business development executives",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Our Recruitment Process",
+        items: [
+          "Understanding client skill requirements and organizational culture",
+          "Sourcing candidates from our curated pharma talent pool and industry networks",
+          "Rigorous screening against domain knowledge, regulatory exposure, and qualification criteria",
+          "In-depth technical and behavioral assessments",
+          "Candidate validation — education, employment history, and reference checks",
+          "Presenting shortlisted profiles with detailed competency reports",
+          "Interview coordination and candidate onboarding support",
+        ],
+      },
+      {
+        title: "Why Clients Choose Our Talent Solutions",
+        items: [
+          "Deep pharmaceutical industry insight — we understand the roles we fill",
+          "Pre-screened candidate pool with verified GMP and regulatory experience",
+          "Quick turnaround for urgent staffing requirements",
+          "Flexible engagement models — contract, contract-to-hire, and permanent placements",
+          "Confidential hiring and discrete executive search capabilities",
+          "Ongoing candidate support and onboarding tracking",
+        ],
+      },
+      {
+        title: "Industries We Serve",
+        items: [
+          "Pharmaceutical manufacturing companies",
+          "Contract Manufacturing Organizations (CMOs/CDMOs)",
+          "API and formulation plants",
+          "Biotechnology and life sciences companies",
+          "Nutraceutical and cosmeceutical firms",
+          "Medical device manufacturers",
+        ],
+      },
+      {
+        title: "Placement Support Services",
+        subsections: [
+          {
+            title: "For Candidates",
+            items: [
+              "Career counseling and profile enhancement",
+              "Resume optimization and market readiness preparation",
+              "Interview preparation specific to pharmaceutical roles",
+              "Key role placement across industries, locations, and experience levels",
+            ],
+          },
+          {
+            title: "For Companies",
+            items: [
+              "Staffing needs analysis and gap identification",
+              "Bulk recruitment for greenfield and brownfield facilities",
+              "Executive search for senior leadership roles",
+              "Temporary and contractual staffing for project-based requirements",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Our Reach",
+        content:
+          "With coverage across major pharmaceutical hubs in India — including Ahmedabad, Mumbai, Hyderabad, Ankleshwar, and Silvassa — we partner with organizations of every scale to meet their workforce needs efficiently and effectively.",
       },
     ],
   },

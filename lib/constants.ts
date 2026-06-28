@@ -1,7 +1,7 @@
 export const LOGO = {
   src: "/logo.png",
-  alt: "LoMars Pharma logo featuring a 3D blue planet with a glowing medical cross and a silver ring, above the text LoMars Pharma - Care Made Convenient.",
-  width: 400,
+  alt: "LoMars Pharma logo featuring a 3D green and silver globe with a medical cross and orbital ring, above the text LoMars Pharma — Care Made Convenient.",
+  width: 500,
   height: 500,
 } as const;
 
@@ -61,7 +61,7 @@ export const SERVICES = [
   {
     title: "Quality Management System (QMS)",
     description:
-      "Design, implementation, and upgradation of QMS per EU GMP, PIC/S, WHO, and ISO guidelines.",
+      "Design, implementation, and upgradation of QMS per EU GMP, PIC/S, and ISO guidelines.",
     icon: "Award",
     href: "/services#qms",
   },
@@ -73,11 +73,18 @@ export const SERVICES = [
     href: "/services#training",
   },
   {
-    title: "Pharma Sourcing & Packaging",
+    title: "Pharmaceutical Sourcing",
     description:
-      "Domestic sourcing of APIs, excipients, and pharmaceutical glass packaging with full QA support.",
+      "Sourcing of APIs, excipients, Packging Material and Finish Product (All Dosages forms) with full QA support.",
     icon: "Package",
     href: "/sourcing",
+  },
+  {
+    title: "Talent Acquisition",
+    description:
+      "Recruitment and placement of qualified pharmaceutical professionals across QA, QC, manufacturing, and regulatory affairs.",
+    icon: "UserPlus",
+    href: "/services#talent-acquisition",
   },
 ] as const;
 
@@ -109,7 +116,7 @@ export const INDUSTRY_DETAILS = [
     title: "Nutraceuticals",
     icon: "Leaf",
     description:
-      "Navigate dietary supplement regulations across FSSAI, FDA, and EU frameworks while ensuring quality and label compliance.",
+      "Navigate dietary supplement regulations across FSSAI and EU frameworks while ensuring quality and label compliance.",
     capabilities: ["Label compliance", "Ingredient sourcing", "FSSAI registration", "Health claims review"],
   },
   {
@@ -123,8 +130,8 @@ export const INDUSTRY_DETAILS = [
     title: "Medical Devices",
     icon: "Stethoscope",
     description:
-      "ISO 13485 implementation, CE marking, and FDA 510(k) guidance for Class I–III medical devices.",
-    capabilities: ["ISO 13485 QMS", "CE marking", "510(k) submissions", "Risk management (ISO 14971)"],
+      "ISO 13485 implementation and CE marking guidance for Class I–III medical devices.",
+    capabilities: ["ISO 13485 QMS", "CE marking", "Regulatory submissions", "Risk management (ISO 14971)"],
   },
   {
     title: "Veterinary",
@@ -202,7 +209,7 @@ export const PROCESS_STEPS = [
 export const TESTIMONIALS = [
   {
     quote:
-      "LoMars Pharma transformed our regulatory strategy. Their expertise helped us achieve FDA approval months ahead of schedule.",
+      "LoMars Pharma transformed our regulatory strategy. Their expertise helped us achieve CDSCO approval months ahead of schedule.",
     author: "Dr. Rajesh Kumar",
     role: "CEO, MedLife Pharmaceuticals",
     avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face",
@@ -216,7 +223,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "Their GMP consultancy was instrumental in our WHO prequalification. Professional, thorough, and results-driven.",
+      "Their GMP consultancy was instrumental in our facility certification. Professional, thorough, and results-driven.",
     author: "Ahmed Hassan",
     role: "Quality Head, PharmaCore Ltd.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
@@ -227,12 +234,12 @@ export const FAQ_ITEMS = [
   {
     question: "What services does LoMars Pharma offer?",
     answer:
-      "We offer plant design, commissioning and validation, third-party GMP audits, pre-inspection audits, QMS implementation, pharmaceutical training, and domestic sourcing of APIs, excipients, and packaging materials.",
+      "We offer plant design, commissioning and validation, third-party GMP audits, pre-inspection audits, QMS implementation, pharmaceutical training, domestic sourcing, and talent acquisition services.",
   },
   {
     question: "Which regulatory markets do you support?",
     answer:
-      "We support FDA (US), EMA (EU), WHO, CDSCO (India), TGA (Australia), and many other international regulatory bodies.",
+      "We support EMA (EU), CDSCO (India), TGA (Australia), PIC/S, and many other international regulatory bodies.",
   },
   {
     question: "How do you ensure supplier quality?",
@@ -259,7 +266,7 @@ export const TRUSTED_LOGOS = [
 export const TIMELINE = [
   { year: "2010", title: "Founded", description: "LoMars Pharma established in Silvassa, India." },
   { year: "2014", title: "Service Expansion", description: "Extended services across Gujarat, Maharashtra, and key pharma hubs in India." },
-  { year: "2018", title: "WHO Partnership", description: "Became WHO-prequalified consultancy partner." },
+  { year: "2018", title: "Regulatory Expansion", description: "Expanded GMP audit and QMS services across India." },
   { year: "2022", title: "Digital Transformation", description: "Launched digital sourcing and compliance platform." },
   { year: "2026", title: "Industry Leader", description: "200+ projects delivered across pharmaceutical facilities in India." },
 ] as const;
@@ -320,7 +327,7 @@ export const LEADERSHIP = [
   {
     name: "Priya Sharma",
     role: "Head of Quality",
-    bio: "Former WHO inspector with expertise in GMP and validation systems.",
+    bio: "Former regulatory inspector with expertise in GMP and validation systems.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
   },
   {
@@ -333,8 +340,6 @@ export const LEADERSHIP = [
 
 export const CERTIFICATIONS = [
   "ISO 9001:2015",
-  "WHO-GMP",
-  "FDA Registered",
   "EU GMP",
   "CDSCO Approved",
   "ISO 13485",
