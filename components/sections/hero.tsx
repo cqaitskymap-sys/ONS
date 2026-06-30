@@ -50,12 +50,12 @@ function AuroraBackground() {
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex items-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+    <section className="relative min-h-[100dvh] flex items-center overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-10 sm:pb-12 md:pb-16 lg:pb-20">
       <AuroraBackground />
       <Hero3D />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-w-0">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full glass text-xs font-medium text-primary mb-4 sm:mb-6 max-w-full"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full glass text-[0.7rem] sm:text-xs font-medium text-primary mb-4 sm:mb-6 max-w-full"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               Pharmaceutical Excellence Since 2023
@@ -80,14 +80,14 @@ export function Hero() {
               <Logo size="xl" link={false} priority />
             </motion.div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-4 sm:mb-6 break-words">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-4 sm:mb-6 break-words text-balance">
               <span className="sr-only">{COMPANY.name} — </span>
               <span className="gradient-text">
                 <TypingText text={COMPANY.tagline} />
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-8 max-w-xl break-words">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-8 max-w-xl break-words text-pretty">
               End-to-end pharmaceutical consultancy — plant design, GMP audits, QMS implementation,
               training, and sourcing Of API, Excipients,Packaging Materials and finished products(SVP,LVP,Tablets,sachets,capsules,syrups etc.) across India.
             </p>
@@ -123,7 +123,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="hidden lg:block relative h-[520px]"
+            className="hidden lg:block relative min-h-[520px]"
           >
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="w-80 h-80 rounded-full bg-primary/12 blur-[100px]" />
@@ -138,15 +138,15 @@ export function Hero() {
               <Logo size="hero" link={false} priority />
             </motion.div>
 
-            <GlassCard className="absolute top-6 right-0 w-56" delay={0.8}>
+            <GlassCard className="absolute top-6 right-0 sm:right-2 md:right-4 w-44 sm:w-48 md:w-56" delay={0.8}>
               <div className="text-primary text-2xl font-bold mb-1">15+</div>
               <div className="text-sm text-muted-foreground">Years Experience</div>
             </GlassCard>
-            <GlassCard className="absolute bottom-16 left-0 w-52" delay={1}>
+            <GlassCard className="absolute bottom-12 sm:bottom-14 md:bottom-16 left-0 sm:left-2 md:left-4 w-40 sm:w-44 md:w-52" delay={1}>
               <div className="text-secondary text-2xl font-bold mb-1">50+</div>
               <div className="text-sm text-muted-foreground">Domestic Partners</div>
             </GlassCard>
-            <GlassCard className="absolute bottom-8 right-4 w-48" delay={1.2}>
+            <GlassCard className="absolute bottom-6 sm:bottom-8 md:bottom-10 right-2 sm:right-4 md:right-6 w-36 sm:w-40 md:w-48" delay={1.2}>
               <div className="text-accent text-2xl font-bold mb-1">200+</div>
               <div className="text-sm text-muted-foreground">Projects Delivered</div>
             </GlassCard>
