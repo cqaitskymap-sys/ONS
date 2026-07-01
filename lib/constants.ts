@@ -11,9 +11,9 @@ export const COMPANY = {
   description:
     "LoMars Pharma is a premier pharmaceutical consultancy delivering end-to-end solutions — from plant design and validation to GMP audits, QMS implementation, training, and domestic sourcing.",
   address: "Office No.16 Platinum Square, Near St. Xavier School, Silvassa 396230",
-  phone: "+91 9714912040",
+  phone: "+91 86306 03509",
   email: "info@lomarspharma.com",
-  whatsapp: "919714912040",
+  whatsapp: "918630603509",
   hours: "Monday – Saturday, 9AM – 7PM",
   social: {
     linkedin: "https://linkedin.com",
@@ -178,9 +178,9 @@ export const CAREER_OPENINGS = [
 
 export const STATS = [
   { value: 15, suffix: "+", label: "Years Experience" },
-  { value: 200, suffix: "+", label: "Projects Delivered" },
-  { value: 50, suffix: "+", label: "Domestic Partners" },
-  { value: 98, suffix: "%", label: "Client Satisfaction" },
+  { value: 7, suffix: "", label: "Core Services" },
+  { value: 6, suffix: "", label: "Industry Sectors" },
+  { value: 8, suffix: "", label: "Compliance Frameworks" },
 ] as const;
 
 export const PROCESS_STEPS = [
@@ -258,17 +258,16 @@ export const FAQ_ITEMS = [
   },
 ] as const;
 
-export const TRUSTED_LOGOS = [
-  "Pfizer", "Novartis", "Roche", "GSK", "Sanofi", "AstraZeneca",
-  "Bayer", "Merck", "Abbott", "Teva",
+export const COMPLIANCE_STANDARDS = [
+  "CDSCO", "WHO GMP", "EU GMP", "PIC/S",
+  "ISO 9001", "ISO 13485", "ICH Guidelines", "Schedule M",
 ] as const;
 
 export const TIMELINE = [
-  { year: "2010", title: "Founded", description: "LoMars Pharma established in Silvassa, India." },
-  { year: "2014", title: "Service Expansion", description: "Extended services across Gujarat, Maharashtra, and key pharma hubs in India." },
-  { year: "2018", title: "Regulatory Expansion", description: "Expanded GMP audit and QMS services across India." },
-  { year: "2022", title: "Digital Transformation", description: "Launched digital sourcing and compliance platform." },
-  { year: "2026", title: "Industry Leader", description: "200+ projects delivered across pharmaceutical facilities in India." },
+  { year: "2023", title: "Founded", description: "LoMars Pharma established in Silvassa, India with a vision to support pharmaceutical excellence." },
+  { year: "2024", title: "Services Launched", description: "Introduced GMP audits, QMS implementation, and regulatory consultancy services." },
+  { year: "2025", title: "Expanded Offerings", description: "Added pharmaceutical training, sourcing support, and talent acquisition services." },
+  { year: "2026", title: "Growing Forward", description: "Building partnerships across India's pharmaceutical industry with end-to-end consultancy." },
 ] as const;
 
 export const WHY_CHOOSE_US = [
@@ -278,8 +277,8 @@ export const WHY_CHOOSE_US = [
     icon: "Brain",
   },
   {
-    title: "Domestic Network",
-    description: "Verified supplier and regulatory networks across India's pharmaceutical hubs.",
+    title: "Domestic Focus",
+    description: "Strong understanding of India's pharma hubs, suppliers, and compliance requirements.",
     icon: "Network",
   },
   {
@@ -288,8 +287,8 @@ export const WHY_CHOOSE_US = [
     icon: "Layers",
   },
   {
-    title: "Proven Results",
-    description: "98% client satisfaction with measurable regulatory outcomes.",
+    title: "Dedicated Support",
+    description: "Hands-on guidance from discovery through implementation and beyond.",
     icon: "Target",
   },
 ] as const;
@@ -336,11 +335,4 @@ export const LEADERSHIP = [
     bio: "Domestic supply chain expert with networks across India's pharmaceutical manufacturing hubs.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
   },
-] as const;
-
-export const CERTIFICATIONS = [
-  "ISO 9001:2015",
-  "EU GMP",
-  "CDSCO Approved",
-  "ISO 13485",
 ] as const;

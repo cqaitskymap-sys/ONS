@@ -3,13 +3,26 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Award, Layers, Building2, ShieldCheck } from "lucide-react";
 import { COMPANY, STATS } from "@/lib/constants";
 import { Logo } from "@/components/brand/logo";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { GlassCard } from "@/components/cards/glass-card";
 import { Hero3D } from "@/components/three/hero-3d";
+
+const HIGHLIGHT_META = [
+  { icon: Award, color: "text-primary", bg: "bg-primary/10" },
+  { icon: Layers, color: "text-secondary", bg: "bg-secondary/10" },
+  { icon: Building2, color: "text-accent", bg: "bg-accent/10" },
+  { icon: ShieldCheck, color: "text-cyan-400", bg: "bg-cyan-500/10" },
+] as const;
+
+const FLOATING_CARD_LAYOUT = [
+  "absolute top-6 right-0 sm:right-2 md:right-4 w-44 sm:w-48 md:w-56",
+  "absolute bottom-12 sm:bottom-14 md:bottom-16 left-0 sm:left-2 md:left-4 w-40 sm:w-44 md:w-52",
+  "absolute bottom-6 sm:bottom-8 md:bottom-10 right-2 sm:right-4 md:right-6 w-36 sm:w-40 md:w-48",
+] as const;
 
 function TypingText({ text }: { text: string }) {
   const [displayed, setDisplayed] = useState("");
@@ -107,15 +120,27 @@ export function Hero() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-              {STATS.map((stat) => (
-                <AnimatedCounter
-                  key={stat.label}
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  label={stat.label}
-                />
-              ))}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+              {STATS.map((stat, i) => {
+                const meta = HIGHLIGHT_META[i];
+                const Icon = meta.icon;
+                return (
+                  <div
+                    key={stat.label}
+                    className="glass rounded-2xl p-3 sm:p-4 text-center transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07]"
+                  >
+                    <div className={`mx-auto mb-2 sm:mb-3 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl ${meta.bg}`}>
+                      <Icon className={`h-4 w-4 sm:h-5 sm:w-5 ${meta.color}`} />
+                    </div>
+                    <AnimatedCounter
+                      value={stat.value}
+                      suffix={stat.suffix}
+                      label={stat.label}
+                      className="[&>div:first-child]:text-2xl [&>div:first-child]:sm:text-3xl [&>div:first-child]:md:text-4xl"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
 
@@ -138,18 +163,18 @@ export function Hero() {
               <Logo size="hero" link={false} priority />
             </motion.div>
 
-            <GlassCard className="absolute top-6 right-0 sm:right-2 md:right-4 w-44 sm:w-48 md:w-56" delay={0.8}>
-              <div className="text-primary text-2xl font-bold mb-1">15+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
-            </GlassCard>
-            <GlassCard className="absolute bottom-12 sm:bottom-14 md:bottom-16 left-0 sm:left-2 md:left-4 w-40 sm:w-44 md:w-52" delay={1}>
-              <div className="text-secondary text-2xl font-bold mb-1">50+</div>
-              <div className="text-sm text-muted-foreground">Domestic Partners</div>
-            </GlassCard>
-            <GlassCard className="absolute bottom-6 sm:bottom-8 md:bottom-10 right-2 sm:right-4 md:right-6 w-36 sm:w-40 md:w-48" delay={1.2}>
-              <div className="text-accent text-2xl font-bold mb-1">200+</div>
-              <div className="text-sm text-muted-foreground">Projects Delivered</div>
-            </GlassCard>
+            {STATS.slice(0, 3).map((stat, i) => {
+              const meta = HIGHLIGHT_META[i];
+              return (
+                <GlassCard key={stat.label} className={FLOATING_CARD_LAYOUT[i]} delay={0.8 + i * 0.2}>
+                  <div className={`${meta.color} text-2xl font-bold mb-1`}>
+                    {stat.value}
+                    {stat.suffix}
+                  </div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </GlassCard>
+              );
+            })}
           </motion.div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Hero } from "@/components/sections/hero";
-import { TrustedCompanies } from "@/components/sections/trusted-companies";
+import { ComplianceStandards } from "@/components/sections/compliance-standards";
 import { AboutSection } from "@/components/sections/about-section";
 import { ServicesSection } from "@/components/sections/services-section";
 import { IndustriesSection } from "@/components/sections/industries-section";
@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <TrustedCompanies />
+      <ComplianceStandards />
       <AboutSection />
       <ServicesSection />
       <IndustriesSection />

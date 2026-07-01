@@ -9,7 +9,7 @@ import { GlowCard } from "@/components/cards/glow-card";
 import { Timeline } from "@/components/ui/timeline";
 import { CTASection } from "@/components/sections/cta-section";
 import {
-  COMPANY, TIMELINE, LEADERSHIP, CERTIFICATIONS, STATS,
+  COMPANY, TIMELINE, LEADERSHIP, STATS,
 } from "@/lib/constants";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 
@@ -110,20 +110,6 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Journey" title="Our Milestones" />
           <Timeline items={TIMELINE} />
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="py-12 sm:py-16 overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
-          <SectionTitle badge="Certifications" title="Accreditations & Standards" />
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            {CERTIFICATIONS.map((cert, i) => (
-              <GlassCard key={cert} delay={i * 0.08} className="px-4 sm:px-8 py-3 sm:py-4" hover={false}>
-                <span className="font-semibold text-sm">{cert}</span>
-              </GlassCard>
-            ))}
-          </div>
         </div>
       </section>
 
