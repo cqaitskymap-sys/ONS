@@ -90,9 +90,6 @@ export const SERVICES = [
 
 export const INDUSTRIES = [
   { title: "Pharmaceuticals", icon: "Pill" },
-  { title: "Biotechnology", icon: "Dna" },
-  { title: "Nutraceuticals", icon: "Leaf" },
-  { title: "Cosmeceuticals", icon: "Sparkles" },
   { title: "Medical Devices", icon: "Stethoscope" },
   { title: "Veterinary", icon: "Heart" },
 ] as const;
@@ -104,27 +101,6 @@ export const INDUSTRY_DETAILS = [
     description:
       "Full-spectrum support for small molecules, generics, and innovative drug development — from dossier preparation to post-approval compliance.",
     capabilities: ["Plant design & validation", "GMP audits", "QMS implementation", "Pre-inspection audits"],
-  },
-  {
-    title: "Biotechnology",
-    icon: "Dna",
-    description:
-      "Specialized consultancy for biologics, biosimilars, and cell-based therapies with complex regulatory pathways.",
-    capabilities: ["Biosimilar strategy", "Cold chain compliance", "BLA submissions", "Process validation"],
-  },
-  {
-    title: "Nutraceuticals",
-    icon: "Leaf",
-    description:
-      "Navigate dietary supplement regulations across FSSAI and EU frameworks while ensuring quality and label compliance.",
-    capabilities: ["Label compliance", "Ingredient sourcing", "FSSAI registration", "Health claims review"],
-  },
-  {
-    title: "Cosmeceuticals",
-    icon: "Sparkles",
-    description:
-      "Bridge cosmetic and pharmaceutical standards with expertise in product classification, safety assessments, and market entry.",
-    capabilities: ["Product classification", "Safety assessments", "CDSCO registration", "GMP for cosmetics"],
   },
   {
     title: "Medical Devices",
@@ -261,6 +237,61 @@ export const FAQ_ITEMS = [
 export const COMPLIANCE_STANDARDS = [
   "CDSCO", "WHO GMP", "EU GMP", "PIC/S",
   "ISO 9001", "ISO 13485", "ICH Guidelines", "Schedule M",
+] as const;
+
+export const ABOUT_SYNOPSIS = {
+  intro:
+    "We are a professional pharmaceutical consultancy dedicated to providing end-to-end solutions for the pharmaceutical, biotechnology, and healthcare industries. Our expertise spans the complete lifecycle of pharmaceutical manufacturing, from facility design and regulatory compliance to quality systems and strategic sourcing.",
+  closing:
+    "Together, our experts bring more than 100 years of combined experience across diverse sectors of the pharmaceutical industry. Having worked with leading pharmaceutical organizations, our consultants possess extensive knowledge of international regulatory standards, including WHO-GMP, US FDA, EU GMP, PIC/S, MHRA, and other global quality requirements.",
+} as const;
+
+export const ABOUT_CORE_SERVICES = [
+  {
+    title: "Pharmaceutical Facility Design & Engineering",
+    description:
+      "Conceptualization, planning, layout optimization, and GMP-compliant facility design.",
+    icon: "Building2",
+  },
+  {
+    title: "Quality Management System (QMS) Development",
+    description:
+      "Design, implementation, documentation, and continuous improvement of robust quality management systems.",
+    icon: "Award",
+  },
+  {
+    title: "Qualification & Validation",
+    description:
+      "Equipment qualification (DQ, IQ, OQ, PQ), process validation, cleaning validation, computer system validation, and analytical method validation.",
+    icon: "ClipboardCheck",
+  },
+  {
+    title: "Regulatory Compliance & Audits",
+    description:
+      "GMP compliance, regulatory gap assessments, mock inspections, third-party audits, supplier audits, and internal quality audits.",
+    icon: "SearchCheck",
+  },
+  {
+    title: "Talent Acquisition & Recruitment",
+    description:
+      "Identification and placement of skilled pharmaceutical professionals across manufacturing, quality, regulatory affairs, engineering, and R&D.",
+    icon: "UserPlus",
+  },
+  {
+    title: "API & Pharmaceutical Dosage Form Sourcing",
+    description:
+      "Strategic sourcing of Active Pharmaceutical Ingredients (APIs), excipients, finished formulations, and reliable manufacturing partners.",
+    icon: "Package",
+  },
+] as const;
+
+export const ABOUT_TEAM_EXPERTISE = [
+  "Pharmacists",
+  "Microbiologists",
+  "Quality Assurance Specialists",
+  "Quality Control Experts",
+  "Validation Professionals",
+  "Engineering Experts",
 ] as const;
 
 export const TIMELINE = [

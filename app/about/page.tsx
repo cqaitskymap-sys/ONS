@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   Target, Eye, Heart, Award, Users, Trophy,
+  Building2, ClipboardCheck, SearchCheck, GraduationCap, Package, UserPlus,
 } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlassCard } from "@/components/cards/glass-card";
@@ -9,13 +9,18 @@ import { GlowCard } from "@/components/cards/glow-card";
 import { Timeline } from "@/components/ui/timeline";
 import { CTASection } from "@/components/sections/cta-section";
 import {
-  COMPANY, TIMELINE, LEADERSHIP, STATS,
+  COMPANY, TIMELINE, STATS,
+  ABOUT_SYNOPSIS, ABOUT_CORE_SERVICES, ABOUT_TEAM_EXPERTISE,
 } from "@/lib/constants";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: `Learn about ${COMPANY.name} — our mission, vision, leadership team, and journey in pharmaceutical excellence.`,
+  description: `Learn about ${COMPANY.name} — end-to-end pharmaceutical consultancy spanning facility design, QMS, validation, regulatory compliance, talent acquisition, and strategic sourcing.`,
+};
+
+const coreServiceIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  Building2, Award, ClipboardCheck, SearchCheck, UserPlus, Package,
 };
 
 const values = [
@@ -33,9 +38,50 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
           <SectionTitle
             badge="About Us"
-            title="Our Story"
-            subtitle={COMPANY.description}
+            title="Pharmaceutical Consultancy"
+            subtitle={ABOUT_SYNOPSIS.intro}
           />
+
+          <div className="max-w-4xl mx-auto mb-12 sm:mb-16">
+            <h3 className="text-lg sm:text-xl font-bold mb-6 text-center">Our Core Services</h3>
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+              {ABOUT_CORE_SERVICES.map((service, i) => {
+                const Icon = coreServiceIcons[service.icon];
+                return (
+                  <GlassCard key={service.title} delay={i * 0.08}>
+                    <div className="flex items-start gap-3">
+                      {Icon && <Icon className="w-5 h-5 text-primary shrink-0 mt-0.5" />}
+                      <div>
+                        <h4 className="font-semibold mb-1.5 text-sm sm:text-base">{service.title}</h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                      </div>
+                    </div>
+                  </GlassCard>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-lg sm:text-xl font-bold mb-4 text-center">Our Multidisciplinary Team</h3>
+            <p className="text-muted-foreground text-center mb-6 leading-relaxed">
+              Our multidisciplinary team comprises highly experienced professionals, including:
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+              {ABOUT_TEAM_EXPERTISE.map((role) => (
+                <span
+                  key={role}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm glass border border-white/10"
+                >
+                  <GraduationCap className="w-3.5 h-3.5 text-primary shrink-0" />
+                  {role}
+                </span>
+              ))}
+            </div>
+            <p className="text-muted-foreground text-center leading-relaxed text-base sm:text-lg">
+              {ABOUT_SYNOPSIS.closing}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -110,31 +156,6 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <SectionTitle badge="Journey" title="Our Milestones" />
           <Timeline items={TIMELINE} />
-        </div>
-      </section>
-
-      {/* Leadership */}
-      <section className="py-12 sm:py-16 overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
-          <SectionTitle badge="Leadership" title="Meet Our Team" subtitle="Experienced professionals driving pharmaceutical excellence." />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {LEADERSHIP.map((leader, i) => (
-              <GlowCard key={leader.name} delay={i * 0.15} glowColor={i === 0 ? "green" : i === 1 ? "blue" : "purple"}>
-                <div className="relative w-24 h-24 rounded-2xl overflow-hidden mb-4">
-                  <Image
-                    src={leader.image}
-                    alt={leader.name}
-                    fill
-                    className="object-cover"
-                    sizes="96px"
-                  />
-                </div>
-                <h3 className="text-lg font-bold">{leader.name}</h3>
-                <p className="text-primary text-sm mb-3">{leader.role}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">{leader.bio}</p>
-              </GlowCard>
-            ))}
-          </div>
         </div>
       </section>
 

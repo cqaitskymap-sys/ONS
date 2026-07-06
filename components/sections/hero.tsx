@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Award, Layers, Building2, ShieldCheck } from "lucide-react";
 import { COMPANY, STATS } from "@/lib/constants";
@@ -106,18 +105,20 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12">
-              <Link href="/contact" className="w-full sm:w-auto">
-                <MagneticButton className="w-full sm:w-auto bg-primary text-primary-foreground glow-green text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 min-h-11">
-                  Start Your Journey
-                  <ArrowRight className="w-4 h-4" />
-                </MagneticButton>
-              </Link>
-              <Link href="/services" className="w-full sm:w-auto">
-                <MagneticButton className="w-full sm:w-auto glass hover:bg-white/10 text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 min-h-11">
-                  <Play className="w-4 h-4" />
-                  Our Services
-                </MagneticButton>
-              </Link>
+              <MagneticButton
+                href="/contact"
+                className="w-full sm:w-auto bg-primary text-primary-foreground glow-green text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 min-h-11"
+              >
+                Start Your Journey
+                <ArrowRight className="w-4 h-4" />
+              </MagneticButton>
+              <MagneticButton
+                href="/services"
+                className="w-full sm:w-auto glass hover:bg-white/10 text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 min-h-11"
+              >
+                <Play className="w-4 h-4" />
+                Our Services
+              </MagneticButton>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">

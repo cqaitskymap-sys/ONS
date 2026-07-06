@@ -112,11 +112,12 @@ export function Navbar() {
         </div>
 
         <div className="hidden lg:block">
-          <Link href="/contact">
-            <MagneticButton className="bg-primary text-primary-foreground hover:bg-primary/90 glow-green">
-              Get Started
-            </MagneticButton>
-          </Link>
+          <MagneticButton
+            href="/contact"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 glow-green"
+          >
+            Get Started
+          </MagneticButton>
         </div>
 
         {/* Mobile Nav */}
@@ -174,11 +175,12 @@ export function Navbar() {
                 )
               )}
               <SheetClose asChild>
-                <Link href="/contact" className="mt-4 block">
-                  <MagneticButton className="w-full bg-primary text-primary-foreground">
-                    Get Started
-                  </MagneticButton>
-                </Link>
+                <MagneticButton
+                  href="/contact"
+                  className="mt-4 w-full bg-primary text-primary-foreground"
+                >
+                  Get Started
+                </MagneticButton>
               </SheetClose>
             </div>
           </SheetContent>

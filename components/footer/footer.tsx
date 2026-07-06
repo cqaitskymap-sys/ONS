@@ -22,9 +22,9 @@ export function Footer() {
     <footer className="relative border-t border-white/5 mt-12 sm:mt-16 lg:mt-20 overflow-x-clip">
       <div className="absolute inset-0 grid-bg opacity-30" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 sm:gap-x-8 sm:gap-y-10 lg:gap-12">
           {/* Brand */}
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <Logo size="xl" className="mb-6" />
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               {COMPANY.tagline}. Delivering excellence in pharmaceutical consultancy across India.
@@ -51,7 +51,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-6">Quick Links</h4>
+            <h4 className="font-bold mb-4 sm:mb-6">Quick Links</h4>
             <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -68,7 +68,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold mb-6">Services</h4>
+            <h4 className="font-bold mb-4 sm:mb-6">Services</h4>
             <ul className="space-y-3">
               {SERVICES.map((service) => (
                 <li key={service.title}>
@@ -84,8 +84,8 @@ export function Footer() {
           </div>
 
           {/* Contact & Newsletter */}
-          <div>
-            <h4 className="font-bold mb-6">Contact</h4>
+          <div className="col-span-2 lg:col-span-1">
+            <h4 className="font-bold mb-4 sm:mb-6">Contact</h4>
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3 text-sm text-muted-foreground break-words">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
@@ -118,6 +118,7 @@ export function Footer() {
                 placeholder="Your email"
                 className="flex-1 min-w-0 px-4 py-2.5 min-h-11 rounded-xl glass text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
                 required
+                suppressHydrationWarning
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -125,6 +126,7 @@ export function Footer() {
                 type="submit"
                 className="px-4 py-2.5 min-h-11 min-w-11 rounded-xl bg-primary text-primary-foreground shrink-0 self-end sm:self-auto"
                 aria-label="Subscribe to newsletter"
+                suppressHydrationWarning
               >
                 <ArrowRight className="w-4 h-4" />
               </motion.button>

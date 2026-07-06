@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Pill, Dna, Leaf, Sparkles, Stethoscope, Heart, ArrowRight, CheckCircle,
+  Pill, Stethoscope, Heart, ArrowRight, CheckCircle,
   Brain, Network, Layers, Target,
 } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -12,11 +12,11 @@ import { COMPANY, INDUSTRY_DETAILS, WHY_CHOOSE_US } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Industries",
-  description: `Explore the life sciences sectors ${COMPANY.name} serves — pharmaceuticals, biotech, nutraceuticals, medical devices, and more.`,
+  description: `Explore the life sciences sectors ${COMPANY.name} serves — pharmaceuticals, medical devices, veterinary, and more.`,
 };
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Pill, Dna, Leaf, Sparkles, Stethoscope, Heart,
+  Pill, Stethoscope, Heart,
 };
 
 const whyIconMap: Record<string, React.ComponentType<{ className?: string }>> = {

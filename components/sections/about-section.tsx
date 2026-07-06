@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -58,11 +57,9 @@ export function AboutSection() {
               of quality auditors, validation specialists, and sourcing partners to deliver
               comprehensive pharmaceutical consultancy services.
             </motion.p>
-            <Link href="/about">
-              <MagneticButton className="glass hover:bg-white/10">
-                Learn More <ArrowRight className="w-4 h-4" />
-              </MagneticButton>
-            </Link>
+            <MagneticButton href="/about" className="glass hover:bg-white/10">
+              Learn More <ArrowRight className="w-4 h-4" />
+            </MagneticButton>
           </div>
         </div>
       </div>
