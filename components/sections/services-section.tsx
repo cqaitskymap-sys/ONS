@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, ArrowRight,
+  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, Workflow, ArrowRight,
 } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlowCard } from "@/components/cards/glow-card";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package,
+  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, Workflow,
 };
 
 export function ServicesSection() {

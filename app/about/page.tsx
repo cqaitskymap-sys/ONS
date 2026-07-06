@@ -8,6 +8,7 @@ import { GlassCard } from "@/components/cards/glass-card";
 import { GlowCard } from "@/components/cards/glow-card";
 import { Timeline } from "@/components/ui/timeline";
 import { CTASection } from "@/components/sections/cta-section";
+import { MdMessageSection } from "@/components/sections/md-message-section";
 import {
   COMPANY, TIMELINE, STATS,
   ABOUT_SYNOPSIS, ABOUT_CORE_SERVICES, ABOUT_TEAM_EXPERTISE,
@@ -84,6 +85,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <MdMessageSection />
 
       {/* Mission & Vision */}
       <section className="py-12 sm:py-16 overflow-hidden">

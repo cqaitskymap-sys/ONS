@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Award, Layers, Building2, ShieldCheck } from "lucide-react";
-import { COMPANY, STATS } from "@/lib/constants";
+import { COMPANY, STATS, IMAGES } from "@/lib/constants";
 import { Logo } from "@/components/brand/logo";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
@@ -52,6 +53,17 @@ function TypingText({ text }: { text: string }) {
 function AuroraBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden">
+      <Image
+        src={IMAGES.heroBackground.src}
+        alt=""
+        fill
+        priority
+        className="object-cover opacity-[0.12]"
+        sizes="100vw"
+        quality={75}
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-background/60" />
       <div className="absolute -top-1/2 left-1/4 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px] animate-pulse" />
       <div className="absolute -bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-secondary/10 blur-[100px] animate-pulse [animation-delay:1s]" />
       <div className="absolute top-1/3 right-1/3 w-[400px] h-[400px] rounded-full bg-accent/8 blur-[80px] animate-pulse [animation-delay:2s]" />

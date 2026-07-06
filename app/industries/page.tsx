@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Pill, Stethoscope, Heart, ArrowRight, CheckCircle,
+  Pill, Stethoscope, Heart, Package, ArrowRight, CheckCircle,
   Brain, Network, Layers, Target,
 } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Pill, Stethoscope, Heart,
+  Pill, Stethoscope, Heart, Package,
 };
 
 const whyIconMap: Record<string, React.ComponentType<{ className?: string }>> = {

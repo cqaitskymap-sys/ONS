@@ -5,13 +5,68 @@ export const LOGO = {
   height: 500,
 } as const;
 
+/** Local 4K (3840px) pharmaceutical imagery — stored in /public/images */
+export const IMAGES = {
+  heroBackground: {
+    src: "/images/hero-background.jpg",
+    alt: "Pharmaceutical capsules and medicine production",
+    width: 3840,
+    height: 2160,
+  },
+  labPrimary: {
+    src: "/images/lab-primary.jpg",
+    alt: "Modern pharmaceutical laboratory with research equipment",
+    width: 3840,
+    height: 2880,
+  },
+  labResearch: {
+    src: "/images/lab-research.jpg",
+    alt: "Scientists conducting pharmaceutical research",
+    width: 3840,
+    height: 2880,
+  },
+  pharmaManufacturing: {
+    src: "/images/pharma-manufacturing.jpg",
+    alt: "Pharmaceutical manufacturing cleanroom facility",
+    width: 3840,
+    height: 2160,
+  },
+  pharmaLaboratory: {
+    src: "/images/pharma-laboratory.jpg",
+    alt: "Advanced pharmaceutical laboratory instrumentation",
+    width: 3840,
+    height: 2160,
+  },
+  cleanroom: {
+    src: "/images/cleanroom.jpg",
+    alt: "GMP-compliant pharmaceutical cleanroom environment",
+    width: 3840,
+    height: 2160,
+  },
+  sourcingWarehouse: {
+    src: "/images/sourcing-warehouse.jpg",
+    alt: "Pharmaceutical supply chain and logistics warehouse",
+    width: 3840,
+    height: 2160,
+  },
+  portraits: {
+    md: "/images/portrait-md.jpg",
+    ceo: "/images/portrait-ceo.jpg",
+    quality: "/images/portrait-quality.jpg",
+    sourcing: "/images/portrait-sourcing.jpg",
+    testimonial1: "/images/portrait-testimonial-1.jpg",
+    testimonial2: "/images/portrait-testimonial-2.jpg",
+    testimonial3: "/images/portrait-testimonial-3.jpg",
+  },
+} as const;
+
 export const COMPANY = {
   name: "LoMars Pharma",
   tagline: "Your Complete Partner in Pharma Excellence",
   description:
     "LoMars Pharma is a premier pharmaceutical consultancy delivering end-to-end solutions — from plant design and validation to GMP audits, QMS implementation, training, and domestic sourcing.",
   address: "Office No.16 Platinum Square, Near St. Xavier School, Silvassa 396230",
-  phone: "+91 86306 03509",
+  phone: "+91 86306 03509/+91 97149 12040",
   email: "info@lomarspharma.com",
   whatsapp: "918630603509",
   hours: "Monday – Saturday, 9AM – 7PM",
@@ -73,6 +128,13 @@ export const SERVICES = [
     href: "/services?service=training",
   },
   {
+    title: "Process Re-Engineering",
+    description:
+      "Optimize operations for higher efficiency, cost saving, and reduce risks.",
+    icon: "Workflow",
+    href: "/services?service=process-re-engineering",
+  },
+  {
     title: "Pharmaceutical Sourcing",
     description:
       "Sourcing of APIs, excipients, Packging Material and Finish Product (All Dosages forms) with full QA support.",
@@ -92,6 +154,7 @@ export const INDUSTRIES = [
   { title: "Pharmaceuticals", icon: "Pill" },
   { title: "Medical Devices", icon: "Stethoscope" },
   { title: "Veterinary", icon: "Heart" },
+  { title: "Primary Packaging", icon: "Package" },
 ] as const;
 
 export const INDUSTRY_DETAILS = [
@@ -115,6 +178,13 @@ export const INDUSTRY_DETAILS = [
     description:
       "Regulatory and quality support for veterinary pharmaceuticals, feed additives, and animal health products.",
     capabilities: ["VICH compliance", "API sourcing", "GMP for vet products", "Export documentation"],
+  },
+  {
+    title: "Primary Packaging",
+    icon: "Package",
+    description:
+      "End-to-end support for primary packaging materials like, bottles, vials, ampoules, and closures.",
+    capabilities: ["Packaging material qualification", "Vendor Audits", "DMF & regulatory documentation", "Stability & compatibility studies"],
   },
 ] as const;
 
@@ -154,7 +224,7 @@ export const CAREER_OPENINGS = [
 
 export const STATS = [
   { value: 15, suffix: "+", label: "Years Experience" },
-  { value: 7, suffix: "", label: "Core Services" },
+  { value: 8, suffix: "", label: "Core Services" },
   { value: 6, suffix: "", label: "Industry Sectors" },
   { value: 8, suffix: "", label: "Compliance Frameworks" },
 ] as const;
@@ -188,21 +258,21 @@ export const TESTIMONIALS = [
       "LoMars Pharma transformed our regulatory strategy. Their expertise helped us achieve CDSCO approval months ahead of schedule.",
     author: "Dr. Rajesh Kumar",
     role: "CEO, MedLife Pharmaceuticals",
-    avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face",
+    avatar: IMAGES.portraits.testimonial1,
   },
   {
     quote:
       "Outstanding sourcing capabilities. They connected us with qualified domestic API suppliers and ensured full quality compliance.",
     author: "Priya Desai",
     role: "Procurement Director, Bharat Pharma Ltd.",
-    avatar: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=100&h=100&fit=crop&crop=face",
+    avatar: IMAGES.portraits.testimonial2,
   },
   {
     quote:
       "Their GMP consultancy was instrumental in our facility certification. Professional, thorough, and results-driven.",
     author: "Ahmed Hassan",
     role: "Quality Head, PharmaCore Ltd.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    avatar: IMAGES.portraits.testimonial3,
   },
 ] as const;
 
@@ -210,7 +280,7 @@ export const FAQ_ITEMS = [
   {
     question: "What services does LoMars Pharma offer?",
     answer:
-      "We offer plant design, commissioning and validation, third-party GMP audits, pre-inspection audits, QMS implementation, pharmaceutical training, domestic sourcing, and talent acquisition services.",
+      "We offer plant design, commissioning and validation, third-party GMP audits, pre-inspection audits, QMS implementation, pharmaceutical training, process re-engineering, domestic sourcing, and talent acquisition services.",
   },
   {
     question: "Which regulatory markets do you support?",
@@ -243,7 +313,7 @@ export const ABOUT_SYNOPSIS = {
   intro:
     "We are a professional pharmaceutical consultancy dedicated to providing end-to-end solutions for the pharmaceutical, biotechnology, and healthcare industries. Our expertise spans the complete lifecycle of pharmaceutical manufacturing, from facility design and regulatory compliance to quality systems and strategic sourcing.",
   closing:
-    "Together, our experts bring more than 100 years of combined experience across diverse sectors of the pharmaceutical industry. Having worked with leading pharmaceutical organizations, our consultants possess extensive knowledge of international regulatory standards, including WHO-GMP, US FDA, EU GMP, PIC/S, MHRA, and other global quality requirements.",
+    "Together, our experts bring more than 100 years of combined experience across diverse sectors of the pharmaceutical industry. Having worked with leading pharmaceutical organizations. The Team Mamebrs possess extensive knowledge of international regulatory standards, including WHO-GMP, EU GMP, PIC/S, MHRA, and other global quality requirements.",
 } as const;
 
 export const ABOUT_CORE_SERVICES = [
@@ -347,23 +417,30 @@ export const SOURCING_MATERIALS = [
   },
 ] as const;
 
+export const MD_MESSAGE = {
+  name: "Rohit Singh",
+  title: "Managing Director",
+  message:
+    "At LoMars Pharma, we are committed to being more than consultants — we are partners in your journey toward pharmaceutical excellence. With a deep understanding of India's regulatory landscape and global quality standards, our team works tirelessly to help manufacturers achieve compliance, operational efficiency, and sustainable growth. Whether you are building a new facility, preparing for an inspection, or strengthening your quality systems, we bring the expertise and dedication your organization deserves.",
+} as const;
+
 export const LEADERSHIP = [
   {
     name: "Dr. Vikram Mehta",
     role: "Founder & CEO",
     bio: "25+ years in pharmaceutical regulatory affairs and domestic market compliance.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
+    image: IMAGES.portraits.ceo,
   },
   {
     name: "Priya Sharma",
     role: "Head of Quality",
     bio: "Former regulatory inspector with expertise in GMP and validation systems.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
+    image: IMAGES.portraits.quality,
   },
   {
     name: "James O'Brien",
     role: "Director of Sourcing",
     bio: "Domestic supply chain expert with networks across India's pharmaceutical manufacturing hubs.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    image: IMAGES.portraits.sourcing,
   },
 ] as const;

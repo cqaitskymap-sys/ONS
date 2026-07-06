@@ -10,6 +10,7 @@ import {
   GraduationCap,
   Package,
   UserPlus,
+  Workflow,
   ArrowRight,
   ChevronDown,
 } from "lucide-react";
@@ -26,6 +27,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   GraduationCap,
   Package,
   UserPlus,
+  Workflow,
 };
 
 function ServiceDetailBlock({ service }: { service: (typeof SERVICE_DETAILS)[number] }) {

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { IMAGES } from "@/lib/constants";
 import { SectionTitle } from "@/components/ui/section-title";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
@@ -20,21 +21,23 @@ export function AboutSection() {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=800&h=600&fit=crop"
-                alt="Modern pharmaceutical laboratory"
+                src={IMAGES.labPrimary.src}
+                alt={IMAGES.labPrimary.alt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                quality={90}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </div>
             <div className="absolute -bottom-6 -right-6 w-48 h-48 rounded-2xl overflow-hidden glass-strong hidden md:block">
               <Image
-                src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=200&h=200&fit=crop"
-                alt="Pharmaceutical research"
+                src={IMAGES.labResearch.src}
+                alt={IMAGES.labResearch.alt}
                 fill
                 className="object-cover"
                 sizes="192px"
+                quality={90}
               />
             </div>
           </motion.div>

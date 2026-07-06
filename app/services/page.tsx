@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import {
-  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, UserPlus, ArrowRight,
+  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, UserPlus, Workflow, ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, UserPlus,
+  Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, UserPlus, Workflow,
 };
 
 const caseStudies = [

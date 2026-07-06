@@ -671,6 +671,64 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
     ],
   },
   {
+    id: "process-re-engineering",
+    title: "Process Re-Engineering",
+    description:
+      "Optimize operations for higher efficiency, cost saving, and reduce risks across pharmaceutical manufacturing and quality processes.",
+    icon: "Workflow",
+    href: "/services?service=process-re-engineering",
+    introduction:
+      "Process re-engineering helps pharmaceutical organizations streamline workflows, eliminate inefficiencies, and strengthen compliance while reducing operational costs and risks. We assess existing processes, identify improvement opportunities, and implement practical solutions aligned with GMP and quality requirements.",
+    sections: [
+      {
+        title: "Optimize Operations for Higher Efficiency, Cost Saving, and Reduce Risks",
+        items: [
+          "Process mapping and workflow analysis",
+          "Bottleneck identification and elimination",
+          "Standardization of operating procedures",
+          "Lean manufacturing and waste reduction",
+          "Automation and digitalization opportunities",
+          "Resource utilization optimization",
+          "Cycle time and throughput improvement",
+          "Risk-based process redesign",
+        ],
+      },
+      {
+        title: "Key Focus Areas",
+        items: [
+          "Manufacturing and production processes",
+          "Quality assurance and quality control workflows",
+          "Warehouse and materials management",
+          "Documentation and batch record processes",
+          "Deviation, CAPA, and change control workflows",
+          "Supply chain and procurement operations",
+        ],
+      },
+      {
+        title: "Deliverables",
+        items: [
+          "Current-state process assessment report",
+          "Gap analysis and improvement recommendations",
+          "Redesigned process workflows and SOPs",
+          "Implementation roadmap with prioritized actions",
+          "Performance metrics and monitoring framework",
+          "Training support for adopted process changes",
+        ],
+      },
+      {
+        title: "Benefits",
+        items: [
+          "Higher operational efficiency",
+          "Reduced manufacturing and quality costs",
+          "Lower compliance and operational risks",
+          "Improved productivity and throughput",
+          "Better resource allocation",
+          "Stronger inspection readiness",
+        ],
+      },
+    ],
+  },
+  {
     id: "talent-acquisition",
     title: "Talent Acquisition",
     description:

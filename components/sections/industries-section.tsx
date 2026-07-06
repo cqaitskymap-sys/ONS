@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Pill, Stethoscope, Heart } from "lucide-react";
+import { Pill, Stethoscope, Heart, Package } from "lucide-react";
 import { INDUSTRIES } from "@/lib/constants";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlassCard } from "@/components/cards/glass-card";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Pill, Stethoscope, Heart,
+  Pill, Stethoscope, Heart, Package,
 };
 
 export function IndustriesSection() {
@@ -19,7 +19,7 @@ export function IndustriesSection() {
           title="Sectors We Serve"
           subtitle="Deep expertise across pharmaceutical and life sciences industries in India."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {INDUSTRIES.map((industry, i) => {
             const Icon = iconMap[industry.icon] || Pill;
             return (

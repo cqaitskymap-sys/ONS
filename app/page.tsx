@@ -8,6 +8,7 @@ import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { ProcessSection } from "@/components/sections/process-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { FAQSection } from "@/components/sections/faq-section";
+import { VisualShowcaseSection } from "@/components/sections/visual-showcase-section";
 import { CTASection } from "@/components/sections/cta-section";
 
 export default function HomePage() {
@@ -21,6 +22,7 @@ export default function HomePage() {
       <TimelineSection />
       <WhyChooseUs />
       <ProcessSection />
+      <VisualShowcaseSection />
       <TestimonialsSection />
       <FAQSection />
       <CTASection />
