@@ -46,7 +46,7 @@ export function AboutSection() {
             <SectionTitle
               badge="About Us"
               title="Pioneering Pharma Excellence"
-              subtitle="For over 15 years, LoMars Pharma has been the trusted partner for pharmaceutical companies seeking GMP compliance, facility validation, and quality excellence."
+              subtitle="For over 6 years, LoMars Pharma has been the trusted partner for pharmaceutical companies seeking GMP compliance, facility validation, and quality excellence."
               align="left"
               className="mb-8"
             />

@@ -97,42 +97,42 @@ export const SERVICES = [
     description:
       "Facility planning, commissioning, and DQ/IQ/OQ/PQ validation for HVAC, utilities, and cleanroom systems.",
     icon: "Building2",
-    href: "/services?service=plant-design",
+    href: "/services/plant-design",
   },
   {
     title: "Third-Party GMP Audits",
     description:
       "Independent GMP compliance audits for pharmaceutical plants, API facilities, CMOs, and suppliers.",
     icon: "ClipboardCheck",
-    href: "/services?service=gmp-audits",
+    href: "/services/gmp-audits",
   },
   {
     title: "Pre-Inspection Audits",
     description:
       "Pre-regulatory inspection assessments to identify gaps and strengthen inspection readiness.",
     icon: "SearchCheck",
-    href: "/services?service=pre-inspection",
+    href: "/services/pre-inspection",
   },
   {
     title: "Quality Management System (QMS)",
     description:
       "Design, implementation, and upgradation of QMS per EU GMP, PIC/S, and ISO guidelines.",
     icon: "Award",
-    href: "/services?service=qms",
+    href: "/services/qms",
   },
   {
     title: "Pharmaceutical Training",
     description:
       "GMP, validation, QA/QC, OSD and sterile manufacturing training with placement support.",
     icon: "GraduationCap",
-    href: "/services?service=training",
+    href: "/services/training",
   },
   {
     title: "Process Re-Engineering",
     description:
       "Optimize operations for higher efficiency, cost saving, and reduce risks.",
     icon: "Workflow",
-    href: "/services?service=process-re-engineering",
+    href: "/services/process-re-engineering",
   },
   {
     title: "Pharmaceutical Sourcing",
@@ -146,7 +146,7 @@ export const SERVICES = [
     description:
       "Recruitment and placement of qualified pharmaceutical professionals across QA, QC, manufacturing, and regulatory affairs.",
     icon: "UserPlus",
-    href: "/services?service=talent-acquisition",
+    href: "/services/talent-acquisition",
   },
 ] as const;
 
@@ -313,7 +313,7 @@ export const ABOUT_SYNOPSIS = {
   intro:
     "We are a professional pharmaceutical consultancy dedicated to providing end-to-end solutions for the pharmaceutical, biotechnology, and healthcare industries. Our expertise spans the complete lifecycle of pharmaceutical manufacturing, from facility design and regulatory compliance to quality systems and strategic sourcing.",
   closing:
-    "Together, our experts bring more than 100 years of combined experience across diverse sectors of the pharmaceutical industry. Having worked with leading pharmaceutical organizations. The Team Mamebrs possess extensive knowledge of international regulatory standards, including WHO-GMP, EU GMP, PIC/S, MHRA, and other global quality requirements.",
+    "Together, our experts bring more than 100 years of combined experience across diverse sectors of the pharmaceutical industry, having worked with leading pharmaceutical organizations. The Team Mamebrs possess extensive knowledge of international regulatory standards, including WHO-GMP, EU GMP, PIC/S, MHRA, and other global quality requirements.",
 } as const;
 
 export const ABOUT_CORE_SERVICES = [
@@ -421,7 +421,7 @@ export const MD_MESSAGE = {
   name: "Rohit Singh",
   title: "Managing Director",
   message:
-    "At LoMars Pharma, we are committed to being more than consultants — we are partners in your journey toward pharmaceutical excellence. With a deep understanding of India's regulatory landscape and global quality standards, our team works tirelessly to help manufacturers achieve compliance, operational efficiency, and sustainable growth. Whether you are building a new facility, preparing for an inspection, or strengthening your quality systems, we bring the expertise and dedication your organization deserves.",
+    "At LoMars Pharma, we are committed to being more than consultants — we are partners in your journey toward pharmaceutical excellence. With a deep understanding of India's regulatory landscape and global quality standards. Our team works tirelessly to help manufacturers achieve compliance, operational efficiency, and sustainable growth. Whether you are building a new facility, preparing for an inspection, or strengthening your quality systems, we bring the expertise and dedication your organization deserves.",
 } as const;
 
 export const LEADERSHIP = [

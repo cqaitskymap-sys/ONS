@@ -6,6 +6,7 @@ import { COMPANY, LOGO } from "@/lib/constants";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lomarspharma.com"),
   title: {
     default: `${COMPANY.name} | ${COMPANY.tagline}`,
     template: `%s | ${COMPANY.name}`,

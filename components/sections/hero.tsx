@@ -92,7 +92,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full glass text-[0.7rem] sm:text-xs font-medium text-primary mb-4 sm:mb-6 max-w-full"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Pharmaceutical Excellence Since 2023
+              Pharmaceutical Excellence Since 2020
             </motion.div>
 
             <motion.div

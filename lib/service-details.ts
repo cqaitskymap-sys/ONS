@@ -22,7 +22,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
     description:
       "Planning, commissioning, and validation of pharmaceutical facilities — HVAC, utilities, cleanrooms, and environmental controls per GMP standards.",
     icon: "Building2",
-    href: "/services?service=plant-design",
+    href: "/services/plant-design",
     introduction:
       "The pharmaceutical industry operates under strict regulatory requirements to ensure product quality, patient safety, and compliance with Good Manufacturing Practices (GMP). Pharmaceutical facility services such as HVAC systems, purified water systems, compressed air, clean steam, electrical systems, and environmental controls play a critical role in maintaining controlled manufacturing conditions. Proper plant design, systematic commissioning, and comprehensive validation are essential for ensuring reliable and compliant operations.",
     sections: [
@@ -82,7 +82,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
     description:
       "Independent GMP compliance assessments for pharmaceutical manufacturing, API plants, CMOs, laboratories, and packaging vendors.",
     icon: "ClipboardCheck",
-    href: "/services?service=gmp-audits",
+    href: "/services/gmp-audits",
     introduction:
       "Third-Party GMP (Good Manufacturing Practice) Audits are independent assessments conducted by qualified auditors to evaluate whether pharmaceutical manufacturing facilities, API (Active Pharmaceutical Ingredient) plants, suppliers, contract manufacturers, laboratories, and packaging vendors comply with applicable GMP regulations and quality standards. These audits help organizations ensure product quality, regulatory compliance, supplier qualification, and patient safety.",
     sections: [
@@ -182,7 +182,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
     description:
       "Comprehensive pre-inspection assessments to identify compliance gaps and strengthen regulatory inspection readiness.",
     icon: "SearchCheck",
-    href: "/services?service=pre-inspection",
+    href: "/services/pre-inspection",
     introduction:
       "Pre-inspection audits are comprehensive assessments conducted before regulatory authority inspections to evaluate a pharmaceutical facility's compliance with applicable regulations, quality standards, and Good Manufacturing Practices (GMP). These audits help organizations identify compliance gaps, mitigate regulatory risks, and improve inspection readiness.",
     sections: [
@@ -318,7 +318,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
     description:
       "Design, implementation, and upgradation of QMS aligned with EU GMP, PIC/S, and ISO guidelines for pharmaceutical operations.",
     icon: "Award",
-    href: "/services?service=qms",
+    href: "/services/qms",
     introduction:
       "The Quality Management System encompasses all activities related to the development, manufacture, testing, storage, distribution, and quality oversight of pharmaceutical formulations produced within the facility, including aseptically manufactured products. The system is designed to ensure compliance with applicable Good Manufacturing Practices (GMP), regulatory requirements, and patient safety expectations throughout the product lifecycle.",
     sections: [
@@ -537,7 +537,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
     description:
       "Industry-focused training for GMP, validation, QA/QC, OSD and sterile injectable manufacturing, and regulatory compliance.",
     icon: "GraduationCap",
-    href: "/services?service=training",
+    href: "/services/training",
     introduction:
       "LoMars Pharma is a specialized training and consulting organization dedicated to developing skilled professionals for the pharmaceutical, biotechnology, healthcare, and life sciences industries. We provide industry-focused training programs designed to enhance technical knowledge, regulatory compliance, quality standards, and professional competencies across pharmaceutical operations. Our mission is to bridge the gap between academic knowledge and industry requirements by delivering practical, compliance-driven, and career-oriented training solutions.",
     sections: [
@@ -676,7 +676,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
     description:
       "Optimize operations for higher efficiency, cost saving, and reduce risks across pharmaceutical manufacturing and quality processes.",
     icon: "Workflow",
-    href: "/services?service=process-re-engineering",
+    href: "/services/process-re-engineering",
     introduction:
       "Process re-engineering helps pharmaceutical organizations streamline workflows, eliminate inefficiencies, and strengthen compliance while reducing operational costs and risks. We assess existing processes, identify improvement opportunities, and implement practical solutions aligned with GMP and quality requirements.",
     sections: [
@@ -734,7 +734,7 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
     description:
       "Specialized recruitment and placement of qualified pharmaceutical professionals across QA, QC, manufacturing, regulatory affairs, and R&D.",
     icon: "UserPlus",
-    href: "/services?service=talent-acquisition",
+    href: "/services/talent-acquisition",
     introduction:
       "LoMars Pharma provides dedicated talent acquisition services for pharmaceutical and life sciences organizations. We leverage our deep industry network, domain expertise, and understanding of pharma-specific skill requirements to source, screen, and place professionals across all critical functions — from manufacturing and quality control to regulatory affairs, R&D, and commercial operations.",
     sections: [
@@ -851,6 +851,12 @@ export const SERVICE_DETAILS: readonly ServiceDetail[] = [
 export function getValidServiceId(id: string | null | undefined): string {
   if (!id) return "";
   return SERVICE_DETAILS.some((s) => s.id === id) ? id : "";
+}
+
+export function getServiceById(id: string): ServiceDetail | undefined {
+  const validId = getValidServiceId(id);
+  if (!validId) return undefined;
+  return SERVICE_DETAILS.find((s) => s.id === validId);
 }
 
 export function getServiceIdFromSearchParam(

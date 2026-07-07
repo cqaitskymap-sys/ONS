@@ -8,8 +8,6 @@ import { GlowCard } from "@/components/cards/glow-card";
 import { GlassCard } from "@/components/cards/glass-card";
 import { FAQ } from "@/components/ui/faq";
 import { CTASection } from "@/components/sections/cta-section";
-import { ServicesDetailView } from "@/components/sections/services-detail-view";
-import { getServiceIdFromSearchParam } from "@/lib/service-details";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { SERVICES, PROCESS_STEPS, STATS, FAQ_ITEMS } from "@/lib/constants";
 
@@ -44,12 +42,7 @@ const caseStudies = [
   },
 ];
 
-export default async function ServicesPage({
-  searchParams,
-}: PageProps<"/services">) {
-  const params = await searchParams;
-  const initialServiceId = getServiceIdFromSearchParam(params.service);
-
+export default function ServicesPage() {
   return (
     <>
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16 overflow-hidden">
@@ -93,11 +86,6 @@ export default async function ServicesPage({
           </div>
         </div>
       </section>
-
-      <ServicesDetailView
-        key={initialServiceId || "none"}
-        initialServiceId={initialServiceId}
-      />
 
       <section className="py-12 md:py-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">

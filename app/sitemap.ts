@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
-import { COMPANY } from "@/lib/constants";
+import { SERVICE_DETAILS } from "@/lib/service-details";
+
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://lomarspharma.com";
@@ -7,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/services",
+    ...SERVICE_DETAILS.map((service) => service.href),
     "/industries",
     "/sourcing",
     "/careers",

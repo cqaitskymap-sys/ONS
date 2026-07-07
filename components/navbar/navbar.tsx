@@ -146,7 +146,7 @@ export function Navbar() {
                       </Link>
                     </SheetClose>
                     <div className="ml-4 mt-1 mb-2 flex flex-col gap-1">
-                      {SERVICES.filter((s) => s.href.startsWith("/services?service=")).map((service) => (
+                      {SERVICES.filter((s) => s.href.startsWith("/services/")).map((service) => (
                         <SheetClose key={service.title} asChild>
                           <Link
                             href={service.href}
