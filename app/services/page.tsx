@@ -5,11 +5,11 @@ import {
 import Link from "next/link";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlowCard } from "@/components/cards/glow-card";
-import { GlassCard } from "@/components/cards/glass-card";
 import { FAQ } from "@/components/ui/faq";
+import { ProcessStepper } from "@/components/ui/process-stepper";
 import { CTASection } from "@/components/sections/cta-section";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
-import { SERVICES, PROCESS_STEPS, STATS, FAQ_ITEMS } from "@/lib/constants";
+import { SERVICES, STATS, FAQ_ITEMS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -99,16 +99,12 @@ export default function ServicesPage() {
 
       <section className="py-12 md:py-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
-          <SectionTitle badge="Process" title="Our Methodology" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {PROCESS_STEPS.map((step, i) => (
-              <GlassCard key={step.step} delay={i * 0.15} className="h-full">
-                <span className="text-3xl sm:text-4xl font-bold gradient-text opacity-40">{step.step}</span>
-                <h3 className="text-base sm:text-lg font-bold mt-3 sm:mt-4 mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-              </GlassCard>
-            ))}
-          </div>
+          <SectionTitle
+            badge="Process"
+            title="Our Methodology"
+            subtitle="A proven four-step methodology — from understanding your needs to long-term partnership."
+          />
+          <ProcessStepper />
         </div>
       </section>
 

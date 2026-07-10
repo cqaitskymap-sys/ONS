@@ -365,7 +365,7 @@ export const ABOUT_TEAM_EXPERTISE = [
 ] as const;
 
 export const TIMELINE = [
-  { year: "2023", title: "Founded", description: "LoMars Pharma established in Silvassa, India with a vision to support pharmaceutical excellence." },
+  { year: "2020", title: "Founded", description: "LoMars Pharma established in Silvassa, India with a vision to support pharmaceutical excellence." },
   { year: "2024", title: "Services Launched", description: "Introduced GMP audits, QMS implementation, and regulatory consultancy services." },
   { year: "2025", title: "Expanded Offerings", description: "Added pharmaceutical training, sourcing support, and talent acquisition services." },
   { year: "2026", title: "Growing Forward", description: "Building partnerships across India's pharmaceutical industry with end-to-end consultancy." },
