@@ -7,7 +7,9 @@ import { SectionTitle } from "@/components/ui/section-title";
 import { GlowCard } from "@/components/cards/glow-card";
 import { GlassCard } from "@/components/cards/glass-card";
 import { CTASection } from "@/components/sections/cta-section";
-import { COMPANY, CAREER_BENEFITS, CAREER_OPENINGS } from "@/lib/constants";
+import { PageBanner } from "@/components/sections/page-banner";
+import { ImageFeatureSection } from "@/components/sections/image-feature-section";
+import { COMPANY, CAREER_BENEFITS, CAREER_OPENINGS, CAREER_TESTIMONIALS, HIRING_PROCESS, PAGE_IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -21,16 +23,20 @@ const benefitIconMap: Record<string, React.ComponentType<{ className?: string }>
 export default function CareersPage() {
   return (
     <>
-      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
-          <SectionTitle
-            badge="Careers"
-            title="Build Your Future With Us"
-            subtitle="Join a team of passionate pharmaceutical professionals making an impact on healthcare accessibility and quality across India."
-          />
-        </div>
-      </section>
+      <PageBanner
+        badge="Careers"
+        title="Build Your Future With Us"
+        subtitle="Join a team of passionate pharmaceutical professionals making an impact on healthcare accessibility and quality across India."
+        image={PAGE_IMAGES.careers.banner}
+      />
+
+      <ImageFeatureSection image={PAGE_IMAGES.careers.feature}>
+        <h3 className="text-xl font-bold mb-4">Grow With Industry Leaders</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          Work alongside seasoned regulatory specialists, QA professionals, and validation experts
+          on meaningful projects that shape pharmaceutical quality across India.
+        </p>
+      </ImageFeatureSection>
 
       <section className="pb-12 sm:pb-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
@@ -59,11 +65,11 @@ export default function CareersPage() {
           />
           <div className="space-y-4 max-w-4xl mx-auto">
             {CAREER_OPENINGS.map((job, i) => (
-              <GlowCard key={job.title} delay={i * 0.08} glowColor="green">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div>
+              <GlowCard key={job.id} delay={i * 0.08} glowColor="green">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                  <div className="flex-1">
                     <h3 className="text-lg font-bold mb-2">{job.title}</h3>
-                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-3">
                       <span className="flex items-center gap-1">
                         <Briefcase className="w-4 h-4 text-primary" />
                         {job.department}
@@ -76,15 +82,56 @@ export default function CareersPage() {
                         <Clock className="w-4 h-4 text-primary" />
                         {job.type}
                       </span>
+                      <span className="text-primary/80">{job.experienceLevel}</span>
                     </div>
+                    <p className="text-sm text-muted-foreground mb-3">{job.description}</p>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {job.requirements.map((req) => (
+                        <li key={req} className="flex items-start gap-2">
+                          <span className="text-primary mt-1">•</span>
+                          {req}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                   <Link
-                    href="/contact"
+                    href={`/contact?inquiry=careers&position=${job.id}`}
                     className="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-11 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors shrink-0 w-full md:w-auto"
                   >
                     Apply Now <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
+              </GlowCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
+          <SectionTitle badge="Process" title="How We Hire" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {HIRING_PROCESS.map((step, i) => (
+              <GlassCard key={step.step} delay={i * 0.1} className="text-center">
+                <div className="text-2xl font-bold gradient-text mb-2">{step.step}</div>
+                <h3 className="font-bold mb-2">{step.title}</h3>
+                <p className="text-sm text-muted-foreground">{step.description}</p>
+              </GlassCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
+          <SectionTitle badge="Team Voices" title="Life at LoMars" />
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
+            {CAREER_TESTIMONIALS.map((t, i) => (
+              <GlowCard key={t.author} delay={i * 0.1} glowColor="blue">
+                <p className="text-sm text-muted-foreground italic mb-4">&ldquo;{t.quote}&rdquo;</p>
+                <div className="font-bold">{t.author}</div>
+                <div className="text-sm text-primary">{t.role}</div>
+                <div className="text-xs text-muted-foreground mt-1">{t.tenure}</div>
               </GlowCard>
             ))}
           </div>

@@ -6,7 +6,7 @@ import { COMPANY } from "@/lib/constants";
 
 export function FloatingContact() {
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col gap-3 pb-[env(safe-area-inset-bottom)] pr-[env(safe-area-inset-right)]">
+    <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40 flex flex-col gap-3 pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)]">
       <a
         href={`https://wa.me/${COMPANY.whatsapp}`}
         target="_blank"

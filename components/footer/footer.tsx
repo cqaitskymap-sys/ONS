@@ -1,21 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, Share2, Globe, MessageSquare, ArrowRight } from "lucide-react";
-import { COMPANY, NAV_LINKS, SERVICES } from "@/lib/constants";
+import { COMPANY, NAV_LINKS, SERVICES, NEWSLETTER_INTERESTS, FOOTER_RESOURCE_LINKS } from "@/lib/constants";
+import { newsletterSchema, type NewsletterData } from "@/lib/validations";
 import { Logo } from "@/components/brand/logo";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 
 export function Footer() {
-  const [email, setEmail] = useState("");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<NewsletterData>({
+    resolver: zodResolver(newsletterSchema),
+  });
 
-  const handleNewsletter = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
+  const onSubmit = async (data: NewsletterData) => {
+    const res = await fetch("/api/newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) {
+      toast.error("Subscription failed. Please try again.");
+      return;
+    }
+
     toast.success("Thank you for subscribing!");
-    setEmail("");
+    reset();
   };
 
   return (
@@ -64,6 +83,19 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+            <h4 className="font-bold mb-4 sm:mb-6 mt-8">Resources</h4>
+            <ul className="space-y-3">
+              {FOOTER_RESOURCE_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Services */}
@@ -71,7 +103,7 @@ export function Footer() {
             <h4 className="font-bold mb-4 sm:mb-6">Services</h4>
             <ul className="space-y-3">
               {SERVICES.map((service) => (
-                <li key={service.title}>
+                <li key={service.id}>
                   <Link
                     href={service.href}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -110,26 +142,61 @@ export function Footer() {
             </ul>
 
             <h4 className="font-bold mb-4 text-sm">Newsletter</h4>
-            <form onSubmit={handleNewsletter} className="flex flex-col sm:flex-row gap-2 min-w-0">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
-                className="flex-1 min-w-0 px-4 py-2.5 min-h-11 rounded-xl glass text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
-                required
-                suppressHydrationWarning
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                type="submit"
-                className="px-4 py-2.5 min-h-11 min-w-11 rounded-xl bg-primary text-primary-foreground shrink-0 self-end sm:self-auto"
-                aria-label="Subscribe to newsletter"
-                suppressHydrationWarning
-              >
-                <ArrowRight className="w-4 h-4" />
-              </motion.button>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 min-w-0">
+              <div className="flex flex-col sm:flex-row gap-2">
+                <input
+                  type="email"
+                  {...register("email")}
+                  placeholder="Your email"
+                  className={cn(
+                    "flex-1 min-w-0 px-4 py-2.5 min-h-11 rounded-xl glass text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50",
+                    errors.email && "ring-1 ring-destructive"
+                  )}
+                  suppressHydrationWarning
+                />
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-4 py-2.5 min-h-11 min-w-11 rounded-xl bg-primary text-primary-foreground shrink-0 self-end sm:self-auto disabled:opacity-70"
+                  aria-label="Subscribe to newsletter"
+                  suppressHydrationWarning
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </motion.button>
+              </div>
+              {errors.email && (
+                <p className="text-xs text-destructive">{errors.email.message}</p>
+              )}
+
+              <div className="flex flex-wrap gap-x-4 gap-y-2">
+                {NEWSLETTER_INTERESTS.map((interest) => (
+                  <label key={interest.value} className="flex items-center gap-1.5 text-xs text-muted-foreground cursor-pointer">
+                    <input
+                      type="checkbox"
+                      value={interest.value}
+                      {...register("interests")}
+                      className="rounded border-white/20 bg-transparent accent-primary"
+                    />
+                    {interest.label}
+                  </label>
+                ))}
+              </div>
+
+              <label className="flex items-start gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  {...register("consent")}
+                  className="mt-0.5 rounded border-white/20 bg-transparent accent-primary"
+                />
+                <span className="text-xs text-muted-foreground">
+                  I agree to receive updates from {COMPANY.name}
+                </span>
+              </label>
+              {errors.consent && (
+                <p className="text-xs text-destructive">{errors.consent.message}</p>
+              )}
             </form>
           </div>
         </div>
@@ -141,7 +208,8 @@ export function Footer() {
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-muted-foreground">
             <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
-            <Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link>
+            <Link href="/regulatory" className="hover:text-primary transition-colors">Regulatory</Link>
+            <Link href="/get-quote" className="hover:text-primary transition-colors">Get a Quote</Link>
           </div>
         </div>
       </div>

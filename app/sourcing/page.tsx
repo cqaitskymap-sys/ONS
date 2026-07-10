@@ -7,7 +7,10 @@ import { GlowCard } from "@/components/cards/glow-card";
 import { GlassCard } from "@/components/cards/glass-card";
 import { Timeline } from "@/components/ui/timeline";
 import { CTASection } from "@/components/sections/cta-section";
-import { SOURCING_MATERIALS } from "@/lib/constants";
+import { PageBanner } from "@/components/sections/page-banner";
+import { ImageFeatureSection } from "@/components/sections/image-feature-section";
+import { ImageStripSection } from "@/components/sections/image-strip-section";
+import { SOURCING_MATERIALS, PAGE_IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Pharma Sourcing & Packaging",
@@ -95,16 +98,24 @@ const whyChooseUs = [
 export default function SourcingPage() {
   return (
     <>
-      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary/5 to-transparent" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
-          <SectionTitle
-            badge="Sourcing"
-            title="Pharmaceutical Sourcing"
-            subtitle="We are a specialized pharmaceutical sourcing and supply-chain partner providing comprehensive solutions for APIs, excipients, and pharmaceutical packaging components across India — with full quality assurance at every step."
-          />
-        </div>
-      </section>
+      <PageBanner
+        badge="Sourcing"
+        title="Pharmaceutical Sourcing"
+        subtitle="We are a specialized pharmaceutical sourcing and supply-chain partner providing comprehensive solutions for APIs, excipients, and pharmaceutical packaging components across India — with full quality assurance at every step."
+        image={PAGE_IMAGES.sourcing.banner}
+      />
+
+      <ImageFeatureSection image={PAGE_IMAGES.sourcing.feature}>
+        <h3 className="text-xl font-bold mb-4">APIs, Excipients & Dosage Forms</h3>
+        <p className="text-muted-foreground leading-relaxed mb-4">
+          Strategic sourcing of Active Pharmaceutical Ingredients, compendial-grade excipients,
+          and finished formulations with full GMP compliance and regulatory documentation.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Every supplier undergoes rigorous qualification — GMP audits, documentation review,
+          sample testing, and ongoing performance monitoring.
+        </p>
+      </ImageFeatureSection>
 
       <section className="pb-12 sm:pb-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
@@ -143,6 +154,13 @@ export default function SourcingPage() {
           </div>
         </div>
       </section>
+
+      <ImageStripSection
+        badge="Packaging"
+        title="Primary Packaging Solutions"
+        subtitle="Pharmaceutical glass vials, ampoules, bottles, and closures — qualified and compliant."
+        images={PAGE_IMAGES.sourcing.strip}
+      />
 
       <section className="py-12 sm:py-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">

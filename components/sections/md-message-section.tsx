@@ -20,15 +20,13 @@ export function MdMessageSection() {
           transition={{ duration: 0.6 }}
           className="max-w-5xl mx-auto glass-strong rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10"
         >
-          <div className="max-w-4xl mx-auto text-center">
-            <Quote className="w-10 h-10 text-primary/20 mb-4 mx-auto" />
-            <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-              {MD_MESSAGE.message}
-            </p>
-            <div className="mt-6">
-              <div className="font-bold text-lg">{MD_MESSAGE.name}</div>
-              <div className="text-sm text-primary">{MD_MESSAGE.title}</div>
-            </div>
+          <Quote className="w-10 h-10 text-primary/20 mb-4" />
+          <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
+            {MD_MESSAGE.message}
+          </p>
+          <div className="mt-6">
+            <div className="font-bold text-lg">{MD_MESSAGE.name}</div>
+            <div className="text-sm text-primary">{MD_MESSAGE.title}</div>
           </div>
         </motion.div>
       </div>

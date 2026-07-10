@@ -29,10 +29,16 @@ export function CTASection() {
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
               <MagneticButton
-                href="/contact"
+                href="/get-quote"
                 className="w-full sm:w-auto bg-primary text-primary-foreground glow-green px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base min-h-11"
               >
-                Get in Touch <ArrowRight className="w-4 h-4" />
+                Get a Quote <ArrowRight className="w-4 h-4" />
+              </MagneticButton>
+              <MagneticButton
+                href="/contact"
+                className="w-full sm:w-auto glass hover:bg-white/10 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base min-h-11"
+              >
+                Contact Us
               </MagneticButton>
               <MagneticButton
                 href="/services"

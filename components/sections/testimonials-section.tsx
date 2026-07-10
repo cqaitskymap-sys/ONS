@@ -35,7 +35,9 @@ export function TestimonialsSection() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold">{t.author}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {t.role}, {t.company}
+                  </div>
                 </div>
               </div>
             </GlassCard>

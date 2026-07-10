@@ -8,7 +8,9 @@ import { SectionTitle } from "@/components/ui/section-title";
 import { GlowCard } from "@/components/cards/glow-card";
 import { GlassCard } from "@/components/cards/glass-card";
 import { CTASection } from "@/components/sections/cta-section";
-import { COMPANY, INDUSTRY_DETAILS, WHY_CHOOSE_US } from "@/lib/constants";
+import { PageBanner } from "@/components/sections/page-banner";
+import { CardImage } from "@/components/ui/card-image";
+import { COMPANY, INDUSTRY_DETAILS, WHY_CHOOSE_US, PAGE_IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -26,16 +28,12 @@ const whyIconMap: Record<string, React.ComponentType<{ className?: string }>> = 
 export default function IndustriesPage() {
   return (
     <>
-      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
-          <SectionTitle
-            badge="Industries"
-            title="Sectors We Serve"
-            subtitle="Deep domain expertise across pharmaceutical and life sciences industries — tailored solutions for every regulatory landscape."
-          />
-        </div>
-      </section>
+      <PageBanner
+        badge="Industries"
+        title="Sectors We Serve"
+        subtitle="Deep domain expertise across pharmaceutical and life sciences industries — tailored solutions for every regulatory landscape."
+        image={PAGE_IMAGES.industries.banner}
+      />
 
       <section className="pb-12 sm:pb-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
@@ -47,7 +45,9 @@ export default function IndustriesPage() {
                   key={industry.title}
                   delay={i * 0.1}
                   glowColor={i % 3 === 0 ? "green" : i % 3 === 1 ? "blue" : "purple"}
+                  className="group/card overflow-hidden"
                 >
+                  <CardImage image={industry.image} />
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
                       <Icon className="w-7 h-7 text-primary" />
@@ -68,8 +68,14 @@ export default function IndustriesPage() {
                     ))}
                   </ul>
                   <Link
+                    href={`/industries/${industry.slug}`}
+                    className="inline-flex items-center gap-1 text-sm text-primary mt-6 mr-4 hover:gap-2 transition-all"
+                  >
+                    Learn more <ArrowRight className="w-3 h-3" />
+                  </Link>
+                  <Link
                     href="/contact"
-                    className="inline-flex items-center gap-1 text-sm text-primary mt-6 hover:gap-2 transition-all"
+                    className="inline-flex items-center gap-1 text-sm text-muted-foreground mt-6 hover:text-primary hover:gap-2 transition-all"
                   >
                     Discuss your needs <ArrowRight className="w-3 h-3" />
                   </Link>

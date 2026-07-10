@@ -5,6 +5,7 @@ import { LoadingScreen } from "@/components/layout/loading-screen";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { FloatingContact } from "@/components/layout/floating-contact";
+import { ChatbotWidget } from "@/components/chatbot/chatbot-widget";
 import { Spotlight } from "@/components/ui/spotlight";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -18,6 +19,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <Spotlight />
       <div className="noise relative z-10 overflow-x-clip">{children}</div>
       <ScrollToTop />
+      <ChatbotWidget />
       <FloatingContact />
       <Toaster position="top-right" theme="dark" richColors />
     </>

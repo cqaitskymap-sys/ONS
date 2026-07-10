@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { SectionTitle } from "@/components/ui/section-title";
 import { FAQ } from "@/components/ui/faq";
 import { GlassCard } from "@/components/cards/glass-card";
 import { CTASection } from "@/components/sections/cta-section";
-import { COMPANY, FAQ_ITEMS } from "@/lib/constants";
+import { PageBanner } from "@/components/sections/page-banner";
+import { COMPANY, FAQ_ITEMS, PAGE_IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -35,15 +35,12 @@ export default function FAQPage() {
 
   return (
     <>
-      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
-          <SectionTitle
-            badge="FAQ"
-            title="Frequently Asked Questions"
-            subtitle="Find answers to common questions about our services, processes, and how we can help your organization."
-          />
-        </div>
-      </section>
+      <PageBanner
+        badge="FAQ"
+        title="Frequently Asked Questions"
+        subtitle="Find answers to common questions about our services, processes, and how we can help your organization."
+        image={PAGE_IMAGES.faq.banner}
+      />
 
       <section className="pb-12 sm:pb-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl min-w-0">

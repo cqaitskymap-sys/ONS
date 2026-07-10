@@ -9,8 +9,10 @@ import {
   Workflow,
   ArrowRight,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { GlassCard } from "@/components/cards/glass-card";
+import { SERVICES } from "@/lib/constants";
 import type { ServiceDetail } from "@/lib/service-details";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -26,9 +28,25 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function ServiceDetailBlock({ service }: { service: ServiceDetail }) {
   const Icon = iconMap[service.icon] || Building2;
+  const image = SERVICES.find((s) => s.id === service.id)?.image;
 
   return (
     <section className="py-6 sm:py-8">
+      {image && (
+        <div className="relative rounded-2xl overflow-hidden aspect-[21/9] mb-8 sm:mb-10">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            priority
+            className="object-cover"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            quality={85}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
+        </div>
+      )}
+
       <div className="flex flex-col sm:flex-row items-start gap-4 mb-6 sm:mb-8">
         <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
           <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
@@ -79,7 +97,7 @@ export function ServiceDetailBlock({ service }: { service: ServiceDetail }) {
 
       <div className="mt-8">
         <Link
-          href="/contact"
+          href={`/contact?service=${service.id}`}
           className="inline-flex items-center gap-1 text-sm text-primary hover:gap-2 transition-all"
         >
           Enquire about {service.title} <ArrowRight className="w-3 h-3" />

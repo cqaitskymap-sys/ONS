@@ -3,8 +3,10 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlassCard } from "@/components/cards/glass-card";
 import { FAQ } from "@/components/ui/faq";
-import { ContactForm } from "@/components/sections/contact-form";
-import { COMPANY, FAQ_ITEMS } from "@/lib/constants";
+import { ContactFormWithParams } from "@/components/sections/contact-form-with-params";
+import { PageBanner } from "@/components/sections/page-banner";
+import { ImageFeatureSection } from "@/components/sections/image-feature-section";
+import { COMPANY, FAQ_ITEMS, PAGE_IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -21,15 +23,20 @@ const contactCards = [
 export default function ContactPage() {
   return (
     <>
-      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
-          <SectionTitle
-            badge="Contact"
-            title="Let's Connect"
-            subtitle="Ready to elevate your pharmaceutical operations? Reach out and our team will respond within 24 hours."
-          />
-        </div>
-      </section>
+      <PageBanner
+        badge="Contact"
+        title="Let's Connect"
+        subtitle="Ready to elevate your pharmaceutical operations? Reach out and our team will respond within 24 hours."
+        image={PAGE_IMAGES.contact.banner}
+      />
+
+      <ImageFeatureSection image={PAGE_IMAGES.contact.feature} reverse className="pb-0">
+        <h3 className="text-xl font-bold mb-4">Your Pharma Partner in Silvassa</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          Visit our office or connect via phone, email, or WhatsApp. Our team of regulatory,
+          quality, and sourcing experts is ready to discuss your project requirements.
+        </p>
+      </ImageFeatureSection>
 
       {/* Contact Cards */}
       <section className="pb-12 sm:pb-16 overflow-hidden">
@@ -50,7 +57,7 @@ export default function ContactPage() {
             {/* Form */}
             <div className="min-w-0">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send Us a Message</h3>
-              <ContactForm />
+              <ContactFormWithParams />
             </div>
 
             {/* Map & Hours */}

@@ -8,6 +8,7 @@ import {
 import { SERVICES } from "@/lib/constants";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlowCard } from "@/components/cards/glow-card";
+import { CardImage } from "@/components/ui/card-image";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Building2, ClipboardCheck, SearchCheck, Award, GraduationCap, Package, Workflow,
@@ -28,7 +29,8 @@ export function ServicesSection() {
           {SERVICES.map((service, i) => {
             const Icon = iconMap[service.icon] || Building2;
             return (
-              <GlowCard key={service.title} delay={i * 0.1} glowColor={i % 3 === 0 ? "green" : i % 3 === 1 ? "blue" : "purple"}>
+              <GlowCard key={service.title} delay={i * 0.1} glowColor={i % 3 === 0 ? "green" : i % 3 === 1 ? "blue" : "purple"} className="group/card overflow-hidden">
+                <CardImage image={service.image} />
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>

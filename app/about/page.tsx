@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import {
   Target, Eye, Heart, Award, Users, Trophy,
-  Building2, ClipboardCheck, SearchCheck, GraduationCap, Package, UserPlus,
+  GraduationCap,
 } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlassCard } from "@/components/cards/glass-card";
@@ -9,19 +9,20 @@ import { GlowCard } from "@/components/cards/glow-card";
 import { Timeline } from "@/components/ui/timeline";
 import { CTASection } from "@/components/sections/cta-section";
 import { MdMessageSection } from "@/components/sections/md-message-section";
+import { PageBanner } from "@/components/sections/page-banner";
+import { ImageFeatureSection } from "@/components/sections/image-feature-section";
+import { ImageStripSection } from "@/components/sections/image-strip-section";
+import { AboutCoreServicesSection } from "@/components/sections/about-core-services-section";
 import {
   COMPANY, TIMELINE, STATS,
-  ABOUT_SYNOPSIS, ABOUT_CORE_SERVICES, ABOUT_TEAM_EXPERTISE,
+  ABOUT_SYNOPSIS, ABOUT_TEAM_EXPERTISE, CERTIFICATIONS,
+  PAGE_IMAGES,
 } from "@/lib/constants";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 export const metadata: Metadata = {
   title: "About Us",
   description: `Learn about ${COMPANY.name} — end-to-end pharmaceutical consultancy spanning facility design, QMS, validation, regulatory compliance, talent acquisition, and strategic sourcing.`,
-};
-
-const coreServiceIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  Building2, Award, ClipboardCheck, SearchCheck, UserPlus, Package,
 };
 
 const values = [
@@ -34,35 +35,29 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 md:pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative min-w-0">
-          <SectionTitle
-            badge="About Us"
-            title="Pharmaceutical Consultancy"
-            subtitle={ABOUT_SYNOPSIS.intro}
-          />
+      <PageBanner
+        badge="About Us"
+        title="Pharmaceutical Consultancy"
+        subtitle={ABOUT_SYNOPSIS.intro}
+        image={PAGE_IMAGES.about.banner}
+      />
 
-          <div className="max-w-4xl mx-auto mb-12 sm:mb-16">
-            <h3 className="text-lg sm:text-xl font-bold mb-6 text-center">Our Core Services</h3>
-            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-              {ABOUT_CORE_SERVICES.map((service, i) => {
-                const Icon = coreServiceIcons[service.icon];
-                return (
-                  <GlassCard key={service.title} delay={i * 0.08}>
-                    <div className="flex items-start gap-3">
-                      {Icon && <Icon className="w-5 h-5 text-primary shrink-0 mt-0.5" />}
-                      <div>
-                        <h4 className="font-semibold mb-1.5 text-sm sm:text-base">{service.title}</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-                      </div>
-                    </div>
-                  </GlassCard>
-                );
-              })}
-            </div>
-          </div>
+      <ImageFeatureSection image={PAGE_IMAGES.about.feature}>
+        <h3 className="text-xl sm:text-2xl font-bold mb-4">Excellence Across the Pharma Lifecycle</h3>
+        <p className="text-muted-foreground leading-relaxed mb-4">
+          From GMP-compliant facility design to validation, audits, and strategic sourcing — we support
+          pharmaceutical manufacturers at every stage of operations.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Our multidisciplinary team brings deep expertise in regulatory compliance, quality systems,
+          and domestic supply chain management across India&apos;s pharmaceutical hubs.
+        </p>
+      </ImageFeatureSection>
 
+      <AboutCoreServicesSection />
+
+      <section className="pb-10 sm:pb-12 md:pb-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-lg sm:text-xl font-bold mb-4 text-center">Our Multidisciplinary Team</h3>
             <p className="text-muted-foreground text-center mb-6 leading-relaxed">
@@ -85,6 +80,13 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <ImageStripSection
+        badge="Our Facilities"
+        title="Where Quality Meets Compliance"
+        subtitle="State-of-the-art laboratories, cleanrooms, and manufacturing environments we help design, validate, and audit."
+        images={PAGE_IMAGES.about.strip}
+      />
 
       <MdMessageSection />
 
@@ -132,6 +134,21 @@ export default function AboutPage() {
                 <v.icon className="w-8 h-8 text-primary mb-4" />
                 <h3 className="font-bold mb-2">{v.title}</h3>
                 <p className="text-sm text-muted-foreground">{v.description}</p>
+              </GlassCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications */}
+      <section className="py-12 sm:py-16 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
+          <SectionTitle badge="Expertise" title="Compliance Frameworks" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {CERTIFICATIONS.map((cert, i) => (
+              <GlassCard key={cert.title} delay={i * 0.08}>
+                <h3 className="font-bold mb-2">{cert.title}</h3>
+                <p className="text-sm text-muted-foreground">{cert.description}</p>
               </GlassCard>
             ))}
           </div>

@@ -6,9 +6,11 @@ import { IndustriesSection } from "@/components/sections/industries-section";
 import { TimelineSection } from "@/components/sections/timeline-section";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { ProcessSection } from "@/components/sections/process-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
-import { FAQSection } from "@/components/sections/faq-section";
 import { VisualShowcaseSection } from "@/components/sections/visual-showcase-section";
+import { MdMessagePreview } from "@/components/sections/md-message-preview";
+import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { LatestInsightsSection } from "@/components/sections/latest-insights-section";
+import { FAQSection } from "@/components/sections/faq-section";
 import { CTASection } from "@/components/sections/cta-section";
 
 export default function HomePage() {
@@ -23,7 +25,9 @@ export default function HomePage() {
       <WhyChooseUs />
       <ProcessSection />
       <VisualShowcaseSection />
+      <MdMessagePreview />
       <TestimonialsSection />
+      <LatestInsightsSection />
       <FAQSection />
       <CTASection />
     </>
