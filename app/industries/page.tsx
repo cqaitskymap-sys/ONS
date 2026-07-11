@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Pill, Stethoscope, Heart, Package, ArrowRight, CheckCircle,
-  Brain, Network, Layers, Target,
+  Brain, Network, Layers, Target, FlaskConical,
 } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlowCard } from "@/components/cards/glow-card";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Pill, Stethoscope, Heart, Package,
+  Pill, Stethoscope, Heart, Package, FlaskConical,
 };
 
 const whyIconMap: Record<string, React.ComponentType<{ className?: string }>> = {

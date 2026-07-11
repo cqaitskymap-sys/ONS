@@ -112,7 +112,7 @@ export default function SourcingPage() {
           and finished formulations with full GMP compliance and regulatory documentation.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Every supplier undergoes rigorous qualification — GMP audits, documentation review,
+          Every manufacturer undergoes rigorous qualification by LoMars Pharma — GMP audits, documentation review,
           sample testing, and ongoing performance monitoring.
         </p>
       </ImageFeatureSection>

@@ -332,7 +332,7 @@ export const SERVICES = [
       "Pre-regulatory inspection assessments to identify gaps and strengthen inspection readiness.",
     icon: "SearchCheck",
     href: "/services/pre-inspection",
-    image: IMAGES.environmentalMonitoring,
+    image: IMAGES.processEngineering,
   },
   {
     id: "qms",
@@ -359,7 +359,7 @@ export const SERVICES = [
       "Optimize operations for higher efficiency, cost saving, and reduce risks.",
     icon: "Workflow",
     href: "/services/process-re-engineering",
-    image: IMAGES.processEngineering,
+    image: IMAGES.environmentalMonitoring,
   },
   {
     id: "sourcing",
@@ -384,6 +384,7 @@ export const SERVICES = [
 export const INDUSTRIES = [
   { title: "Pharmaceuticals", icon: "Pill" },
   { title: "Medical Devices", icon: "Stethoscope" },
+  { title: "API & Excipient", icon: "FlaskConical" },
   { title: "Veterinary", icon: "Heart" },
   { title: "Primary Packaging", icon: "Package" },
 ] as const;
@@ -412,6 +413,18 @@ export const INDUSTRY_DETAILS = [
     capabilities: ["ISO 13485 QMS", "CE marking", "Regulatory submissions", "Risk management (ISO 14971)"],
     successStory:
       "Implemented ISO 13485 QMS for a Class II device manufacturer, enabling successful CE marking within 8 months.",
+  },
+  {
+    slug: "api-excipient",
+    title: "API & Excipient",
+    icon: "FlaskConical",
+    image: IMAGES.apiPills,
+    featureImage: IMAGES.sourcingWarehouse,
+    description:
+      "Strategic sourcing and quality support for Active Pharmaceutical Ingredients (APIs) and excipients — from vendor qualification to regulatory documentation.",
+    capabilities: ["API & excipient sourcing", "Vendor qualification & audits", "DMF & COA review", "GMP compliance for raw materials"],
+    successStory:
+      "Identified, audited, and qualified three domestic API manufacturers with complete DMF documentation and GMP compliance for a formulation client.",
   },
   {
     slug: "veterinary",

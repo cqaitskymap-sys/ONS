@@ -31,7 +31,7 @@ export default function ContactPage() {
       />
 
       <ImageFeatureSection image={PAGE_IMAGES.contact.feature} reverse className="pb-0">
-        <h3 className="text-xl font-bold mb-4">Your Pharma Partner in Silvassa</h3>
+        <h3 className="text-xl font-bold mb-4">Your Pharma Partner in India</h3>
         <p className="text-muted-foreground leading-relaxed">
           Visit our office or connect via phone, email, or WhatsApp. Our team of regulatory,
           quality, and sourcing experts is ready to discuss your project requirements.

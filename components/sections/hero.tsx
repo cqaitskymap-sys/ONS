@@ -31,6 +31,8 @@ const HERO_DESCRIPTION_SHORT =
 const HERO_DESCRIPTION_FULL =
   "End-to-end pharmaceutical consultancy — plant design, GMP audits, QMS implementation, training, and sourcing of API, excipients, packaging materials, and finished products (SVP, LVP, tablets, sachets, capsules, syrups, etc.) across India.";
 
+const HERO_MOBILE_VIDEO_SRC = "/videos/hero-background-mobile.mp4";
+
 function usePrefersReducedMotion() {
   const [reduced, setReduced] = useState(false);
 
@@ -112,6 +114,18 @@ function AuroraBackground() {
         quality={75}
         aria-hidden
       />
+      <video
+        className="absolute inset-0 block h-full w-full object-cover opacity-30 motion-reduce:hidden sm:hidden"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={IMAGES.heroBackground.src}
+        aria-hidden
+      >
+        <source src={HERO_MOBILE_VIDEO_SRC} type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-background/70 sm:bg-background/60" />
       <div className="absolute -top-1/3 left-1/2 -translate-x-1/2 w-[min(100vw,28rem)] h-[min(100vw,28rem)] sm:w-[600px] sm:h-[600px] sm:left-1/4 sm:translate-x-0 rounded-full bg-primary/10 blur-[80px] sm:blur-[120px] animate-pulse" />
       <div className="absolute -bottom-1/4 -right-8 w-[min(90vw,24rem)] h-[min(90vw,24rem)] sm:right-1/4 sm:w-[500px] sm:h-[500px] rounded-full bg-secondary/10 blur-[70px] sm:blur-[100px] animate-pulse [animation-delay:1s]" />

@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Pill, Stethoscope, Heart, Package } from "lucide-react";
+import { Pill, Stethoscope, Heart, Package, FlaskConical } from "lucide-react";
 import { INDUSTRIES } from "@/lib/constants";
 import { SectionTitle } from "@/components/ui/section-title";
 import { GlassCard } from "@/components/cards/glass-card";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Pill, Stethoscope, Heart, Package,
+  Pill, Stethoscope, Heart, Package, FlaskConical,
 };
 
 export function IndustriesSection() {
