@@ -1,8 +1,7 @@
 import Image from "next/image";
-import type { ImageAsset } from "@/lib/constants";
 
 type CardImageProps = {
-  image: ImageAsset;
+  image: { src: string; alt: string };
   className?: string;
 };
 

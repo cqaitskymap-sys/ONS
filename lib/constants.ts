@@ -75,7 +75,7 @@ export const IMAGES = {
   },
   qualityControl: {
     src: "/images/quality-control.jpg",
-    alt: "Pharmaceutical quality control laboratory testing",
+    alt: "Pharmaceutical glass vials and ampoules for quality-controlled drug products",
     width: 3840,
     height: 2160,
   },
@@ -194,35 +194,79 @@ export const IMAGES = {
 
 export type ImageAsset = (typeof IMAGES)[keyof Omit<typeof IMAGES, "portraits">];
 
+/** Local pharmaceutical ambient videos — stored in /public/video (skip oversized assets for autoplay) */
+export const VIDEOS = {
+  hero: "/video/5701383-uhd_4096_2160_25fps.mp4",
+  manufacturing: "/video/34351-402103816_medium.mp4",
+  laboratory: "/video/286443_medium.mp4",
+  cleanroom: "/video/172475-847499816_medium.mp4",
+  warehouse: "/video/27019-361107952_medium.mp4",
+  research: "/video/119967-719443875_medium.mp4",
+  production: "/video/202587-918431513_medium.mp4",
+  quality: "/video/184814-874271896_medium.mp4",
+  packaging: "/video/32314-391434484_medium.mp4",
+  training: "/video/184816-874271901_medium.mp4",
+  consultation: "/video/45675-446485292_medium.mp4",
+  validation: "/video/40967-427876030_medium.mp4",
+  logistics: "/video/164369-830461279_medium.mp4",
+  sterile: "/video/106867-674260860_medium.mp4",
+  compliance: "/video/37515-414085991_medium.mp4",
+  careers: "/video/94427-642182202_medium.mp4",
+  showcaseA: "/video/21937-322869318_medium.mp4",
+  showcaseB: "/video/49814-458438872_medium.mp4",
+  showcaseC: "/video/6973-197914400_medium.mp4",
+  cta: "/video/40967-427876030_medium.mp4",
+} as const;
+
+export type BannerAsset = ImageAsset & { video: string };
+
 /** Unique image per page — no image reused across sections */
 export const PAGE_IMAGES = {
   about: {
-    banner: IMAGES.teamCollaboration,
+    banner: { ...IMAGES.teamCollaboration, video: VIDEOS.consultation },
     feature: IMAGES.pharmaConsultation,
     strip: [IMAGES.facilityDesign, IMAGES.environmentalMonitoring, IMAGES.injectableManufacturing, IMAGES.microbiologyLab],
   },
   services: {
-    banner: IMAGES.pharmaProductionLine,
+    banner: { ...IMAGES.pharmaProductionLine, video: VIDEOS.production },
     strip: [IMAGES.gmpClassroom, IMAGES.tabletCapsuleProduction, IMAGES.veterinaryPharma, IMAGES.teamCollaboration],
   },
-  industries: { banner: IMAGES.pharmaLaboratory },
-  training: { banner: IMAGES.training, feature: IMAGES.veterinaryPharma },
+  industries: { banner: { ...IMAGES.pharmaLaboratory, video: VIDEOS.laboratory } },
+  training: {
+    banner: { ...IMAGES.training, video: VIDEOS.training },
+    feature: IMAGES.veterinaryPharma,
+  },
   sourcing: {
-    banner: IMAGES.pharmaLogistics,
+    banner: { ...IMAGES.pharmaLogistics, video: VIDEOS.logistics },
     feature: IMAGES.apiPills,
     strip: [IMAGES.glassPackaging, IMAGES.sourcingWarehouse],
   },
-  regulatory: { banner: IMAGES.auditCompliance, feature: IMAGES.regulatoryDesk },
-  careers: { banner: IMAGES.careersWorkplace, feature: IMAGES.tabletCapsuleProduction },
-  caseStudies: { banner: IMAGES.validation },
-  contact: { banner: IMAGES.labPrimary, feature: IMAGES.environmentalMonitoring },
-  getQuote: { banner: IMAGES.cleanroom, feature: IMAGES.facilityDesign },
+  regulatory: {
+    banner: { ...IMAGES.auditCompliance, video: VIDEOS.compliance },
+    feature: IMAGES.regulatoryDesk,
+  },
+  careers: {
+    banner: { ...IMAGES.careersWorkplace, video: VIDEOS.careers },
+    feature: IMAGES.tabletCapsuleProduction,
+  },
+  caseStudies: { banner: { ...IMAGES.validation, video: VIDEOS.validation } },
+  contact: {
+    banner: { ...IMAGES.labPrimary, video: VIDEOS.research },
+    feature: IMAGES.environmentalMonitoring,
+  },
+  getQuote: {
+    banner: { ...IMAGES.cleanroom, video: VIDEOS.cleanroom },
+    feature: IMAGES.facilityDesign,
+  },
   resources: {
-    banner: IMAGES.qualityControl,
+    banner: { ...IMAGES.qualityControl, video: VIDEOS.quality },
     strip: [IMAGES.microbiologyLab, IMAGES.injectableManufacturing, IMAGES.gmpClassroom, IMAGES.veterinaryPharma],
   },
-  insights: { banner: IMAGES.labResearch, feature: IMAGES.biotechResearch },
-  faq: { banner: IMAGES.medicalDevices },
+  insights: {
+    banner: { ...IMAGES.labResearch, video: VIDEOS.research },
+    feature: IMAGES.biotechResearch,
+  },
+  faq: { banner: { ...IMAGES.medicalDevices, video: VIDEOS.packaging } },
 } as const;
 
 export const COMPANY = {
@@ -394,7 +438,7 @@ export const INDUSTRY_DETAILS = [
     slug: "pharmaceuticals",
     title: "Pharmaceuticals",
     icon: "Pill",
-    image: IMAGES.tabletCapsuleProduction,
+    image: { ...IMAGES.tabletCapsuleProduction, video: VIDEOS.production },
     featureImage: IMAGES.injectableManufacturing,
     description:
       "Full-spectrum support for small molecules, generics, and innovative drug development — from dossier preparation to post-approval compliance.",
@@ -406,7 +450,7 @@ export const INDUSTRY_DETAILS = [
     slug: "medical-devices",
     title: "Medical Devices",
     icon: "Stethoscope",
-    image: IMAGES.medicalDevices,
+    image: { ...IMAGES.medicalDevices, video: VIDEOS.packaging },
     featureImage: IMAGES.regulatoryDesk,
     description:
       "ISO 13485 implementation and CE marking guidance for Class I–III medical devices.",
@@ -418,7 +462,7 @@ export const INDUSTRY_DETAILS = [
     slug: "api-excipient",
     title: "API & Excipient",
     icon: "FlaskConical",
-    image: IMAGES.apiPills,
+    image: { ...IMAGES.apiPills, video: VIDEOS.warehouse },
     featureImage: IMAGES.sourcingWarehouse,
     description:
       "Strategic sourcing and quality support for Active Pharmaceutical Ingredients (APIs) and excipients — from vendor qualification to regulatory documentation.",
@@ -430,7 +474,7 @@ export const INDUSTRY_DETAILS = [
     slug: "veterinary",
     title: "Veterinary",
     icon: "Heart",
-    image: IMAGES.veterinaryPharma,
+    image: { ...IMAGES.veterinaryPharma, video: VIDEOS.sterile },
     featureImage: IMAGES.biotechResearch,
     description:
       "Regulatory and quality support for veterinary pharmaceuticals, feed additives, and animal health products.",
@@ -442,7 +486,7 @@ export const INDUSTRY_DETAILS = [
     slug: "primary-packaging",
     title: "Primary Packaging",
     icon: "Package",
-    image: IMAGES.glassPackaging,
+    image: { ...IMAGES.glassPackaging, video: VIDEOS.showcaseA },
     featureImage: IMAGES.pharmaLogistics,
     description:
       "End-to-end support for primary packaging materials like, bottles, vials, ampoules, and closures.",

@@ -14,6 +14,7 @@ import {
   PREFERRED_CONTACT,
 } from "@/lib/constants";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { submitToWeb3Forms } from "@/lib/web3forms";
 import { cn } from "@/lib/utils";
 
 const quoteFormSchema = z.object({
@@ -51,21 +52,21 @@ export function QuoteForm() {
   });
 
   const onSubmit = async (data: QuoteFormData) => {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...data,
-        inquiryType: "quote",
-        designation: "",
-        city: "",
-        industry: "",
-        regulatoryMarket: "",
-        position: "",
-      }),
-    });
-
-    if (!res.ok) {
+    try {
+      await submitToWeb3Forms({
+        subject: `[LoMars Pharma] Quote — ${data.name}`,
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        company: data.company,
+        inquiry_type: "quote",
+        service: data.service,
+        facility_type: data.facilityType || "",
+        timeline: data.timeline || "",
+        preferred_contact: data.preferredContact || "",
+        message: data.message,
+      });
+    } catch {
       toast.error("Failed to submit quote request. Please try again.");
       return;
     }

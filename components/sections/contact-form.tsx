@@ -7,6 +7,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import Link from "next/link";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations";
+import { submitToWeb3Forms } from "@/lib/web3forms";
 import {
   SERVICES,
   INQUIRY_TYPES,
@@ -57,13 +58,26 @@ export function ContactForm({
   const isCareerInquiry = inquiryType === "careers";
 
   const onSubmit = async (data: ContactFormData) => {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-
-    if (!res.ok) {
+    try {
+      await submitToWeb3Forms({
+        subject: `[LoMars Pharma] ${data.inquiryType} — ${data.name}`,
+        name: data.name,
+        email: data.email,
+        phone: data.phone || "",
+        company: data.company || "",
+        designation: data.designation || "",
+        city: data.city || "",
+        inquiry_type: data.inquiryType,
+        service: data.service,
+        industry: data.industry || "",
+        regulatory_market: data.regulatoryMarket || "",
+        facility_type: data.facilityType || "",
+        timeline: data.timeline || "",
+        preferred_contact: data.preferredContact || "",
+        position: data.position || "",
+        message: data.message,
+      });
+    } catch {
       toast.error("Failed to send message. Please try again or email us directly.");
       return;
     }

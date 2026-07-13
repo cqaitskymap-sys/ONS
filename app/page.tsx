@@ -11,6 +11,7 @@ import { MdMessagePreview } from "@/components/sections/md-message-preview";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { LatestInsightsSection } from "@/components/sections/latest-insights-section";
 import { FAQSection } from "@/components/sections/faq-section";
+import { ContactSection } from "@/components/sections/contact-section";
 import { CTASection } from "@/components/sections/cta-section";
 
 export default function HomePage() {
@@ -29,6 +30,7 @@ export default function HomePage() {
       <TestimonialsSection />
       <LatestInsightsSection />
       <FAQSection />
+      <ContactSection />
       <CTASection />
     </>
   );

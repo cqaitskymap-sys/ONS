@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { VideoBackdrop } from "@/components/ui/background-video";
+import { VIDEOS } from "@/lib/constants";
 
 export function CTASection() {
   return (
@@ -14,6 +16,7 @@ export function CTASection() {
           viewport={{ once: true }}
           className="relative rounded-2xl sm:rounded-3xl overflow-hidden glass-strong p-6 sm:p-10 md:p-12 lg:p-16 text-center"
         >
+          <VideoBackdrop src={VIDEOS.cta} variant="cta" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10" />
           <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-primary/10 blur-[80px]" />
           <div className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-secondary/10 blur-[80px]" />
