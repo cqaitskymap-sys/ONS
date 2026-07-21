@@ -26,9 +26,10 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "border-b border-white/10 backdrop-blur-xl",
         scrolled
-          ? "glass-strong py-2 sm:py-3 shadow-lg shadow-black/20"
-          : "py-2.5 sm:py-4 max-lg:glass-strong max-lg:shadow-md max-lg:shadow-black/15 lg:bg-transparent"
+          ? "bg-background/98 py-2 sm:py-3 shadow-lg shadow-black/40"
+          : "bg-background/95 py-2.5 sm:py-4 shadow-md shadow-black/30"
       )}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 min-w-0">
@@ -47,10 +48,11 @@ export function Navbar() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "flex items-center gap-1 px-4 py-2 rounded-xl text-sm font-medium transition-all",
+                    "flex items-center gap-1 px-4 py-2 rounded-xl text-sm font-semibold transition-all",
+                    "drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]",
                     pathname === link.href
                       ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                      : "text-foreground/90 hover:text-foreground hover:bg-white/10"
                   )}
                 >
                   {link.label}
@@ -89,10 +91,11 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative px-4 py-2 rounded-xl text-sm font-medium transition-all",
+                  "relative px-4 py-2 rounded-xl text-sm font-semibold transition-all",
+                  "drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]",
                   pathname === link.href
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                    : "text-foreground/90 hover:text-foreground hover:bg-white/10"
                 )}
               >
                 {link.label}

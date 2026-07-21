@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type VideoBackdropVariant = "hero" | "banner" | "cta";
@@ -8,7 +10,23 @@ type VideoBackdropProps = {
   src: string;
   variant?: VideoBackdropVariant;
   className?: string;
+  mobileImage?: { src: string; alt: string };
+  desktopBreakpoint?: number;
 };
+
+function useIsDesktop(breakpoint = 768) {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia(`(min-width: ${breakpoint}px)`);
+    setIsDesktop(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, [breakpoint]);
+
+  return isDesktop;
+}
 
 const VARIANT_OVERLAYS: Record<VideoBackdropVariant, string[]> = {
   hero: [
@@ -29,24 +47,49 @@ const VARIANT_OVERLAYS: Record<VideoBackdropVariant, string[]> = {
   ],
 };
 
-export function VideoBackdrop({ src, variant = "banner", className }: VideoBackdropProps) {
+function BackdropOverlays({ variant }: { variant: VideoBackdropVariant }) {
   return (
-    <div className={cn("absolute inset-0 overflow-hidden", className)} aria-hidden>
-      <video
-        className="video-ken-burns absolute inset-0 h-full w-full object-cover saturate-[1.15] contrast-[1.05]"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-      >
-        <source src={src} type="video/mp4" />
-      </video>
+    <>
       <div className="absolute inset-0 bg-background/15 mix-blend-multiply" />
       {VARIANT_OVERLAYS[variant].map((overlay) => (
         <div key={overlay} className={cn("absolute inset-0 pointer-events-none", overlay)} />
       ))}
       <div className="video-grain absolute inset-0 pointer-events-none opacity-50" />
+    </>
+  );
+}
+
+const MEDIA_CLASS =
+  "video-ken-burns absolute inset-0 h-full w-full object-cover saturate-[1.15] contrast-[1.05]";
+
+export function VideoBackdrop({
+  src,
+  variant = "banner",
+  className,
+  mobileImage,
+  desktopBreakpoint = 768,
+}: VideoBackdropProps) {
+  const isDesktop = useIsDesktop(desktopBreakpoint);
+  const showVideo = !mobileImage || isDesktop;
+
+  return (
+    <div className={cn("absolute inset-0 overflow-hidden", className)} aria-hidden>
+      {showVideo ? (
+        <video className={MEDIA_CLASS} autoPlay muted loop playsInline preload="auto">
+          <source src={src} type="video/mp4" />
+        </video>
+      ) : (
+        <Image
+          src={mobileImage.src}
+          alt=""
+          fill
+          priority
+          className={MEDIA_CLASS}
+          sizes="100vw"
+          quality={85}
+        />
+      )}
+      <BackdropOverlays variant={variant} />
     </div>
   );
 }

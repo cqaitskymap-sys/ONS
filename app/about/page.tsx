@@ -12,7 +12,6 @@ import { MdMessageSection } from "@/components/sections/md-message-section";
 import { PageBanner } from "@/components/sections/page-banner";
 import { ImageFeatureSection } from "@/components/sections/image-feature-section";
 import { ImageStripSection } from "@/components/sections/image-strip-section";
-import { AboutCoreServicesSection } from "@/components/sections/about-core-services-section";
 import {
   COMPANY, TIMELINE, STATS,
   ABOUT_SYNOPSIS, ABOUT_TEAM_EXPERTISE, CERTIFICATIONS,
@@ -54,7 +53,6 @@ export default function AboutPage() {
         </p>
       </ImageFeatureSection>
 
-      <AboutCoreServicesSection />
 
       <section className="pb-10 sm:pb-12 md:pb-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
@@ -82,7 +80,7 @@ export default function AboutPage() {
       </section>
 
       <ImageStripSection
-        badge="Our Facilities"
+        badge="LoMars"
         title="Where Quality Meets Compliance"
         subtitle="State-of-the-art laboratories, cleanrooms, and manufacturing environments we help design, validate, and audit."
         images={PAGE_IMAGES.about.strip}

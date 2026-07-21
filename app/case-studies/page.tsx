@@ -18,7 +18,7 @@ export default function CaseStudiesPage() {
       <PageBanner
         badge="Case Studies"
         title="Proven Results"
-        subtitle="Real outcomes from pharmaceutical manufacturers, biotech firms, and healthcare companies we've partnered with across India."
+        subtitle="Real outcomes from pharmaceutical manufacturers, and healthcare companies we've partnered with across India."
         image={PAGE_IMAGES.caseStudies.banner}
       />
 
@@ -40,20 +40,27 @@ export default function CaseStudiesPage() {
                   </span>
                 </div>
                 <div className="space-y-3 text-sm">
+                  {"challenge" in study && study.challenge && (
+                    <div>
+                      <span className="font-semibold text-foreground">Challenge: </span>
+                      <span className="text-muted-foreground">{study.challenge}</span>
+                    </div>
+                  )}
+                  {"solution" in study && study.solution && (
+                    <div>
+                      <span className="font-semibold text-foreground">Solution: </span>
+                      <span className="text-muted-foreground">{study.solution}</span>
+                    </div>
+                  )}
                   <div>
-                    <span className="font-semibold text-foreground">Challenge: </span>
-                    <span className="text-muted-foreground">{study.challenge}</span>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-foreground">Solution: </span>
-                    <span className="text-muted-foreground">{study.solution}</span>
+                    <span className="font-semibold text-foreground">Services: </span>
+                    <span className="text-muted-foreground">{study.service}</span>
                   </div>
                   <div>
                     <span className="font-semibold text-foreground">Result: </span>
                     <span className="text-muted-foreground">{study.result}</span>
                   </div>
                 </div>
-                <p className="text-xs text-primary/80 mt-4">{study.service}</p>
               </GlowCard>
             ))}
           </div>

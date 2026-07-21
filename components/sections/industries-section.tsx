@@ -17,7 +17,7 @@ export function IndustriesSection() {
         <SectionTitle
           badge="Industries"
           title="Sectors We Serve"
-          subtitle="Deep expertise across pharmaceutical and life sciences industries in India."
+          subtitle="Deep expertise across Pharmaceutical, Chemical and Life Sciences industries."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {INDUSTRIES.map((industry, i) => {

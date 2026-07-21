@@ -10,7 +10,6 @@ import { contactFormSchema, type ContactFormData } from "@/lib/validations";
 import { submitToWeb3Forms } from "@/lib/web3forms";
 import {
   SERVICES,
-  INQUIRY_TYPES,
   INDUSTRIES,
   COMPLIANCE_STANDARDS,
   FACILITY_TYPES,
@@ -42,32 +41,29 @@ export function ContactForm({
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       service: defaultService,
-      inquiryType: defaultInquiry,
       position: defaultPosition,
     },
   });
 
-  const inquiryType = watch("inquiryType");
-  const isCareerInquiry = inquiryType === "careers";
+  const isCareerInquiry = defaultInquiry === "careers";
 
   const onSubmit = async (data: ContactFormData) => {
     try {
       await submitToWeb3Forms({
-        subject: `[LoMars Pharma] ${data.inquiryType} — ${data.name}`,
+        subject: `[LoMars Pharma] ${defaultInquiry || "Contact"} — ${data.name}`,
         name: data.name,
         email: data.email,
         phone: data.phone || "",
         company: data.company || "",
         designation: data.designation || "",
         city: data.city || "",
-        inquiry_type: data.inquiryType,
+        inquiry_type: defaultInquiry || "contact",
         service: data.service,
         industry: data.industry || "",
         regulatory_market: data.regulatoryMarket || "",
@@ -126,16 +122,6 @@ export function ContactForm({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-        <div>
-          <select {...register("inquiryType")} id="inquiryType" className={selectClass(!!errors.inquiryType)}>
-            <option value="" disabled>Inquiry Type *</option>
-            {INQUIRY_TYPES.map((t) => (
-              <option key={t.value} value={t.value} className="bg-surface">{t.label}</option>
-            ))}
-          </select>
-          {errors.inquiryType && <p className="text-xs text-destructive mt-1">{errors.inquiryType.message}</p>}
-        </div>
-
         <div>
           <select {...register("service")} id="service" className={selectClass(!!errors.service)}>
             <option value="" disabled>Service of Interest *</option>

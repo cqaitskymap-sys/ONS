@@ -31,24 +31,16 @@ const supplyChainSteps = [
 ];
 
 const supplierRegions = [
-  { region: "Gujarat", suppliers: "40+", specialty: "APIs & Formulations" },
-  { region: "Maharashtra", suppliers: "35+", specialty: "APIs & Intermediates" },
-  { region: "Telangana", suppliers: "25+", specialty: "APIs & Biotech" },
-  { region: "Himachal Pradesh", suppliers: "20+", specialty: "Formulations & Excipients" },
-  { region: "Uttarakhand", suppliers: "15+", specialty: "APIs & Packaging" },
+  { region: "Gujarat", suppliers: "40+", specialty: "APIs,Packaging & Formulations" },
+  { region: "Maharashtra", suppliers: "10+", specialty: "APIs,Packaging & Exipients" },
+  { region: "Telangana", suppliers: "25+", specialty: "APIs & Exipients" },
+  { region: "Himachal Pradesh", suppliers: "15+", specialty: "Packaging & Formulations" },
+  // { region: "Punjab", suppliers: "12+", specialty: "APIs,Packaging & Exipients" },,
+  { region: "Uttarakhand", suppliers: "15+", specialty: "Formulations" },
+
 ];
 
 const sourcingServices = [
-  {
-    title: "Raw Material Sourcing (API & Non-API)",
-    items: [
-      "Identification and qualification of reliable domestic suppliers",
-      "Procurement of pharmaceutical-grade raw materials in compliance with regulatory standards",
-      "Vendor audits, quality assessments, and supply-chain risk management",
-      "Documentation support including Certificates of Analysis (CoA), regulatory dossiers, and traceability records",
-      "Cost optimization and strategic sourcing for uninterrupted production",
-    ],
-  },
   {
     title: "API (Active Pharmaceutical Ingredient) Sourcing",
     items: [
@@ -75,6 +67,19 @@ const sourcingServices = [
       "Packaging component qualification and compatibility assessment",
       "Custom sizing, sterilization options, and regulatory-compliant packaging solutions",
       "Support for primary packaging procurement and supply-chain management",
+    ],
+  },
+
+  {
+    title: "Finish Product",
+    items: [
+      "Strategic sourcing and quality support for Pharmaceuticals finish products from WHO certified manufacturing sites, for both Domestic and Export. Dosage form-Tablets,Capsules,Sachet, Ointments, Creams, Liquids, Injectables(LVP & SVP), Dry Powder Injections.",
+      "Plant design & validation",
+      "QMS design, implementation & Evaluation",
+      "Qulification & Validation",
+      "GMP audits",
+      "Pre-inspection audits",
+      "Vendor audits",
     ],
   },
 ];

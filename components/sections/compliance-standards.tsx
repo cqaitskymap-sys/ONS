@@ -17,8 +17,8 @@ const STANDARDS_META: Record<string, { icon: LucideIcon; accent: Accent }> = {
   "WHO GMP": { icon: Globe, accent: "cyan" },
   "EU GMP": { icon: Building2, accent: "blue" },
   "PIC/S": { icon: FileCheck, accent: "purple" },
-  "ISO 9001": { icon: Award, accent: "green" },
-  "ISO 13485": { icon: Stethoscope, accent: "blue" },
+  MHRA: { icon: Award, accent: "green" },
+  "ZaZiBoNa": { icon: Stethoscope, accent: "blue" },
   "ICH Guidelines": { icon: BookOpen, accent: "purple" },
   "Schedule M": { icon: ClipboardList, accent: "cyan" },
 };
@@ -90,10 +90,6 @@ function MarqueeTrack({
 }
 
 export function ComplianceStandards() {
-  const midpoint = Math.ceil(COMPLIANCE_STANDARDS.length / 2);
-  const topRow = COMPLIANCE_STANDARDS.slice(0, midpoint);
-  const bottomRow = COMPLIANCE_STANDARDS.slice(midpoint);
-
   return (
     <section className="relative overflow-hidden border-y border-white/5 py-16 sm:py-20 lg:py-24">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.05] via-transparent to-secondary/[0.05]" />
@@ -105,13 +101,10 @@ export function ComplianceStandards() {
         <SectionTitle
           badge="Compliance Frameworks"
           title="Built on Global Standards"
-          subtitle="Guiding pharmaceutical companies through India's leading regulatory and quality frameworks."
+          subtitle="Guiding pharmaceutical and chemical companies through leading Regulatory and Quality frameworks."
         />
 
-        <div className="space-y-4 sm:space-y-5">
-          <MarqueeTrack items={topRow} speed={38} />
-          <MarqueeTrack items={bottomRow} reverse speed={46} compact />
-        </div>
+        <MarqueeTrack items={COMPLIANCE_STANDARDS} speed={38} />
       </div>
     </section>
   );

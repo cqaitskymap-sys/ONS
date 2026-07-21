@@ -275,7 +275,7 @@ export const COMPANY = {
   description:
     "LoMars Pharma is a premier pharmaceutical consultancy delivering end-to-end solutions — from plant design and validation to GMP audits, QMS implementation, training, and domestic sourcing.",
   address: "Office No.16 Platinum Square, Near St. Xavier School, Silvassa 396230",
-  phone: "+91 86306 03509/+91 97149 12040",
+  phone: "+91 86306 03509",
   email: "info@lomarspharma.com",
   whatsapp: "918630603509",
   hours: "Monday – Saturday, 9AM – 7PM",
@@ -428,7 +428,7 @@ export const SERVICES = [
 export const INDUSTRIES = [
   { title: "Pharmaceuticals", icon: "Pill" },
   { title: "Medical Devices", icon: "Stethoscope" },
-  { title: "API & Excipient", icon: "FlaskConical" },
+  { title: "Chemicals (API & Excipient)", icon: "FlaskConical" },
   { title: "Veterinary", icon: "Heart" },
   { title: "Primary Packaging", icon: "Package" },
 ] as const;
@@ -441,32 +441,20 @@ export const INDUSTRY_DETAILS = [
     image: { ...IMAGES.tabletCapsuleProduction, video: VIDEOS.production },
     featureImage: IMAGES.injectableManufacturing,
     description:
-      "Full-spectrum support for small molecules, generics, and innovative drug development — from dossier preparation to post-approval compliance.",
-    capabilities: ["Plant design & validation", "GMP audits", "QMS implementation", "Pre-inspection audits"],
+      "Strategic sourcing and quality support for Pharmaceuticals finish products from WHO certified manufacturing sites,  for both Domestic and Export. Dosage form-Tablets,Capsules,Sachet, Ointments, Creams, Liquids, Injectables(LVP & SVP), Dry Powder Injections.",
+    capabilities: ["Plant design & validation","QMS design, implementation & Evaluation","Qulification & Validation","GMP audits", "Pre-inspection audits"],
     successStory:
       "Supported a Gujarat-based OSD manufacturer through CDSCO pre-inspection readiness — zero critical observations on subsequent inspection.",
   },
   {
-    slug: "medical-devices",
-    title: "Medical Devices",
-    icon: "Stethoscope",
-    image: { ...IMAGES.medicalDevices, video: VIDEOS.packaging },
-    featureImage: IMAGES.regulatoryDesk,
-    description:
-      "ISO 13485 implementation and CE marking guidance for Class I–III medical devices.",
-    capabilities: ["ISO 13485 QMS", "CE marking", "Regulatory submissions", "Risk management (ISO 14971)"],
-    successStory:
-      "Implemented ISO 13485 QMS for a Class II device manufacturer, enabling successful CE marking within 8 months.",
-  },
-  {
     slug: "api-excipient",
-    title: "API & Excipient",
+    title: "Chemicals (API & Excipient)",
     icon: "FlaskConical",
     image: { ...IMAGES.apiPills, video: VIDEOS.warehouse },
     featureImage: IMAGES.sourcingWarehouse,
     description:
       "Strategic sourcing and quality support for Active Pharmaceutical Ingredients (APIs) and excipients — from vendor qualification to regulatory documentation.",
-    capabilities: ["API & excipient sourcing", "Vendor qualification & audits", "DMF & COA review", "GMP compliance for raw materials"],
+    capabilities: ["Chemicals (API & Excipient) sourcing", "Vendor qualification & audits", "DMF & COA review", "GMP compliance for raw materials","QMS design, implementation & Evaluation","Qulification & Validation"],
     successStory:
       "Identified, audited, and qualified three domestic API manufacturers with complete DMF documentation and GMP compliance for a formulation client.",
   },
@@ -478,7 +466,7 @@ export const INDUSTRY_DETAILS = [
     featureImage: IMAGES.biotechResearch,
     description:
       "Regulatory and quality support for veterinary pharmaceuticals, feed additives, and animal health products.",
-    capabilities: ["VICH compliance", "API sourcing", "GMP for vet products", "Export documentation"],
+    capabilities: ["API sourcing", "GMP for vet products","QMS design, implementation & Evaluation","Qulification & Validation","GMP audits", "Pre-inspection audits"],
     successStory:
       "Qualified domestic API suppliers for a veterinary formulation unit, reducing procurement lead times by 30%.",
   },
@@ -567,7 +555,7 @@ export const CAREER_OPENINGS = [
 ] as const;
 
 export const STATS = [
-  { value: 15, suffix: "+", label: "Years Experience" },
+  { value: 6, suffix: "+", label: "Years Experience" },
   { value: 8, suffix: "", label: "Core Services" },
   { value: 4, suffix: "", label: "Industry Sectors" },
   { value: 8, suffix: "", label: "Compliance Frameworks" },
@@ -726,7 +714,7 @@ export const CHATBOT_QA: readonly ChatbotQA[] = [
     id: "regulatory",
     question: "Which regulatory standards do you support?",
     answer:
-      "We support CDSCO (India), WHO-GMP, EU GMP, PIC/S, ICH guidelines, ISO 9001/13485, Schedule M, and related international quality and regulatory frameworks.",
+      "We support CDSCO (India), WHO-GMP, EU GMP, PIC/S, ICH guidelines, MHRA, ZaZiBoNa, Schedule M, and related international quality and regulatory frameworks.",
     keywords: ["regulatory", "cdsco", "who", "eu gmp", "pics", "schedule m", "standard"],
   },
   {
@@ -773,14 +761,14 @@ export const CHATBOT_QA: readonly ChatbotQA[] = [
 
 export const COMPLIANCE_STANDARDS = [
   "CDSCO", "WHO GMP", "EU GMP", "PIC/S",
-  "ISO 9001", "ISO 13485", "ICH Guidelines", "Schedule M",
+  "MHRA", "ZaZiBoNa", "ICH Guidelines", "Schedule M",
 ] as const;
 
 export const ABOUT_SYNOPSIS = {
   intro:
-    "We are a professional pharmaceutical consultancy dedicated to providing end-to-end solutions for the pharmaceutical, biotechnology, and healthcare industries. Our expertise spans the complete lifecycle of pharmaceutical manufacturing, from facility design and regulatory compliance to quality systems and strategic sourcing.",
+    "We are a professional Pharmaceutical consultancy dedicated to providing end-to-end solutions for the Pharmaceutical, Biotechnology, Chemical, Healthcare, and Primary Packaging industries. Our expertise spans the complete lifecycle of pharmaceutical manufacturing, from facility design and regulatory compliance to quality systems and strategic sourcing.",
   closing:
-    "Together, our experts bring more than 100 years of combined experience across diverse sectors of the pharmaceutical industry, having worked with leading pharmaceutical organizations. The Team Mamebrs possess extensive knowledge of international regulatory standards, including WHO-GMP, EU GMP, PIC/S, MHRA, and other global quality requirements.",
+    "Together, our experts bring more than 100+ years of combined experience across diverse sectors of the pharmaceutical industry, having worked with leading pharmaceutical organizations. The Team Mamebrs possess extensive knowledge of international regulatory standards, including WHO-GMP, EU GMP, PIC/S, MHRA, and other global quality requirements.",
 } as const;
 
 export const ABOUT_CORE_SERVICES = [
@@ -841,7 +829,7 @@ export const TIMELINE = [
 export const WHY_CHOOSE_US = [
   {
     title: "Deep Expertise",
-    description: "15+ years of pharmaceutical industry experience across India's regulatory landscape.",
+    description: "100+ years of combined Pharmaceutical Chemical industry experience across India's regulatory landscape.",
     icon: "Brain",
   },
   {
@@ -888,19 +876,17 @@ export const MD_MESSAGE = {
   name: "Rohit Singh",
   title: "Managing Director",
   message:
-    "At LoMars Pharma, we are committed to being more than consultants — we are partners in your journey toward pharmaceutical excellence. With a deep understanding of India's regulatory landscape and global quality standards. Our team works tirelessly to help manufacturers achieve compliance, operational efficiency, and sustainable growth. Whether you are building a new facility, preparing for an inspection, or strengthening your quality systems, we bring the expertise and dedication your organization deserves.",
+    "At LoMars Pharma, we are committed to being more than consultants — we are partners in your journey toward pharmaceutical excellence, with a deep understanding of India's regulatory landscape and global quality standards. Our team works tirelessly to help manufacturers achieve compliance, operational efficiency, and sustainable growth. Whether you are building a new facility, preparing for an inspection, or strengthening your quality systems, we bring the expertise and dedication your organization deserves.",
 } as const;
 
 export const CASE_STUDIES = [
   {
     id: "facility-validation",
-    title: "Facility Validation",
-    client: "MedLife Pharmaceuticals",
-    service: "Plant Design & Validation",
+    title: "Facility Design & Commissioning",
+    client: "Confidential",
+    service: "Plant Design,Commissioning,qualification & Validation - 6 Green Field OSD Projects,7 Green Field Injection Projects & multiple Renovation Project of Existing Facilities",
     industry: "Pharmaceuticals",
     image: IMAGES.validation,
-    challenge: "New OSD facility required complete HVAC and purified water system validation before commercial production.",
-    solution: "Executed DQ/IQ/OQ/PQ protocols for HVAC, WFI, and compressed air systems with full documentation per EU GMP Annex 15.",
     result: "Full PQ achieved ahead of schedule; facility cleared for commercial batch manufacturing.",
     metric: "Full PQ achieved",
     timeline: "4 months",
@@ -1214,8 +1200,8 @@ export const CERTIFICATIONS = [
   { title: "WHO GMP", description: "Consultancy aligned with WHO Good Manufacturing Practice guidelines." },
   { title: "EU GMP", description: "Expertise in European Union GMP requirements and Annex compliance." },
   { title: "PIC/S", description: "Pharmaceutical Inspection Co-operation Scheme standards." },
-  { title: "ISO 9001", description: "Quality management systems implementation support." },
-  { title: "ISO 13485", description: "Medical device quality management systems." },
+  { title: "MHRA", description: "Expertise in MHRA GMP requirements for UK." },
+  { title: "ZaZiBoNa", description: "Collaborative medicines registration in Southern African Development Community (SADC). Formed by Zambia, Zimbabwe, Botswana, and Namibia." },
   { title: "Schedule M", description: "India-specific manufacturing compliance expertise." },
 ] as const;
 

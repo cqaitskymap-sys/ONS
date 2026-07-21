@@ -11,7 +11,7 @@ export function TimelineSection() {
         <SectionTitle
           badge="Our Journey"
           title="Milestones of Excellence"
-          subtitle="A decade and a half of growth, innovation, and pharmaceutical expertise."
+          subtitle="Half a decade of Innovation, Growth, and Pharmaceutical expertise."
         />
         <Timeline items={TIMELINE} />
       </div>

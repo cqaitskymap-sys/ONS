@@ -11,7 +11,6 @@ export const contactFormSchema = z.object({
   company: z.string().optional(),
   designation: z.string().optional(),
   city: z.string().optional(),
-  inquiryType: z.string().min(1, "Please select an inquiry type"),
   industry: z.string().optional(),
   service: z.string().min(1, "Please select a service"),
   regulatoryMarket: z.string().optional(),

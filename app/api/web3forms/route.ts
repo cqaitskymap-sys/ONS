@@ -29,7 +29,17 @@ export async function POST(request: Request) {
       }),
     });
 
-    const json = (await res.json()) as { success?: boolean; message?: string };
+    const text = await res.text();
+    let json: { success?: boolean; message?: string };
+
+    try {
+      json = JSON.parse(text) as { success?: boolean; message?: string };
+    } catch {
+      return NextResponse.json(
+        { success: false, message: "Failed to reach form service" },
+        { status: 502 },
+      );
+    }
 
     if (!res.ok || !json.success) {
       return NextResponse.json(

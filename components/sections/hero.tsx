@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Award, Layers, Building2, ShieldCheck } from "lucide-react";
-import { COMPANY, STATS, VIDEOS } from "@/lib/constants";
+import { COMPANY, IMAGES, STATS, VIDEOS } from "@/lib/constants";
 import { Logo } from "@/components/brand/logo";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
@@ -29,7 +29,7 @@ const HERO_DESCRIPTION_SHORT =
   "End-to-end pharmaceutical consultancy — plant design, GMP audits, QMS, training, and strategic sourcing across India.";
 
 const HERO_DESCRIPTION_FULL =
-  "End-to-end pharmaceutical consultancy — plant design, GMP audits, QMS implementation, training, and sourcing of API, excipients, packaging materials, and finished products (SVP, LVP, tablets, sachets, capsules, syrups, etc.) across India.";
+  "End-to-end pharmaceutical consultancy — plant design, GMP audits, QMS implementation, Training,Process reengineering and sourcing of API, excipients, packaging materials, and finished products (SVP, LVP, tablets, sachets, capsules, syrups, etc.) across India.";
 
 function usePrefersReducedMotion() {
   const [reduced, setReduced] = useState(false);
@@ -102,7 +102,7 @@ function TypingText({ text }: { text: string }) {
 function AuroraBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <VideoBackdrop src={VIDEOS.hero} variant="hero" />
+      <VideoBackdrop src={VIDEOS.hero} variant="hero" mobileImage={IMAGES.heroBackground} />
       <div className="absolute -top-1/3 left-1/2 -translate-x-1/2 w-[min(100vw,28rem)] h-[min(100vw,28rem)] sm:w-[600px] sm:h-[600px] sm:left-1/4 sm:translate-x-0 rounded-full bg-primary/10 blur-[80px] sm:blur-[120px] animate-pulse pointer-events-none" />
       <div className="absolute -bottom-1/4 -right-8 w-[min(90vw,24rem)] h-[min(90vw,24rem)] sm:right-1/4 sm:w-[500px] sm:h-[500px] rounded-full bg-secondary/10 blur-[70px] sm:blur-[100px] animate-pulse [animation-delay:1s] pointer-events-none" />
       <div className="absolute top-1/3 right-0 w-[min(80vw,20rem)] h-[min(80vw,20rem)] sm:right-1/3 sm:w-[400px] sm:h-[400px] rounded-full bg-accent/8 blur-[60px] sm:blur-[80px] animate-pulse [animation-delay:2s] pointer-events-none" />
